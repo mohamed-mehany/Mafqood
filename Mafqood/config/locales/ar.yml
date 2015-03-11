@@ -1,3 +1,6 @@
 ar:
   hello: "مرحبا يا عالم"
   title: "مفقود"
+  home:
+    report: "إبلاغ"
+    search: "بحث"

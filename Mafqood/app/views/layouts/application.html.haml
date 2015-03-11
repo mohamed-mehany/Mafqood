@@ -1,9 +1,9 @@
 !!! 5
-%html{ :lang => "en"}
+%html{ lang: cookies[:locale], dir: cookies[:locale] == "ar" ? "rtl" : "ltr" }
   %head
-    %meta{ :charset => "utf-8" }
+    %meta{ charset: "utf-8" }
 
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
     %title= content_for?(:title) ? yield(:title) : t("title")
 
@@ -12,5 +12,14 @@
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
-  %body
-    = yield
+  %body.f-topbar-fixed
+    .fixed
+      %nav.top-bar{ "data-topbar": "", role: "navigation" }
+        %ul.title-area
+          %li.name
+            %h1
+              = link_to t("title"), root_url
+    %section{ role: "main" }
+      .row
+        .columns.large-12.medium-12.small-12
+          = yield
