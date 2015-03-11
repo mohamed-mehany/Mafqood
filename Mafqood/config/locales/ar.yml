@@ -1,6 +1,8 @@
 ar:
   hello: "مرحبا يا عالم"
   title: "مفقود"
+  login: "تسجيل دخول"
+  facebook_login: "تسجيل دخول عبر فيسبوك"
   home:
     report: "إبلاغ"
     search: "بحث"

@@ -1,6 +1,8 @@
 en:
   hello: "Hello world"
   title: "Mafqood"
+  login: "Login"
+  facebook_login: "Login with Facebook"
   home:
     report: "Report"
     seatch: "Search"

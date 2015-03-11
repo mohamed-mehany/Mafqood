@@ -12,13 +12,17 @@
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
-  %body.f-topbar-fixed
-    .fixed
-      %nav.top-bar{ "data-topbar": "", role: "navigation" }
-        %ul.title-area
-          %li.name
-            %h1
-              = link_to t("title"), root_url
+  %body
+    %nav.top-bar{ "data-topbar": "", role: "navigation" }
+      %ul.title-area
+        %li.name
+          %h1= link_to t("title"), root_url
+        %li.toggle-topbar.menu-icon
+          %a{ href: "javascript:" }
+            %span Menu
+      %section.top-bar-section
+        %ul.right
+          %li.active= link_to t("facebook_login"), login_path(:facebook)
     %section{ role: "main" }
       .row
         .columns.large-12.medium-12.small-12
