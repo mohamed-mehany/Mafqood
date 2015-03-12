@@ -22,7 +22,20 @@
             %span Menu
       %section.top-bar-section
         %ul.right
-          %li.active= link_to t("facebook_login"), login_path(:facebook)
+          - if current_user
+            %li.active= link_to t("logout"), logout_path
+          - else
+            %li.active= link_to t("facebook_login"), login_path(:facebook)
+    - if notice
+      .success.alert-box{ "data-alert": "" }
+        = notice
+        %a.close{ href: "#" } &times;
+    - if alert
+      .alert.alert-box{ "data-alert": "" }
+        - alert.each do |a|
+          %div
+            = a
+            %a.close{ href: "#" } &times;
     %section{ role: "main" }
       .row
         .columns.large-12.medium-12.small-12

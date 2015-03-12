@@ -3,6 +3,10 @@ en:
   title: "Mafqood"
   login: "Login"
   facebook_login: "Login with Facebook"
+  logout: "Logout"
   home:
     report: "Report"
     seatch: "Search"
+  users:
+    successful_login: "Signed in successfully"
+    successful_logout: "Signed out successfully"

@@ -3,6 +3,10 @@ ar:
   title: "مفقود"
   login: "تسجيل دخول"
   facebook_login: "تسجيل دخول عبر فيسبوك"
+  logout: "تسجيل خروج"
   home:
     report: "إبلاغ"
     search: "بحث"
+  users:
+    successful_login: "تم تسجيل دخول بنجاح"
+    successful_logout: "تم تسجيل خروج بنجاح"
