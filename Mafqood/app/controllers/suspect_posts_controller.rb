@@ -1,7 +1,4 @@
 class SuspectPostsController < ApplicationController
-  def index
-  end
-
   def new
     @suspect_post = SuspectPost.new
   end
@@ -13,7 +10,6 @@ class SuspectPostsController < ApplicationController
       flash[:notice] = "Your Post has been created successfully"
       redirect_to @suspect_post
     else
-      #flash.now[:alert] = @suspect_post.errors[:name].first
       render 'new'
     end
   end
