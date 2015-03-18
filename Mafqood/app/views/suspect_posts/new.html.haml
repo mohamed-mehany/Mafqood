@@ -9,7 +9,7 @@
       %fieldset
         %legend 
           = t('suspect_posts.form_title')    
-        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t('suspect_posts.male'), t('suspect_posts.female')], label: t('suspect_posts.gender')    
+        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t('suspect_posts.male'), t('suspect_posts.female')], label: t('suspect_posts.gender')   
         = f.input :approximate_age, label: t('suspect_posts.approximate_age'), placeholder: t('suspect_posts.age_placeholder')
         = f.input :location, label: t('suspect_posts.location'), placeholder: t('suspect_posts.location_placeholder')
         = f.input :image, as: :file, label: t('suspect_posts.image'), input_html: { accept: 'image/*' }
