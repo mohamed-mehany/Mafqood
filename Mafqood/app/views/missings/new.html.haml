@@ -10,7 +10,7 @@
         %legend
           = t('missings.form_title')
         = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t('missings.male'), t('missings.female')], label: t('missings.gender')
-        = f.input :age, label: t('missings.age'), placeholder: t('missings.age_placeholder')
+        = f.input :age, label: t('missings.approximate_age'), placeholder: t('missings.age_placeholder')
         = f.input :location, label: t('missings.location'), placeholder: t('missings.location_placeholder')
         = f.input :image, as: :file, label: t('missings.image'), input_html: { accept: 'image/*' }
         = f.input :description, label: t('missings.description'), as: :text, placeholder: t('missings.description_placeholder')
