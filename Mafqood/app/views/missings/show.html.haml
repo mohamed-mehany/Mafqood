@@ -1,0 +1,5 @@
+= if flash[:notice]
+  %div.alert-box.success{"data-alert" => ""}
+    = flash[:notice]
+    %a.close
+      &times;
