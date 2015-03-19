@@ -579,3 +579,22 @@ Processing by Admin::DashboardController#index as HTML
   [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1  ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
   Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/bundler/gems/activeadmin-808bc0f5ee0d/app/views/active_admin/page/index.html.arb (99.8ms)
 Completed 200 OK in 102ms (Views: 100.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-19 17:18:57 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (28.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (9.5ms)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2015-03-19 17:19:00 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2015-03-19 17:19:00 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/bundler/gems/activeadmin-808bc0f5ee0d/app/views/active_admin/devise/shared/_links.erb (3.3ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/bundler/gems/activeadmin-808bc0f5ee0d/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (104.5ms)
+Completed 200 OK in 384ms (Views: 336.7ms | ActiveRecord: 0.9ms)
