@@ -12,8 +12,8 @@ class MissingsController < ApplicationController
   end
 
   def create
-    # @missing = SuspectPost.new(params[:missing].permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs))
-    @missing = Missing.create(missing_params)
+    @missing = Missing.new(params[:missing].permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs))
+    # @missing = Missing.create(params.require(:missing).permit(:approximate_age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs))
 
     if @missing.save
       flash[:notice] = "Your Post has been created successfully"
@@ -26,8 +26,8 @@ class MissingsController < ApplicationController
   protected
 
   def missing_params
-    params.require(:missing).permit(:approximate_age, :gender, :location, :image, :description,
-      :special_signs, :reporter_name, :reporter_phone)
+    params.require(:missing).permit(:approximate_age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
+
 
 end
