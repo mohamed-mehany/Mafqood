@@ -11,3 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+/Mafqood/log/*
+!/Mafqood/log/.keep
+/Mafqood/tmp

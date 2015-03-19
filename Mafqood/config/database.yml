@@ -14,7 +14,6 @@ default: &default
   encoding: utf8
   pool: 5
   username: mafqood
-  socket:
 
 development:
   <<: *default
@@ -49,5 +48,3 @@ test:
 production:
   <<: *default
   database: Mafqood_production
-  username: mafqood
-  password: <%= ENV['MAFQOOD_DATABASE_PASSWORD'] %>
