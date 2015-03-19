@@ -13,8 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: mafqood
   socket:
 
 development:
@@ -50,5 +49,5 @@ test:
 production:
   <<: *default
   database: Mafqood_production
-  username: Mafqood
+  username: mafqood
   password: <%= ENV['MAFQOOD_DATABASE_PASSWORD'] %>
