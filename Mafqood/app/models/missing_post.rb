@@ -3,6 +3,8 @@ class MissingPost < ActiveRecord::Base
   attr_accessor :image
   mount_uploader :image, ImageUploader
 
+  belongs_to :user
+
   validates :gender , presence: true
   validates :age , presence: true
   validates :location , presence: true
