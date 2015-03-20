@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
 
-  missings:
+  missing_posts:
     page_title: "New Missing Post:"
     form_title: "Report a missing kid"
     approximate_age: "age:"
@@ -47,7 +47,7 @@ en:
   activerecord:
     errors:
       models:
-        missing:
+        missing_posts:
           attributes:
             gender:
               blank: "Male or Female must be selected"

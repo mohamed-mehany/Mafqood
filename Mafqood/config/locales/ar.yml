@@ -1,5 +1,5 @@
 ar:
-  missings:
+  missing_posts:
     page_title: "تقديم بلاغ جديد"
     form_title: "بلاغ عن فقدان طفل"
     approximate_age: "العمر:"
@@ -24,7 +24,7 @@ ar:
   activerecord:
     errors:
       models:
-        missing:
+        missing_posts:
           attributes:
             gender:
               blank: "يجب اختيار ذكر أو انثى"
