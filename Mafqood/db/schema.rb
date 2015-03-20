@@ -62,6 +62,31 @@ ActiveRecord::Schema.define(version: 20150320001336) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "location",       limit: 255
+
+  create_table "finding_posts", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "description",   limit: 255
+    t.string   "location",      limit: 255
+    t.string   "special_signs", limit: 255
+    t.integer  "age",           limit: 4
+    t.string   "image",         limit: 255
+    t.string   "contact_info",  limit: 255
+    t.boolean  "gender",        limit: 1
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
+
+  create_table "suspect_posts", force: :cascade do |t|
+    t.string   "approximate_age", limit: 255
+    t.string   "gender",          limit: 255
+    t.string   "location",        limit: 255
+    t.string   "description",     limit: 255
+    t.string   "special_signs",   limit: 255
+    t.string   "reporter_name",   limit: 255
+    t.string   "reporter_phone",  limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "image",           limit: 255
+  end
 end

@@ -21,6 +21,28 @@ ar:
     phone_placeholder: "محمول"
     submit_button: "إرسال"
 
+  suspect_posts:
+    page_title: "تقديم بلاغ جديد"
+    form_title: "بلاغ عن طفل مشتبه في خطفه"
+    approximate_age: "العمر بالتقريب:"
+    age_placeholder: "العمر بالتقريب"
+    gender: "الجنس:"
+    male: " ذكر"
+    female: " انثى"
+    location: "الموقع:"
+    location_placeholder: "المنطقة أو الموقع بالتحديد"
+    image: "صورة الطفل:"
+    description: "الوصف:"
+    description_placeholder: "معلومات/وصف زيادة عن الطفل"
+    special_signs: "علامات مميزة:"
+    signs_placeholder: "اي علامات مميزة لاحظتها على الطفل"
+    reporter_info: "كيف نصل إليك:"
+    reporter_name: "الإسم:"
+    name_placeholder: "الإسم بالكامل"
+    reporter_phone: "رقم التليفون:"
+    phone_placeholder: "محمول"
+    submit_button: "إرسال"
+
   activerecord:
     errors:
       models:
@@ -43,3 +65,39 @@ ar:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+
+        suspect_post:
+          attributes:
+            gender:
+              blank: "يجب اختيار ذكر أو انثى"
+            approximate_age:
+              blank: "لا يمكن ان يكون فارغا"
+            image:
+              blank: "لا يمكن ان يكون فارغا"
+            location:
+              blank: "لا يمكن ان يكون فارغا"
+            reporter_phone:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "رقم هاتف غير صالح"
+              invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
+            description:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+            special_signs:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+  finding:
+    title: "أبلاغ عن طفل وجد"
+    child_name: "أسم الطفل"
+    required_field: "خانة مطلوبة"
+    age: "العمر تحديدا أو تقريبا"
+    description: "أوصف الطفل"
+    description_placeholder: "مطلوب وصف ملامح و ملابس الطفل"
+    special_signs: "علامات بارزة"
+    special_signs_placeholder: "أذكر أي علامة بارزة مثل جرح في الوجة أو وحمة.. ألخ"
+    gender: "الجنس"
+    male: "ذكر"
+    female: "أنثي"
+    location: "مكان عثورك علي الطفل"
+    contact_info: "رقم هاتفك"
+    photo: "أضافة صورة - خانة مطلوبه"
+    submit: "أبلاغ"
