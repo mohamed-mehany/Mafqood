@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>Lost people </title>
+
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+								<header>
+				<h1>Lost people</h1>
+             	<link rel="stylesheet" type="text/css" href="css/default.css" />
+
+			</header>
+			<div>
+				<ul id="og-grid" class="og-grid">
+
+					<% @findings.each do |finding| %>
+					<li>
+
+						<a  data-largesrc="images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="images/thumbs/2.jpg" alt="img02"/>
+						</a>
+
+						<div class="og-expander">
+							<div class="og-expander-inner">
+								<span class="og-close"></span>
+								<div class="og-fullimg">
+									<div class="og-loading"></div>
+									<img src="images/2.jpg">
+								</div>
+								<div class="og-details">
+									<p> name :<%= @findings.name%><p>
+
+								</div>
+							</div>
+						</div>
+
+					</li>
+					<% end %>
+				</ul>
+
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/grid.js"></script>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
+	</body>
+	</html>
