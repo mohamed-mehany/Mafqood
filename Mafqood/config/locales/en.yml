@@ -22,6 +22,7 @@
 en:
   hello: "Hello world"
   missing_posts:
+    title: "Submit new missing post"
     page_title: "New Missing Post:"
     form_title: "Report a missing kid"
     approximate_age: "Age:"
@@ -43,6 +44,7 @@ en:
     phone_placeholder: "Mobile"
 
   suspect_posts:
+    title: "Submit new suspect post"
     page_title: "New Suspect Post:"
     form_title: "Report a Suspected kid"
     approximate_age: "Approximate age:"

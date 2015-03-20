@@ -1,5 +1,6 @@
 ar:
   missing_posts:
+    title: "تقديم بلاغ جديد"
     page_title: "تقديم بلاغ جديد"
     form_title: "بلاغ عن فقدان طفل"
     approximate_age: "العمر:"
@@ -22,6 +23,7 @@ ar:
     submit_button: "إرسال"
 
   suspect_posts:
+    title: "تقديم بلاغ جديد"
     page_title: "تقديم بلاغ جديد"
     form_title: "بلاغ عن طفل مشتبه في خطفه"
     approximate_age: "العمر بالتقريب:"
