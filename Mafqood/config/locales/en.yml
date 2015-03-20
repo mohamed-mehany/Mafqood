@@ -21,40 +21,62 @@
 
 en:
   hello: "Hello world"
+  missing_posts:
+    title: "Submit new missing post"
+    page_title: "New Missing Post:"
+    form_title: "Report a missing kid"
+    approximate_age: "Age:"
+    age_placeholder: "Age"
+    gender: "Gender:"
+    male: " Male"
+    female: " Female"
+    location: "Area/Location:"
+    location_placeholder: "Area or exact location"
+    image: "Kid's photo:"
+    description: "Description:"
+    description_placeholder: "Any additional information/description about the kid"
+    special_signs: "Special Signs:"
+    signs_placeholder: "Any special signs seen on the kid"
+    reporter_info: "How to reach you:"
+    reporter_name: "Name:"
+    name_placeholder: "Full name"
+    reporter_phone: "Phone number:"
+    phone_placeholder: "Mobile"
 
   suspect_posts:
+    title: "Submit new suspect post"
     page_title: "New Suspect Post:"
     form_title: "Report a Suspected kid"
     approximate_age: "Approximate age:"
     age_placeholder: "approximate age"
     gender: "Gender:"
-    male: " Male"
-    female: " Female"
+    male: "Male"
+    female: "Female"
     location: "Area/Location:"
-    location_placeholder: "area or exact location"
+    location_placeholder: "Area or exact location"
     image: "Kid's photo:"
     description: "Description:"
-    description_placeholder: "any additional information/description about the kid"
+    description_placeholder: "Any additional information/description about the kid"
     special_signs: "Special Signs:"
-    signs_placeholder: "any special signs seen on the kid"
+    signs_placeholder: "Any special signs seen on the kid"
     reporter_info: "How to reach you:"
     reporter_name: "Name:"
-    name_placeholder: "full name"
+    name_placeholder: "Full name"
     reporter_phone: "Phone number:"
-    phone_placeholder: "mobile"
+    phone_placeholder: "Mobile"
     submit_button: "Submit"
 
   activerecord:
     errors:
       models:
-        suspect_post:
+        missing_posts:
           attributes:
             gender:
               blank: "Male or Female must be selected"
-            approximate_age:  
+            approximate_age:
               blank: "This field can't be blank"
             image:
-              blank: "This field can't be blank" 
+              blank: "This field can't be blank"
             location:
               blank: "This field can't be blank"
             reporter_phone:
@@ -62,10 +84,30 @@ en:
               not_a_number: "This is not a number"
               wrong_length: "Invalid phone number"
               invalid: "Must start with '01' and of length 11"
-            description:  
+            description:
               too_long: "500 characters is the maximum allowed"
             special_signs:
-              too_long: "500 characters is the maximum allowed"   
+              too_long: "500 characters is the maximum allowed"
+
+        suspect_post:
+          attributes:
+            gender:
+              blank: "Male or Female must be selected"
+            approximate_age:
+              blank: "This field can't be blank"
+            image:
+              blank: "This field can't be blank"
+            location:
+              blank: "This field can't be blank"
+            reporter_phone:
+              blank: "This field can't be blank"
+              not_a_number: "This is not a number"
+              wrong_length: "Invalid phone number"
+              invalid: "Must start with '01' and of length 11"
+            description:
+              too_long: "500 characters is the maximum allowed"
+            special_signs:
+              too_long: "500 characters is the maximum allowed"
   finding:
     title: "Submit new finding"
     child_name: "Child's name"
