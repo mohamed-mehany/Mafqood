@@ -40,6 +40,7 @@ en:
     name_placeholder: "Full name"
     reporter_phone: "Phone number:"
     phone_placeholder: "Mobile"
+    submit_button: "Submit"
 
   suspect_posts:
     title: "Submit new suspect post"
