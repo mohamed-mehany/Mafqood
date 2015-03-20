@@ -8,6 +8,6 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/Mafqood/log/*
-!/Mafqood/log/.keep
-/Mafqood/tmp
+/log/*
+!/log/.keep
+/tmp
