@@ -1,9 +1,9 @@
 class FindingPostsController < ApplicationController
-  
+
   def new
    @finding = FindingPost.new
   end
-  
+
   def create
     if (current_user)
     	@finding = FindingPost.new(finding_params)
@@ -14,9 +14,11 @@ class FindingPostsController < ApplicationController
         flash[:alert] = @finding.errors.full_messages
         render 'new'
 	    end
+    else
+      redirect_to root_url, alert: ["Must be logged in..."]
     end
   end
-  
+
 
   protected
 

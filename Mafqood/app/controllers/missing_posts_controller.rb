@@ -22,6 +22,8 @@ class MissingPostsController < ApplicationController
       else
         render 'new'
       end
+    else
+      redirect_to root_url, alert: ["Must be logged in..."]
     end
   end
 
