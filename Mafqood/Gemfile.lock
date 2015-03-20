@@ -104,7 +104,6 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
-    hashie (3.4.0)
     haml-rails (0.9.0)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
@@ -114,6 +113,7 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    hashie (3.4.0)
     hike (1.2.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
