@@ -4,9 +4,18 @@ en:
   login: "Login"
   facebook_login: "Login with Facebook"
   logout: "Logout"
+  remove: "Remove"
+  login_to_view: "Please login to view this page"
   home:
     report: "Report"
     seatch: "Search"
   users:
+    edit: "Edit Profile"
+    update: "Update Profile"
     successful_login: "Signed in successfully"
     successful_logout: "Signed out successfully"
+    successful_update: "Updated successfully"
+  telephones:
+    number: "Telephone"
+  addresses:
+    text: "ِAddress"

@@ -21,11 +21,15 @@
           %a{ href: "javascript:" }
             %span Menu
       %section.top-bar-section
-        %ul.right
+        %ul
           - if current_user
-            %li.active= link_to t("logout"), logout_path
+            %li.active= link_to t("logout"), logout_path, class: "button"
           - else
-            %li.active= link_to t("facebook_login"), login_path(:facebook)
+            %li.active= link_to t("facebook_login"), login_path(:facebook), class: "button", onclick: "if($(this).hasClass('disabled')) return false; $(this).addClass('disabled');"
+        - if current_user
+          %ul.right
+            %li.divider.hide-for-small
+            %li= link_to t("users.edit"), edit_user_path(current_user)
     - if notice
       .success.alert-box{ "data-alert": "" }
         = notice

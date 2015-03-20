@@ -1,7 +1,1 @@
-%h1 Sign up
-= form_for @user do |f|
-  = hidden_field_tag :provider, session[:provider]
-  = hidden_field_tag :uid, session[:uid]
-  = f.text_field :name, placeholder: "Name"
-  = f.text_field :email, placeholder: "Email"
-  = f.submit "Submit", class: "small button"
+= render "form"

@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
   
@@ -10,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate_user!
-    redirect_to login_path(:facebook) unless session[:user_id]
+    redirect_to request.referer || root_url, notice: t("login_to_view") unless session[:user_id]
   end
 end

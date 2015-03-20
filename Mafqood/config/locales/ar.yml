@@ -4,9 +4,18 @@ ar:
   login: "تسجيل دخول"
   facebook_login: "تسجيل دخول عبر فيسبوك"
   logout: "تسجيل خروج"
+  remove: "إزالة"
+  login_to_view: "من فضلك سجل الدخول لعرض هذه الصفحة"
   home:
     report: "إبلاغ"
     search: "بحث"
   users:
-    successful_login: "تم تسجيل دخول بنجاح"
-    successful_logout: "تم تسجيل خروج بنجاح"
+    edit: "تعديل البيانات"
+    update: "تعديل البيانات"
+    successful_login: "تم تسجيل الدخول بنجاح"
+    successful_logout: "تم تسجيل الخروج بنجاح"
+    successful_update: "تم تعديل البيانات بنجاح"
+  telephones:
+    number: "التليفون"
+  addresses:
+    text: "العنوان"
