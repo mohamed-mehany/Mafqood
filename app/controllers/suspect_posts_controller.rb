@@ -1,4 +1,11 @@
 class SuspectPostsController < ApplicationController
+  def index
+    @suspects = SuspectPost.order("created_at desc")
+  end
+  
+  def show
+  end
+  
   def new
     @suspect_post = SuspectPost.new
   end

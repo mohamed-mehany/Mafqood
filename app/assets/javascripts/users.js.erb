@@ -1,0 +1,51 @@
+function addPhone()
+{
+  var theSize = $("#telephones .row").size();
+  var numberId = "user_telephones_attributes_" + theSize + "_number";
+  var numberName = "user[telephones_attributes][" + theSize + "][number]";
+  var destroyId = "user_telephones_attributes_" + theSize + "__destroy";
+  var destroyName = "user[telephones_attributes][" + theSize + "][_destroy]";
+  $("#telephones").append(
+    '<div class="row">\
+      <div class="columns large-10 medium-9 small-8">\
+        <input placeholder="<%= I18n.t("telephones.number") %>" type="text" name="' + numberName + '" id="' + numberId + '">\
+      </div>\
+      <div class="columns large-2 medium-3 small-4">\
+        <input name="' + destroyName + '" type="hidden">\
+        <input type="checkbox" name="' + destroyName + '" id="' + destroyId + '">\
+        <label for="' + destroyId + '"><%= I18n.t("remove") %></label>\
+      </div>\
+    </div>'
+  );
+}
+
+function removePhone()
+{
+  if($("#telephones .row").size() > 1) $("#telephones .row:last").remove();
+}
+
+function addAddress()
+{
+  var theSize = $("#addresses .row").size();
+  var textId = "user_addresses_attributes_" + theSize + "_text";
+  var textName = "user[addresses_attributes][" + theSize + "][text]";
+  var destroyId = "user_addresses_attributes_" + theSize + "__destroy";
+  var destroyName = "user[addresses_attributes][" + theSize + "][_destroy]";
+  $("#addresses").append(
+    '<div class="row">\
+      <div class="columns large-10 medium-9 small-8">\
+        <input placeholder="<%= I18n.t("addresses.text") %>" type="text" name="' + textName + '" id="' + textId + '">\
+      </div>\
+      <div class="columns large-2 medium-3 small-4">\
+        <input name="' + destroyName + '" type="hidden">\
+        <input type="checkbox" name="' + destroyName + '" id="' + destroyId + '">\
+        <label for="' + destroyId + '"><%= I18n.t("remove") %></label>\
+      </div>\
+    </div>'
+  );
+}
+
+function removeAddress()
+{
+  if($("#addresses .row").size() > 1) $("#addresses .row:last").remove();
+}

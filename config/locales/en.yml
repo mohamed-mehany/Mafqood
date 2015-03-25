@@ -1,60 +1,81 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  title: "Mafqood"
+  login: "Login"
+  facebook_login: "Login with Facebook"
+  logout: "Logout"
+  remove: "Remove"
+  login_to_view: "Please login to view this page"
+  home:
+    report: "Report"
+    seatch: "Search"
+  users:
+    edit: "Edit Profile"
+    update: "Update Profile"
+    successful_login: "Signed in successfully"
+    successful_logout: "Signed out successfully"
+    successful_update: "Updated successfully"
+  telephones:
+    number: "Telephone"
+  addresses:
+    text: "ِAddress"
+  missing_posts:
+    title: "Submit new missing post"
+    page_title: "New Missing Post:"
+    form_title: "Report a missing kid"
+    approximate_age: "Age:"
+    age_placeholder: "Age"
+    gender: "Gender:"
+    male: " Male"
+    female: " Female"
+    location: "Area/Location:"
+    location_placeholder: "Area or exact location"
+    image: "Kid's photo:"
+    description: "Description:"
+    description_placeholder: "Any additional information/description about the kid"
+    special_signs: "Special Signs:"
+    signs_placeholder: "Any special signs seen on the kid"
+    reporter_info: "How to reach you:"
+    reporter_name: "Name:"
+    name_placeholder: "Full name"
+    reporter_phone: "Phone number:"
+    phone_placeholder: "Mobile"
+    submit_button: "Submit"
 
   suspect_posts:
+    title: "Submit new suspect post"
     page_title: "New Suspect Post:"
     form_title: "Report a Suspected kid"
     approximate_age: "Approximate age:"
     age_placeholder: "approximate age"
     gender: "Gender:"
-    male: " Male"
-    female: " Female"
+    male: "Male"
+    female: "Female"
     location: "Area/Location:"
-    location_placeholder: "area or exact location"
+    location_placeholder: "Area or exact location"
     image: "Kid's photo:"
     description: "Description:"
-    description_placeholder: "any additional information/description about the kid"
+    description_placeholder: "Any additional information/description about the kid"
     special_signs: "Special Signs:"
-    signs_placeholder: "any special signs seen on the kid"
+    signs_placeholder: "Any special signs seen on the kid"
     reporter_info: "How to reach you:"
     reporter_name: "Name:"
-    name_placeholder: "full name"
+    name_placeholder: "Full name"
     reporter_phone: "Phone number:"
-    phone_placeholder: "mobile"
+    phone_placeholder: "Mobile"
     submit_button: "Submit"
 
   activerecord:
     errors:
       models:
-        suspect_post:
+        missing_posts:
           attributes:
             gender:
               blank: "Male or Female must be selected"
-            approximate_age:  
+            approximate_age:
               blank: "This field can't be blank"
             image:
-              blank: "This field can't be blank" 
+              blank: "This field can't be blank"
             location:
               blank: "This field can't be blank"
             reporter_phone:
@@ -62,10 +83,30 @@ en:
               not_a_number: "This is not a number"
               wrong_length: "Invalid phone number"
               invalid: "Must start with '01' and of length 11"
-            description:  
+            description:
               too_long: "500 characters is the maximum allowed"
             special_signs:
-              too_long: "500 characters is the maximum allowed"   
+              too_long: "500 characters is the maximum allowed"
+
+        suspect_post:
+          attributes:
+            gender:
+              blank: "Male or Female must be selected"
+            approximate_age:
+              blank: "This field can't be blank"
+            image:
+              blank: "This field can't be blank"
+            location:
+              blank: "This field can't be blank"
+            reporter_phone:
+              blank: "This field can't be blank"
+              not_a_number: "This is not a number"
+              wrong_length: "Invalid phone number"
+              invalid: "Must start with '01' and of length 11"
+            description:
+              too_long: "500 characters is the maximum allowed"
+            special_signs:
+              too_long: "500 characters is the maximum allowed"
   finding:
     title: "Submit new finding"
     child_name: "Child's name"

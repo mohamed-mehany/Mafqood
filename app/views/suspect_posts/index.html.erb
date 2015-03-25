@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Thumbnail Grid with Expanding Preview</title>
+		<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+		<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+		<meta name="author" content="Codrops" />
+		<%= stylesheet_link_tag "default" %>
+		<%= stylesheet_link_tag "component" %>
+    <%= javascript_include_tag "modernizr.custom" %>
+	</head>
+	<body>
+		<div class="container">	
+			<div class="main">
+				<ul id="og-grid" class="og-grid">
+				  <% @suspects.each do |finding| %>
+					<li>
+						<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="<%= finding.image %>" data-title="<%= finding.reporter_name %>" data-description="<%= finding.description %><br><%= finding.description %>">
+							<img src="<%= finding.image.thumb %>">
+						</a>
+	          <div class="og-expander">
+		          <div class="og-expander-inner">
+			          <span class="og-close"></span>
+			          <div class="og-fullimg">
+				          <div class="og-loading"></div>
+				          <img src="images/2.jpg">
+			          </div>
+			          <div class="og-details">
+				          <h3>Veggies sunt bona vobis</h3>
+				          <p>Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.</p>
+				          <a href="http://cargocollective.com/jaimemartinez/">Visit website</a>
+			          </div>
+		          </div>
+	          </div>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</div><!-- /container -->
+		<%= javascript_include_tag "grid" %>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
+	</body>
+</html>

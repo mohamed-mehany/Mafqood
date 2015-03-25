@@ -1,5 +1,4 @@
 class CreateSuspectPosts < ActiveRecord::Migration
-
   def change
     create_table :suspect_posts do |t|
       t.string :approximate_age

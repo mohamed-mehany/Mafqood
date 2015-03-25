@@ -1,12 +1,56 @@
 ar:
+  hello: "مرحبا يا عالم"
+  title: "مفقود"
+  login: "تسجيل دخول"
+  facebook_login: "تسجيل دخول عبر فيسبوك"
+  logout: "تسجيل خروج"
+  remove: "إزالة"
+  login_to_view: "من فضلك سجل الدخول لعرض هذه الصفحة"
+  home:
+    report: "إبلاغ"
+    search: "بحث"
+  users:
+    edit: "تعديل البيانات"
+    update: "تعديل البيانات"
+    successful_login: "تم تسجيل الدخول بنجاح"
+    successful_logout: "تم تسجيل الخروج بنجاح"
+    successful_update: "تم تعديل البيانات بنجاح"
+  telephones:
+    number: "التليفون"
+  addresses:
+    text: "العنوان"
+  missing_posts:
+    title: "تقديم بلاغ جديد"
+    page_title: "تقديم بلاغ جديد"
+    form_title: "بلاغ عن فقدان طفل"
+    approximate_age: "العمر:"
+    age_placeholder: "العمر"
+    gender: "الجنس:"
+    male: " ذكر"
+    female: " انثى"
+    location: "الموقع:"
+    location_placeholder: "المنطقة أو الموقع بالتحديد"
+    image: "صورة الطفل:"
+    description: "الوصف:"
+    description_placeholder: "معلومات/وصف زيادة عن الطفل"
+    special_signs: "علامات مميزة:"
+    signs_placeholder: "اي علامات مميزة لاحظتها على الطفل"
+    reporter_info: "كيف نصل إليك:"
+    reporter_name: "الإسم:"
+    name_placeholder: "الإسم بالكامل"
+    reporter_phone: "رقم التليفون:"
+    phone_placeholder: "محمول"
+    submit_button: "إرسال"
+
   suspect_posts:
+    title: "تقديم بلاغ جديد"
     page_title: "تقديم بلاغ جديد"
     form_title: "بلاغ عن طفل مشتبه في خطفه"
     approximate_age: "العمر بالتقريب:"
     age_placeholder: "العمر بالتقريب"
     gender: "الجنس:"
     male: " ذكر"
-    female: " انثى"    
+    female: " انثى"
     location: "الموقع:"
     location_placeholder: "المنطقة أو الموقع بالتحديد"
     image: "صورة الطفل:"
@@ -24,11 +68,11 @@ ar:
   activerecord:
     errors:
       models:
-        suspect_post:
+        missing_posts:
           attributes:
             gender:
               blank: "يجب اختيار ذكر أو انثى"
-            approximate_age:  
+            approximate_age:
               blank: "لا يمكن ان يكون فارغا"
             image:
               blank: "لا يمكن ان يكون فارغا"
@@ -39,7 +83,27 @@ ar:
               not_a_number: "هذا ليس رقم هاتف"
               wrong_length: "رقم هاتف غير صالح"
               invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
-            description:  
+            description:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+            special_signs:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+
+        suspect_post:
+          attributes:
+            gender:
+              blank: "يجب اختيار ذكر أو انثى"
+            approximate_age:
+              blank: "لا يمكن ان يكون فارغا"
+            image:
+              blank: "لا يمكن ان يكون فارغا"
+            location:
+              blank: "لا يمكن ان يكون فارغا"
+            reporter_phone:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "رقم هاتف غير صالح"
+              invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
+            description:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"

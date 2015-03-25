@@ -1,15 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'haml-rails', '~> 0.9.0'
-gem 'foundation-rails'
-gem 'simple_form'
-gem 'rmagick'
-gem 'carrierwave'
+gem 'haml'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'foundation-rails'
+gem 'haml-rails', '~> 0.9.0'
+gem 'simple_form'
+gem 'rmagick'
+#gem 'rmagick', '~> 2.13.4'
+gem 'carrierwave'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets

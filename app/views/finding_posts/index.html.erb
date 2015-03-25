@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
-		<title>Lost people </title>
-
-		<script src="js/modernizr.custom.js"></script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Thumbnail Grid with Expanding Preview</title>
+		<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+		<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+		<meta name="author" content="Codrops" />
+		<%= stylesheet_link_tag "default" %>
+		<%= stylesheet_link_tag "component" %>
+    <%= javascript_include_tag "modernizr.custom" %>
 	</head>
 	<body>
 		<div class="container">
-								<header>
-				<h1>Lost people</h1>
-             	<link rel="stylesheet" type="text/css" href="css/default.css" />
-
-			</header>
-			<div>
+			<div class="main">
 				<ul id="og-grid" class="og-grid">
-
-					<% @findings.each do |finding| %>
+				  <% @findings.each do |finding| %>
 					<li>
+						<a href="" data-largesrc="<%= finding.image %>" data-title="<%= finding.name %>" data-description="name : <%= finding.description %> <br> location : <%= finding.location%> <br> special signs : <%= finding.special_signs%> <br> age : <%= finding.age %> <br> contact information : <%= finding.contact_info%> <br>
+	  gender : <% if finding.gender==true %>
+    male
+    <% else %>
+    female
+    <% end %>" >
 
-						<a  data-largesrc="images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
-							<img src="images/thumbs/2.jpg" alt="img02"/>
+							<img src="<%= finding.image.thumb %>" alt="img01"/>
 						</a>
-
-						<div class="og-expander">
-							<div class="og-expander-inner">
-								<span class="og-close"></span>
-								<div class="og-fullimg">
-									<div class="og-loading"></div>
-									<img src="images/2.jpg">
-								</div>
-								<div class="og-details">
-									<p> name :<%= @findings.name%><p>
-
-								</div>
-							</div>
-						</div>
-
+	          <div class="og-expander">
+		          <div class="og-expander-inner">
+			          <span class="og-close"></span>
+			          <div class="og-fullimg">
+				          <div class="og-loading"></div>
+				          <img src="images/2.jpg">
+			          </div>
+			          <div class="og-details">
+				          <h3></h3>
+				          <p></p>
+				          <a href=""></a>
+			          </div>
+		          </div>
+	          </div>
 					</li>
 					<% end %>
 				</ul>
-
 			</div>
 		</div><!-- /container -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/grid.js"></script>
+		<%= javascript_include_tag "grid" %>
 		<script>
 			$(function() {
 				Grid.init();
 			});
 		</script>
 	</body>
-	</html>
+</html>
