@@ -1,0 +1,67 @@
+function addPhone()
+{
+var theSize = $("#telephones .row").size();
+var numberId = "user_telephones_attributes_" + theSize + "_number";
+var numberName = "user[telephones_attributes][" + theSize + "][number]";
+var destroyId = "user_telephones_attributes_" + theSize + "__destroy";
+var destroyName = "user[telephones_attributes][" + theSize + "][_destroy]";
+$("#telephones").append(
+'
+.row>
+  \\
+  = succeed "\\" do
+    .columns.large-10.medium-9.small-8
+      \\
+      = succeed "\\" do
+        %input{:id => "' + numberId + '", :name => "' + numberName + '", :placeholder => "#{I18n.t("telephones.number")}", :type => "text"}/
+  = succeed "\\" do
+    .columns.large-2.medium-3.small-4
+      \\
+      = succeed "\\" do
+        %input{:name => "' + destroyName + '", :type => "hidden"}/
+      = succeed "\\" do
+        %input{:id => "' + destroyId + '", :name => "' + destroyName + '", :type => "checkbox"}/
+      = succeed "\\" do
+        %label{:for => "' + destroyId + '"}= I18n.t("remove")
+'
+);
+}
+
+function removePhone()
+{
+if($("#telephones .row").size() &gt; 1) $("#telephones .row:last").remove();
+}
+
+function addAddress()
+{
+var theSize = $("#addresses .row").size();
+var textId = "user_addresses_attributes_" + theSize + "_text";
+var textName = "user[addresses_attributes][" + theSize + "][text]";
+var destroyId = "user_addresses_attributes_" + theSize + "__destroy";
+var destroyName = "user[addresses_attributes][" + theSize + "][_destroy]";
+$("#addresses").append(
+'
+.row>
+  \\
+  = succeed "\\" do
+    .columns.large-10.medium-9.small-8
+      \\
+      = succeed "\\" do
+        %input{:id => "' + textId + '", :name => "' + textName + '", :placeholder => "#{I18n.t("addresses.text")}", :type => "text"}/
+  = succeed "\\" do
+    .columns.large-2.medium-3.small-4
+      \\
+      = succeed "\\" do
+        %input{:name => "' + destroyName + '", :type => "hidden"}/
+      = succeed "\\" do
+        %input{:id => "' + destroyId + '", :name => "' + destroyName + '", :type => "checkbox"}/
+      = succeed "\\" do
+        %label{:for => "' + destroyId + '"}= I18n.t("remove")
+'
+);
+}
+
+function removeAddress()
+{
+if($("#addresses .row").size() &gt; 1) $("#addresses .row:last").remove();
+}
