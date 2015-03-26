@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="missingsen">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Thumbnail Grid with Expanding Preview</title>
+		<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+		<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+		<meta name="author" content="Codrops" />
+		<%= stylesheet_link_tag "default" %>
+		<%= stylesheet_link_tag "component" %>
+    <%= javascript_include_tag "modernizr.custom" %>
+	</head>
+	<body>
+		<div class="container">
+			<div class="main">
+				<ul id="og-grid" class="og-grid">
+				  <% @missing_posts.each do |missing| %>
+					<li>
+						<a href="" data-largesrc=" <%= missing.image %>" data-title=""
+              data-description="age : <%= missing.age %> <br>
+                 reporter name: <%= missing.reporter_name%> <br>
+                  reporter phone: <%= missing.reporter_phone%>  <br>
+                                   location : <%=missing.location %> <br>
+                                   description: <%= missing.description%> <br>
+                                   special signs : <%= missing.special_signs%> <br>
+																	gender : <% if missing.gender==true %>
+															    male
+															    <% else %>
+															    female
+															    <% end %>"
+
+																	>
+
+
+
+
+							<img src="<%= missing.image.thumb %>" alt="img01"/>
+						</a>
+	          <div class="og-expander">
+		          <div class="og-expander-inner">
+			          <span class="og-close"></span>
+			          <div class="og-fullimg">
+				          <div class="og-loading"></div>
+				          <img src="images/2.jpg">
+			          </div>
+			          <div class="og-details">
+				          <h3></h3>
+				          <p></p>
+				          <a href=""></a>
+			          </div>
+		          </div>
+	          </div>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</div><!-- /container -->
+		<%= javascript_include_tag "grid" %>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
+	</body>
+</html>
