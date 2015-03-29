@@ -18,14 +18,7 @@
         %ul#og-grid.og-grid
           - @findings.each do |finding|
             %li
-              %a{"data-description" => "name : #{finding.description},  location : #{finding.location},
-              special signs : #{finding.special_signs},
-              age : #{finding.age},
-              contact information : #{finding.contact_info},
-	  gender :  if finding.gender==true
-    male
-     else
-    female", "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => ""}
+              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => ""}
                 %img{:alt => "img01", :src => "#{finding.image.thumb}"}/
               .og-expander
                 .og-expander-inner
