@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :users
-  get '/edit_profile', to: 'users#edit', as: 'edit_profile'
   get '/auth/:provider', to: 'sessions#new', as: 'login'
   get '/auth/:provider/callback', to: 'sessions#new'
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
-  get 'finding_posts/new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :suspect_posts,:finding_posts
+  resources :suspect_posts, :finding_posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
