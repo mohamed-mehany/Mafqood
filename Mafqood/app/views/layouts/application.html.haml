@@ -29,7 +29,7 @@
         - if current_user
           %ul.right
             %li.divider.hide-for-small
-            %li= link_to t("users.edit"), edit_user_path(current_user)
+            %li= link_to t("users.edit"), edit_profile_path
     - if notice
       .success.alert-box{ "data-alert": "" }
         = notice
