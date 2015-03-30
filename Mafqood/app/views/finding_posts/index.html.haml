@@ -1,5 +1,5 @@
 !!!
-%html{:lang => "missingsen"}
+%html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
@@ -16,17 +16,10 @@
     .container
       .main
         %ul#og-grid.og-grid
-          - @missing_posts.each do |missing|
+          - @findings.each do |finding|
             %li
-              %a{"data-description" => "age : #{missing.age},
-
-            reporter name: #{missing.reporter_name},
-                  reporter phone: #{missing.reporter_phone},
-                                   location : #{missing.location},
-                                   description: #{missing.description},
-                                   special signs : #{missing.special_signs},
-																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => ""}
-                %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
+              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => ""}
+                %img{:alt => "img01", :src => "#{finding.image.thumb}"}/
               .og-expander
                 .og-expander-inner
                   %span.og-close

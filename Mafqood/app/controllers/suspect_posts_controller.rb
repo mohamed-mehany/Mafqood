@@ -1,4 +1,11 @@
 class SuspectPostsController < ApplicationController
+  def index
+    @suspects = SuspectPost.order("created_at desc")
+  end
+
+  def show
+  end
+
   def new
     @suspect_post = SuspectPost.new
   end
@@ -21,7 +28,7 @@ class SuspectPostsController < ApplicationController
   protected
 
   def suspect_post_params
-    params.require(:suspect_post).permit(:approximate_age, :gender, :location, :image, :description, 
+    params.require(:suspect_post).permit(:approximate_age, :gender, :location, :image, :description,
       :special_signs, :reporter_name, :reporter_phone)
   end
 end

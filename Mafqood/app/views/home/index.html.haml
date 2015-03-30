@@ -1,16 +1,26 @@
 .row
   %fieldset
     %legend= t("home.report")
-    - 3.times do
-      .columns.large-4.medium-4.small-12
-        %center
-          %a.th{ href: "javascript:" }
-            %img{ src: "http://placehold.it/300x300" }
+    .columns.large-4.medium-4.small-12
+      %center
+        %a.th{ href: "#{new_missing_post_path}" }
+          %img{ src: "http://dummyimage.com/300x300/000000/ffffff&text=Missing" }
+    .columns.large-4.medium-4.small-12
+      %center
+        %a.th{ href: "#{new_finding_post_path}" }
+          %img{ src: "http://dummyimage.com/300x300/000000/ffffff&text=Finding" }
+    .columns.large-4.medium-4.small-12
+      %center
+        %a.th{ href: "#{new_suspect_post_path}" }
+          %img{ src: "http://dummyimage.com/300x300/000000/ffffff&text=Suspect" }
 .row
   %fieldset
     %legend= t("home.search")
-    - 2.times do
-      .columns.large-6.medium-6.small-12
-        %center
-          %a.th{ href: "javascript:" }
-            %img{ src: "http://placehold.it/300x300" }
+    .columns.large-6.medium-6.small-12
+      %center
+        %a.th{ href: "#{missing_posts_path}" }
+          %img{ src: "http://dummyimage.com/300x300/000000/ffffff&text=Missings" }
+    .columns.large-6.medium-6.small-12
+      %center
+        %a.th{ href: "#{finding_posts_path}" }
+          %img{ src: "http://dummyimage.com/300x300/000000/ffffff&text=Findings" }
