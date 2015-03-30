@@ -14,8 +14,8 @@
 				= f.label :special_signs, t("finding.special_signs")
 				= f.text_field :special_signs, placeholder: t("finding.special_signs_placeholder")
 				= f.label :gender, t("finding.gender")
-				= f.radio_button :gender, 1  
-				= f.label :gender, t("finding.male"), :value => 1 
+				= f.radio_button :gender, 1
+				= f.label :gender, t("finding.male"), :value => 1
 				= f.radio_button :gender, 0
 				= f.label :gender, t("finding.female"), :value => 0
 				= f.label :location, t("finding.location")
@@ -23,5 +23,5 @@
 				= f.label :contact_info, "Enter your phone numer"
 				= f.text_field :contact_info, placeholder: t("finding.contact_info")
 				= f.label :image , t("finding.photo")
-				= f.file_field :image 
+				= f.file_field :image
 				= f.submit t("finding.submit"),class: "button expand"
