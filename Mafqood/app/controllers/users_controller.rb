@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, only: [:edit]
-  
+
   def new
     @user = User.new(name: session[:name], email: session[:email])
     @user.telephones.build
     @user.addresses.build
   end
-  
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -22,21 +22,21 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-  
+
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
-  
+
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
-      redirect_to edit_user_path, notice: t("users.successful_update")
+      redirect_to edit_profile_path, notice: t("users.successful_update")
     else
       flash.now[:alert] = @user.errors.full_messages
       render "new"
     end
   end
-  
+
 private
   def user_params
     params.require(:user).permit(

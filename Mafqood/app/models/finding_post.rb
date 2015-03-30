@@ -5,5 +5,5 @@ class FindingPost < ActiveRecord::Base
   	validates :contact_info, 
             	  :numericality => { :only_integer => true }, 
             	  :length => { :is => 11 }	
-	mount_uploader :image, PhotoUploader
+	mount_uploader :image, ImageUploader
 end
