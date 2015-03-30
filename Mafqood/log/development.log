@@ -27897,3 +27897,428 @@ ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.ha
   Rendered /home/mark/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.6ms)
   Rendered /home/mark/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
   Rendered /home/mark/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (37.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToAdminUsers (20150330065402)
+  [1m[35m (0.8ms)[0m  ALTER TABLE `admin_users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+Mysql2::Error: Duplicate column name 'email': ALTER TABLE `admin_users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (490.1ms)[0m  [1mDROP DATABASE IF EXISTS `mafqood_development`[0m
+  [1m[35m (433.1ms)[0m  DROP DATABASE IF EXISTS `mafqood_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `mafqood_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `mafqood_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (81.6ms)[0m  [1mCREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (99.2ms)[0m  CREATE TABLE `active_admin_comments` (`id` int(11) auto_increment PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (156.6ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_author_type_and_author_id` USING btree ON `active_admin_comments` (`author_type`, `author_id`) [0m
+  [1m[35m (156.7ms)[0m  CREATE  INDEX `index_active_admin_comments_on_namespace` USING btree ON `active_admin_comments` (`namespace`) 
+  [1m[36m (179.1ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_resource_type_and_resource_id` USING btree ON `active_admin_comments` (`resource_type`, `resource_id`) [0m
+  [1m[35m (68.4ms)[0m  CREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `text` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (87.9ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (177.9ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_email` USING btree ON `admin_users` (`email`) 
+  [1m[36m (157.2ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` USING btree ON `admin_users` (`reset_password_token`) [0m
+  [1m[35m (99.4ms)[0m  CREATE TABLE `change_location_id_to_locations` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (76.0ms)[0m  [1mCREATE TABLE `finding_posts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `location` varchar(255), `special_signs` varchar(255), `age` int(11), `image` varchar(255), `contact_info` varchar(255), `gender` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (88.6ms)[0m  CREATE TABLE `missing_posts` (`id` int(11) auto_increment PRIMARY KEY, `age` int(11), `reporter_name` varchar(255), `reporter_phone` varchar(255), `description` varchar(255), `image` varchar(255), `gender` varchar(255), `special_signs` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `location` varchar(255), `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (79.4ms)[0m  [1mCREATE TABLE `suspect_posts` (`id` int(11) auto_increment PRIMARY KEY, `approximate_age` varchar(255), `gender` varchar(255), `location` varchar(255), `description` varchar(255), `special_signs` varchar(255), `reporter_name` varchar(255), `reporter_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `image` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (76.6ms)[0m  CREATE TABLE `telephones` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (78.0ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (62.7ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (224.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (44.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320210830')[0m
+  [1m[35m (44.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150319224802')
+  [1m[36m (44.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150315193423')[0m
+  [1m[35m (44.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150311145116')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312232344')[0m
+  [1m[35m (33.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312141548')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150318150833')[0m
+  [1m[35m (35.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150320210824')
+  [1m[36m (33.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150316154335')[0m
+  [1m[35m (33.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312132354')
+  [1m[36m (44.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150316154643')[0m
+  [1m[35m (33.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150311235303')
+  [1m[36m (33.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312232336')[0m
+  [1m[35m (33.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150320001336')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311235255')[0m
+  [1m[35m (33.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150319215142')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312132353')[0m
+  [1m[35m (86.3ms)[0m  CREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (88.9ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) auto_increment PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (155.8ms)[0m  CREATE  INDEX `index_active_admin_comments_on_author_type_and_author_id` USING btree ON `active_admin_comments` (`author_type`, `author_id`) 
+  [1m[36m (167.9ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_namespace` USING btree ON `active_admin_comments` (`namespace`) [0m
+  [1m[35m (181.5ms)[0m  CREATE  INDEX `index_active_admin_comments_on_resource_type_and_resource_id` USING btree ON `active_admin_comments` (`resource_type`, `resource_id`) 
+  [1m[36m (88.3ms)[0m  [1mCREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `text` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (96.6ms)[0m  CREATE TABLE `admin_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (167.9ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` USING btree ON `admin_users` (`email`) [0m
+  [1m[35m (167.7ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` USING btree ON `admin_users` (`reset_password_token`) 
+  [1m[36m (68.4ms)[0m  [1mCREATE TABLE `change_location_id_to_locations` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (77.5ms)[0m  CREATE TABLE `finding_posts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `location` varchar(255), `special_signs` varchar(255), `age` int(11), `image` varchar(255), `contact_info` varchar(255), `gender` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (77.3ms)[0m  [1mCREATE TABLE `missing_posts` (`id` int(11) auto_increment PRIMARY KEY, `age` int(11), `reporter_name` varchar(255), `reporter_phone` varchar(255), `description` varchar(255), `image` varchar(255), `gender` varchar(255), `special_signs` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `location` varchar(255), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (88.5ms)[0m  CREATE TABLE `suspect_posts` (`id` int(11) auto_increment PRIMARY KEY, `approximate_age` varchar(255), `gender` varchar(255), `location` varchar(255), `description` varchar(255), `special_signs` varchar(255), `reporter_name` varchar(255), `reporter_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `image` varchar(255)) ENGINE=InnoDB
+  [1m[36m (88.6ms)[0m  [1mCREATE TABLE `telephones` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (77.5ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (77.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (201.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (32.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150320210830')
+  [1m[36m (33.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150319224802')[0m
+  [1m[35m (35.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150315193423')
+  [1m[36m (44.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311145116')[0m
+  [1m[35m (44.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312232344')
+  [1m[36m (44.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312141548')[0m
+  [1m[35m (70.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150318150833')
+  [1m[36m (31.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320210824')[0m
+  [1m[35m (33.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150316154335')
+  [1m[36m (33.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312132354')[0m
+  [1m[35m (33.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150316154643')
+  [1m[36m (33.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311235303')[0m
+  [1m[35m (33.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312232336')
+  [1m[36m (33.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320001336')[0m
+  [1m[35m (33.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150311235255')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150319215142')[0m
+  [1m[35m (33.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312132353')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'accounts'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `accounts`[0m
+  [1m[35m (0.4ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'active_admin_comments'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `active_admin_comments`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'addresses'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `addresses`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'admin_users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `admin_users`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'change_location_id_to_locations'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `change_location_id_to_locations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'finding_posts'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `finding_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'missing_posts'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `missing_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'suspect_posts'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `suspect_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'telephones'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `telephones`[0m
+  [1m[35m (0.4ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36m (116.8ms)[0m  [1mCREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (99.7ms)[0m  CREATE TABLE `active_admin_comments` (`id` int(11) auto_increment PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (167.4ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_author_type_and_author_id` USING btree ON `active_admin_comments` (`author_type`, `author_id`) [0m
+  [1m[35m (170.0ms)[0m  CREATE  INDEX `index_active_admin_comments_on_namespace` USING btree ON `active_admin_comments` (`namespace`) 
+  [1m[36m (190.5ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_resource_type_and_resource_id` USING btree ON `active_admin_comments` (`resource_type`, `resource_id`) [0m
+  [1m[35m (88.4ms)[0m  CREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `text` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (64.8ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (178.6ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_email` USING btree ON `admin_users` (`email`) 
+  [1m[36m (158.7ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` USING btree ON `admin_users` (`reset_password_token`) [0m
+  [1m[35m (78.2ms)[0m  CREATE TABLE `change_location_id_to_locations` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (75.4ms)[0m  [1mCREATE TABLE `finding_posts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `location` varchar(255), `special_signs` varchar(255), `age` int(11), `image` varchar(255), `contact_info` varchar(255), `gender` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (88.5ms)[0m  CREATE TABLE `missing_posts` (`id` int(11) auto_increment PRIMARY KEY, `age` int(11), `reporter_name` varchar(255), `reporter_phone` varchar(255), `description` varchar(255), `image` varchar(255), `gender` varchar(255), `special_signs` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `location` varchar(255), `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (88.8ms)[0m  [1mCREATE TABLE `suspect_posts` (`id` int(11) auto_increment PRIMARY KEY, `approximate_age` varchar(255), `gender` varchar(255), `location` varchar(255), `description` varchar(255), `special_signs` varchar(255), `reporter_name` varchar(255), `reporter_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `image` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (77.5ms)[0m  CREATE TABLE `telephones` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (88.8ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (75.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (214.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (33.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320210830')[0m
+  [1m[35m (108.6ms)[0m  CREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (77.4ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) auto_increment PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (201.8ms)[0m  CREATE  INDEX `index_active_admin_comments_on_author_type_and_author_id` USING btree ON `active_admin_comments` (`author_type`, `author_id`) 
+  [1m[36m (178.8ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_namespace` USING btree ON `active_admin_comments` (`namespace`) [0m
+  [1m[35m (180.2ms)[0m  CREATE  INDEX `index_active_admin_comments_on_resource_type_and_resource_id` USING btree ON `active_admin_comments` (`resource_type`, `resource_id`) 
+  [1m[36m (66.0ms)[0m  [1mCREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `text` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (87.1ms)[0m  CREATE TABLE `admin_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (156.9ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` USING btree ON `admin_users` (`email`) [0m
+  [1m[35m (179.0ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` USING btree ON `admin_users` (`reset_password_token`) 
+  [1m[36m (68.7ms)[0m  [1mCREATE TABLE `change_location_id_to_locations` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (77.7ms)[0m  CREATE TABLE `finding_posts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `location` varchar(255), `special_signs` varchar(255), `age` int(11), `image` varchar(255), `contact_info` varchar(255), `gender` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (77.3ms)[0m  [1mCREATE TABLE `missing_posts` (`id` int(11) auto_increment PRIMARY KEY, `age` int(11), `reporter_name` varchar(255), `reporter_phone` varchar(255), `description` varchar(255), `image` varchar(255), `gender` varchar(255), `special_signs` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `location` varchar(255), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (238.1ms)[0m  CREATE TABLE `suspect_posts` (`id` int(11) auto_increment PRIMARY KEY, `approximate_age` varchar(255), `gender` varchar(255), `location` varchar(255), `description` varchar(255), `special_signs` varchar(255), `reporter_name` varchar(255), `reporter_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `image` varchar(255)) ENGINE=InnoDB
+  [1m[36m (145.1ms)[0m  [1mCREATE TABLE `telephones` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (203.8ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (221.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (312.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (98.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150320210830')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'accounts'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `accounts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'active_admin_comments'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `active_admin_comments`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'addresses'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `addresses`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'admin_users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `admin_users`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'change_location_id_to_locations'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `change_location_id_to_locations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'finding_posts'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `finding_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'missing_posts'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `missing_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'suspect_posts'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `suspect_posts`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'telephones'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `telephones`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-30 09:14:49 +0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 2116ms (Views: 2072.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/users.js.haml.js" for 127.0.0.1 at 2015-03-30 09:14:51 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.haml.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (45.4ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (202.0ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (28.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.7ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.8ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (57.1ms)
+
+
+Started GET "/javascripts/users.js.haml.js" for 127.0.0.1 at 2015-03-30 09:14:52 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.haml.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mohamed/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.7ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (26.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (55.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-03-30 09:14:56 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 10ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2015-03-30 09:14:56 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/bundler/gems/activeadmin-e3a7354c0196/app/views/active_admin/devise/shared/_links.erb (11.8ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/bundler/gems/activeadmin-e3a7354c0196/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (169.1ms)
+Completed 200 OK in 813ms (Views: 723.0ms | ActiveRecord: 1.6ms)
