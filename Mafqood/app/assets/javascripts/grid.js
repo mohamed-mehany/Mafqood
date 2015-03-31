@@ -164,7 +164,7 @@ $.fn.imagesLoaded = function( callback ) {
 var Grid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -345,6 +345,7 @@ var Grid = (function() {
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
 			this.$href = $( '<a href="#" class="button">Report</a>' );
+			//this.$href = $( '<%= link_to "Lost", post, :method => :change_post_status, :remote => true ' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
