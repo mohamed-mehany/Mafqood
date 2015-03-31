@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :users
+  get '/edit_profile', to: 'users#edit', as: 'edit_profile'
   get '/auth/:provider', to: 'sessions#new', as: 'login'
   get '/auth/:provider/callback', to: 'sessions#new'
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
+  get 'finding_posts/:id/mine', to: 'finding_posts#mine', as: 'finding_post_mine'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

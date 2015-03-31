@@ -1,5 +1,5 @@
 class FindingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new]
+  before_filter :auth, only: [:create, :new, :mine]
   
   def index
     @finding_posts = FindingPost.order("created_at desc")
@@ -20,6 +20,31 @@ class FindingPostsController < ApplicationController
     else
       flash[:alert] = @finding_post.errors.full_messages
       render "new"
+    end
+  end
+
+# Public: Report this finding post as mine i.e this kid is my kid.
+#       
+# Examples
+#
+#   mine #i.e this method is called when a user navigates to 
+#   /fining_posts/:id/mine 
+#
+#   # => @finding_post_report.save
+#
+# Redirects the user to the findings post index and displays a flash 
+# whether the report wa successful or not.
+  def mine
+    @temp = FindingPost.find(params[:id])
+    @finding_post_report = FindingPostReport.new
+    @finding_post_report.finding_post_id = @temp.id
+    @finding_post_report.user = current_user
+    @finding_post_report.kind = "spam"
+    if @finding_post_report.save
+      redirect_to({ action: "index"}, notice: "You have successfully report this child as yours")
+    else
+      flash[:alert] = @finding_post_report.errors.full_messages
+      redirect_to action: "index"
     end
   end
 
