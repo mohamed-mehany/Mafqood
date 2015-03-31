@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :email
 
+  # Public: Defines a string equivalent for the User ActiveRecord.
+  #
+  # Examples
+  #
+  #   User.first
+  #   # => "Mark Morcos"
+  #
+  # Returns the name of the user belonging to the ActiveRecord.
   def to_s
     name
   end
