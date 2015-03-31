@@ -1,6 +1,6 @@
 = simple_form_for @user do |f|
   %fieldset
-    %legend= @user.new_record? ? t("login") : t("users.update")
+    %legend= @user.new_record? ? t("login") : t("users.edit")
     = hidden_field_tag :provider, session[:provider]
     = hidden_field_tag :uid, session[:uid]
     = f.text_field :name, placeholder: "Name"
@@ -37,4 +37,4 @@
               = address.label :_destroy, t("remove")
         - first = false
     %a.tiny.secondary.button.expand{ onclick: "addAddress();" } Add address
-    = f.submit "Submit", class: "small expand button"
+    = f.submit t("users.update"), class: "small expand button"

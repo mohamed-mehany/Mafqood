@@ -24,13 +24,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
-      redirect_to edit_user_path, notice: t("users.successful_update")
+      redirect_to edit_profile_path, notice: t("users.successful_update")
     else
       flash.now[:alert] = @user.errors.full_messages
       render "new"
