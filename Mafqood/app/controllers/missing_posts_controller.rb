@@ -11,7 +11,7 @@ class MissingPostsController < ApplicationController
     @missing_posts = MissingPost.order("created_at desc")
     @missing = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
-    @missing_post_report.type = "mine"
+    @missing_post_report.kind = "mine"
     @missing_post_report.user_id = current_user.id
     @missing_post_report.missing_post_id = @missing.id
     @missing_post_report.save
