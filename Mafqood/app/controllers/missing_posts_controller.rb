@@ -1,7 +1,6 @@
 class MissingPostsController < ApplicationController
   def index
-    @missing_post = MissingPost.new
-    render 'new'
+    @missing_posts = MissingPost.order("created_at desc")
   end
 
   def show

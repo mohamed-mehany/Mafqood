@@ -1,0 +1,45 @@
+!!!
+%html{:lang => "missingsen"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Thumbnail Grid with Expanding Preview
+    %meta{:content => "Thumbnail Grid with Expanding Preview", :name => "description"}/
+    %meta{:content => "thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio", :name => "keywords"}/
+    %meta{:content => "Codrops", :name => "author"}/
+    = stylesheet_link_tag "default"
+    = stylesheet_link_tag "component"
+    = javascript_include_tag "modernizr.custom"
+  %body
+    .container
+      .main
+        %ul#og-grid.og-grid
+          - @missing_posts.each do |missing|
+            %li
+              %a{"data-description" => "age : #{missing.age},
+
+            reporter name: #{missing.reporter_name},
+                  reporter phone: #{missing.reporter_phone},
+                                   location : #{missing.location},
+                                   description: #{missing.description},
+                                   special signs : #{missing.special_signs},
+																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => ""}
+                %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
+              .og-expander
+                .og-expander-inner
+                  %span.og-close
+                  .og-fullimg
+                    .og-loading
+                    %img{:src => "images/2.jpg"}/
+                  .og-details
+                    %h3
+                    %p
+                    %a{:href => ""}
+    / /container
+    = javascript_include_tag "grid"
+    :javascript
+      $(function() {
+      	Grid.init();
+      });
