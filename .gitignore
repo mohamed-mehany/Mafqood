@@ -10,7 +10,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
-/tmp
+/tmp/*
+/Mafqood/log
 /Mafqood/log/*
 !/Mafqood/log/.keep
+/Mafqood/tmp/*
 /Mafqood/tmp
