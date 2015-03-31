@@ -1,5 +1,12 @@
 class MissingPost < ActiveRecord::Base
+include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
+  settings index: { number_of_shards: 1 }
+
+  def as_indexed_json(options = {})
+    self.as_json({only: [:user, :description, :age, :location, :gender]})
+  end
   attr_accessor :image
   mount_uploader :image, ImageUploader
   belongs_to :user
