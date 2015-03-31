@@ -26,14 +26,22 @@ class MissingPostsController < ApplicationController
     end
   end
 
+  # public: Report a specific missing post to be found by child's
+  #   parents or the contrary
+  #
+  # method is called when a user is navigated to '/my_posts/:id/found'
+  #
+  # @missing_post.save
+  # => true, redirects the user to user posts and success message is displayed
+  # => false, redirects the user to user posts and error message is displayed
   def report_found
     @missing_post = MissingPost.find(params[:id])
     @missing_post.status == 0 ? @missing_post.status = 1 : @missing_post.status = 0
     if @missing_post.save
       flash[:notice] = "Your Post status has been updated successfully"
-      redirect_to root_url
+      redirect_to 'users#posts'
     else
-      redirect_to root_url, alert: ["Error while updating post status..."]
+      redirect_to 'users#posts', alert: ["Error while updating post status..."]
     end
   end
 
