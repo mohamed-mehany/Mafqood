@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get 'finding_posts/new'
-  get 'missing_posts/:id/report', to: 'missing_posts#report'
-  get 'missing_posts/:id/mine', to: 'missing_posts#mine', as: 'missing_post_mine'
+  # get 'missing_posts/:id/report', to: 'missing_posts#report'
+  get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

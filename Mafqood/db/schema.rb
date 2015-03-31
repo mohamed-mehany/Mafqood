@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330185730) do
+ActiveRecord::Schema.define(version: 20150331095206) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -83,9 +83,9 @@ ActiveRecord::Schema.define(version: 20150330185730) do
   create_table "missing_post_reports", force: :cascade do |t|
     t.integer  "user_id",         limit: 4
     t.integer  "missing_post_id", limit: 4
-    t.string   "type",            limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "kind",            limit: 255
   end
 
   create_table "missing_posts", force: :cascade do |t|
