@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get 'finding_posts/new'
-
+  post 'report_post' to: 'finding_posts#send_report'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :suspect_posts,:finding_posts
