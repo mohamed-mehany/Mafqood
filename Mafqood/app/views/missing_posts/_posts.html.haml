@@ -1,6 +1,6 @@
 - @missing_posts.each do |missing_post|
   %li
-    %a{"data-description" => "Age: #{missing_post.age}<br>Reporter phone: #{missing_post.reporter_phone}<br>Location: #{missing_post.location}<br>Description: #{missing_post.description}<br>Special signs: #{missing_post.special_signs}<br>Gender: #{missing_post.gender}".html_safe, "data-largesrc" => "#{missing_post.image}", "data-title" => missing_post.reporter_name, "data-href" => "/my_posts/missing_post.id/found"}
+    %a{"data-description" => "Age: #{missing_post.age}<br>Reporter phone: #{missing_post.reporter_phone}<br>Location: #{missing_post.location}<br>Description: #{missing_post.description}<br>Special signs: #{missing_post.special_signs}<br>Gender: #{missing_post.gender}".html_safe, "data-largesrc" => "#{missing_post.image}", "data-title" => missing_post.reporter_name, "data-href" => report_child_as_found_path(missing_post.id)}
       %img{:alt => "img01", :src => "#{missing_post.image.thumb}"}/
     .og-expander
       .og-expander-inner
@@ -11,5 +11,5 @@
         .og-details
           %h3
           %p
-          %a{:href => "/my_posts/missing_post.id/found"}
+          %a{:href => report_child_as_found_path(missing_post.id)}
    

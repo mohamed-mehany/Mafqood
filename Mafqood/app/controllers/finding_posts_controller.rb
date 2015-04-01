@@ -35,12 +35,12 @@ class FindingPostsController < ApplicationController
   # => false, redirects the user to user posts and error message is displayed
   def report_returned
     @finding_post = FindingPost.find(params[:id])
-    @finding_post.status == 0 ? @finding_post.status = 1 : @finding_post.status = 0
+    @finding_post.status == false ? @finding_post.status = 1 : @finding_post.status = 0
     if @finding_post.save
       flash[:notice] = "Your Post status has been updated successfully"
-      redirect_to 'users#posts'
+      redirect_to my_posts_path
     else
-      redirect_to 'users#posts', alert: ["Error while updating post status..."]
+      redirect_to my_posts_path, alert: ["Error while updating post status..."]
     end
   end  
 
