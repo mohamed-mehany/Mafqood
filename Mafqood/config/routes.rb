@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :widgets
+
   root 'home#index'
   resources :users
   get '/edit_profile', to: 'users#edit', as: 'edit_profile'

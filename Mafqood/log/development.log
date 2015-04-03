@@ -1,0 +1,156 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateWidgets (20150331194223)
+  [1m[35m (83.4ms)[0m  CREATE TABLE `widgets` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150331194223')
+  [1m[36m (51.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'accounts'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `accounts`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'active_admin_comments'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `active_admin_comments`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'addresses'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `addresses`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'admin_users'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `admin_users`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'change_location_id_to_locations'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `change_location_id_to_locations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'finding_posts'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `finding_posts`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'missing_posts'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `missing_posts`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'suspect_posts'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `suspect_posts`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'telephones'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `telephones`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mafqood_development'
+  AND fk.table_name = 'widgets'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `widgets`
+  [1m[36m (0.7ms)[0m  [1mDROP DATABASE IF EXISTS `mafqood_test`[0m
+  [1m[35m (0.4ms)[0m  CREATE DATABASE `mafqood_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (74.3ms)[0m  [1mCREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (87.3ms)[0m  CREATE TABLE `active_admin_comments` (`id` int(11) auto_increment PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (200.3ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_author_type_and_author_id` USING btree ON `active_admin_comments` (`author_type`, `author_id`) [0m
+  [1m[35m (168.0ms)[0m  CREATE  INDEX `index_active_admin_comments_on_namespace` USING btree ON `active_admin_comments` (`namespace`) 
+  [1m[36m (167.2ms)[0m  [1mCREATE  INDEX `index_active_admin_comments_on_resource_type_and_resource_id` USING btree ON `active_admin_comments` (`resource_type`, `resource_id`) [0m
+  [1m[35m (65.6ms)[0m  CREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `text` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (75.9ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (167.0ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_email` USING btree ON `admin_users` (`email`) 
+  [1m[36m (178.2ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` USING btree ON `admin_users` (`reset_password_token`) [0m
+  [1m[35m (88.1ms)[0m  CREATE TABLE `change_location_id_to_locations` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (87.7ms)[0m  [1mCREATE TABLE `finding_posts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `location` varchar(255), `special_signs` varchar(255), `age` int(11), `image` varchar(255), `contact_info` varchar(255), `gender` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (111.8ms)[0m  CREATE TABLE `missing_posts` (`id` int(11) auto_increment PRIMARY KEY, `age` int(11), `reporter_name` varchar(255), `reporter_phone` varchar(255), `description` varchar(255), `image` varchar(255), `gender` varchar(255), `special_signs` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `location` varchar(255), `user_id` int(11)) ENGINE=InnoDB
+  [1m[36m (65.3ms)[0m  [1mCREATE TABLE `suspect_posts` (`id` int(11) auto_increment PRIMARY KEY, `approximate_age` varchar(255), `gender` varchar(255), `location` varchar(255), `description` varchar(255), `special_signs` varchar(255), `reporter_name` varchar(255), `reporter_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `image` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (222.9ms)[0m  CREATE TABLE `telephones` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (88.0ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (87.6ms)[0m  CREATE TABLE `widgets` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (155.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (220.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (44.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150331194223')
+  [1m[36m (68.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150312141548')[0m
+  [1m[35m (82.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312232344')
+  [1m[36m (63.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150315193423')[0m
+  [1m[35m (33.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150319215142')
+  [1m[36m (33.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311235303')[0m
+  [1m[35m (33.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150316154643')
+  [1m[36m (33.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311145116')[0m
+  [1m[35m (44.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312132353')
+  [1m[36m (44.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320001336')[0m
+  [1m[35m (44.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312232336')
+  [1m[36m (44.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150318150833')[0m
+  [1m[35m (44.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150320210830')
+  [1m[36m (44.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150311235255')[0m
+  [1m[35m (44.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150312132354')
+  [1m[36m (44.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150316154335')[0m
+  [1m[35m (44.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150319224802')
+  [1m[36m (44.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150320210824')[0m

@@ -12,6 +12,14 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'simple_form'
 gem 'rmagick'
 gem 'html2haml'
+
+gem "rspec-rails", :group => [:development, :test]
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+end
+
 #gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
 # Use mysql as the database for Active Record
