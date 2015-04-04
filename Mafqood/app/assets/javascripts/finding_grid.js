@@ -340,12 +340,23 @@ var Grid = (function() {
 	}
 
 	Preview.prototype = {
-		create : function() {
+		create : function( $item ) {
 			// create Preview structure:
+			var $itemEl = this.$item.children( 'a' ),
+			eldata = {
+				user : $itemEl.attr( 'user'),
+				current : $itemEl.attr ( 'current'),
+			};
+			if(eldata.user != eldata.current){
+			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a><br>' );
+			}
+			else{
+				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button">This is my kid</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$href = $( '<a href="#" class="button">Its my kid</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$edit );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -380,6 +391,7 @@ var Grid = (function() {
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
 					href : $itemEl.attr( 'href' ),
+					edit : $itemEl.attr( 'hrefedit' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -388,6 +400,7 @@ var Grid = (function() {
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
+			this.$edit.attr( 'href' , eldata.edit );
 
 			var self = this;
 
