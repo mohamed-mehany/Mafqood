@@ -21,7 +21,7 @@
             -if(current_user != nil)
               -griduser = current_user.id
             %li
-              %a{"data-description" => "name : #{finding_post.description}<br>location : #{finding_post.location}<br>special signs : #{finding_post.special_signs}<br>age : #{finding_post.age}<br>contact information : #{finding_post.contact_info}<br>gender : #{finding_post.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", :href => finding_post_mine_path(finding_post),:hrefedit => finding_post_edit_path(finding_post),:user => "#{finding_post.user_id}",:current => "#{griduser}"}
+              %a{"data-description" => "name : #{finding_post.description}<br>location : #{finding_post.location}<br>special signs : #{finding_post.special_signs}<br>age : #{finding_post.age}<br>contact information : #{finding_post.contact_info}<br>gender : #{finding_post.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", :href => finding_post_mine_path(finding_post),:hrefedit => edit_finding_post_path(finding_post),:user => "#{finding_post.user_id}",:current => "#{griduser}"}
                 %img{:alt => "img01", :src => "#{finding_post.image.thumb}"}/
               .og-expander
                 .og-expander-inner
