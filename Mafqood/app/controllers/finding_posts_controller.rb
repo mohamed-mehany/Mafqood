@@ -39,7 +39,7 @@ class FindingPostsController < ApplicationController
     @finding_post_report = FindingPostReport.new
     @finding_post_report.finding_post_id = @temp.id
     @finding_post_report.user = current_user
-    @finding_post_report.kind = "spam"
+    @finding_post_report.kind = "mine"
     if @finding_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully report this child as yours")
     else
@@ -54,7 +54,7 @@ protected
       :name,:contact_info,:description,:age,:special_signs,
       :image,:location,:gender)
   end
-
+# Protected: Redirects the user to the homepage unless he is logged in
   def auth
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
   end
