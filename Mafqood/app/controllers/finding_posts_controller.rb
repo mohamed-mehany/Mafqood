@@ -33,7 +33,7 @@ class FindingPostsController < ApplicationController
 #   # => @finding_post_report.save
 #
 # Redirects the user to the findings post index and displays a flash 
-# whether the report wa successful or not.
+# whether the report was successful or not.
   def mine
     @temp = FindingPost.find(params[:id])
     @finding_post_report = FindingPostReport.new
