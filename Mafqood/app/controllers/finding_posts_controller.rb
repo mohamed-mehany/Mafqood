@@ -1,6 +1,6 @@
 class FindingPostsController < ApplicationController
   before_filter :auth, only: [:create, :new, :mine]
-  
+  before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
@@ -71,5 +71,8 @@ protected
 # Protected: Redirects the user to the homepage unless he is logged in
   def auth
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
+  end
+  def is_owner x
+    redirect_to({action: "index"}, alert: ["Must be logged in..."]) unless (current_user.id == FindingPost.find(params[:id]).user_id)
   end
 end
