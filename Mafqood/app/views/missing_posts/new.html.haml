@@ -11,9 +11,9 @@
         %legend
           = t('missing_posts.form_title')
         = f.label :gender, t('missing_posts.gender')
-        = f.radio_button :gender, 1
+        = f.radio_button :gender, @missing_post.gender?
         = f.label :gender, t('missing_posts.male'), :value => 1
-        = f.radio_button :gender, 0
+        = f.radio_button :gender, @missing_post.gender?
         = f.label :gender, t('missing_posts.female'), :value => 0
         = f.input :age, label: t('missing_posts.approximate_age'), placeholder: t('missing_posts.age_placeholder')
         = f.input :location, label: t('missing_posts.location'), placeholder: t('missing_posts.location_placeholder')
