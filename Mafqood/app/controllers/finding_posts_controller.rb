@@ -25,6 +25,8 @@ class FindingPostsController < ApplicationController
     end
   end
 
+  # Author: Nariman Hesham 
+  #    
   # public: Report a specific finding post to be returned to child's
   #   parents or the contrary
   #

@@ -25,7 +25,9 @@ class MissingPostsController < ApplicationController
       redirect_to root_url, alert: ["Must be logged in..."]
     end
   end
-
+  
+  # Author: Nariman Hesham 
+  # 
   # public: Report a specific missing post to be found by child's
   #   parents or the contrary
   #
