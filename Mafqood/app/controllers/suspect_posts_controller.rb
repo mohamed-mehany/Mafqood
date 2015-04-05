@@ -12,42 +12,42 @@ class SuspectPostsController < ApplicationController
 
   def report1_suspect
     @temp = MissingPost.find(params[:id])
-    @suspect_post_report = MissingPostReport.new
+    @suspect_post_report = SuspectPostReport.new
     @suspect_post_report.suspect_post_id = @temp.id
     @suspect_post_report.user = current_user
     @suspect_post_report.kind = "spam"
     if @suspect_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
-      flash[:alert] = @missing_post_report.errors.full_messages
+      flash[:alert] = @suspect_post_report.errors.full_messages
       redirect_to action: "index"
     end
   end
 
   def report2_suspect
     @temp = MissingPost.find(params[:id])
-    @suspect_post_report = MissingPostReport.new
+    @suspect_post_report = SuspectPostReport.new
     @suspect_post_report.suspect_post_id = @temp.id
     @suspect_post_report.user = current_user
     @suspect_post_report.kind = "fake"
     if @suspect_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
-      flash[:alert] = @missing_post_report.errors.full_messages
+      flash[:alert] = @suspect_post_report.errors.full_messages
       redirect_to action: "index"
     end
   end
 
   def report3_suspect
     @temp = MissingPost.find(params[:id])
-    @suspect_post_report = MissingPostReport.new
+    @suspect_post_report = SuspectPostReport.new
     @suspect_post_report.suspect_post_id = @temp.id
     @suspect_post_report.user = current_user
     @suspect_post_report.kind = "duplicate"
     if @suspect_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
-      flash[:alert] = @missing_post_report.errors.full_messages
+      flash[:alert] = @suspect_post_report.errors.full_messages
       redirect_to action: "index"
     end
   end
