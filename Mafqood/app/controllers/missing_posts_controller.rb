@@ -1,5 +1,6 @@
 class MissingPostsController < ApplicationController
-  # before_filter :auth, only: [:create, :new, :mine]
+  before_filter :auth, only: [:create, :new, :report, :edit , :update]
+  # before_filter (only: [:edit, :update]) { |f| f.is_owner MissingPost.find(params[:id]) }
 
   def index
     @missing_posts = MissingPost.new
@@ -15,24 +16,20 @@ class MissingPostsController < ApplicationController
   end
 
   def create
-    if (current_user)
-      @missing_post = MissingPost.new(missing_params)
-      @missing_post.user = current_user
-      if @missing_post.save
-        flash[:notice] = "Your Post has been created successfully"
-        redirect_to @missing_post
-      else
-        render 'new'
-      end
+    @missing_post = MissingPost.new(missing_params)
+    @missing_post.user = current_user
+    if @missing_post.save
+      flash[:notice] = "Your Post has been created successfully"
+      redirect_to @missing_post
     else
-      redirect_to root_url, alert: ["Must be logged in..."]
+      render 'new'
     end
   end
 
 # to edit post getting the user id and matching it with the current user
 # if equal render to new to edit the post else prints alert message
 
-    def edit
+  def edit
     @missing = MissingPost.find(params[:id])
     if current_user == @missing.user
       @missing_post = @missing
@@ -64,7 +61,6 @@ class MissingPostsController < ApplicationController
 # whether the report was successful or not.
 
   def report
-    if(current_user)
     @missing_posts = MissingPost.order("created_at desc")
     @missing = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
@@ -72,15 +68,21 @@ class MissingPostsController < ApplicationController
     @missing_post_report.user_id = current_user.id
     @missing_post_report.missing_post_id = @missing.id
     @missing_post_report.save
-    # redirect_to @missing, notice: ["congratulations :D"]
-    end
   end
 
- protected
+  protected
  # Protected: Redirects the user to the homepage unless he is logged in
 
- def missing_params
-   params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
- end
+  def missing_params
+    params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
+  end
+
+  def auth
+    redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
+  end
+
+  # def is_owner x
+  #   redirect_to({action: "index"}, alert: ["Must be logged in..."]) unless (current_user.id == MissingPost.find(params[:id]).user_id)
+  # end
 
 end
