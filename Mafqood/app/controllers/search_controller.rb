@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
-  def search
+  def searchfind
     begin
     	@results = Finding_post.search(params[:key])
     rescue
@@ -9,7 +9,7 @@ class SearchController < ApplicationController
     render 'index'
   end
 
-def search
+def searchmissing
     begin
     	@results = Missing_post.search(params[:key])
     rescue
@@ -18,7 +18,7 @@ def search
     render 'index'
   end
 
-def search
+def searchsuspect
     begin
     	@results = Suspect_post.search(params[:key])
     rescue

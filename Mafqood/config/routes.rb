@@ -7,13 +7,19 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get 'finding_posts/new'
-  post 'report_post' to: 'finding_posts#send_report'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :suspect_posts,:finding_posts
   
+  resource :search do
+    collection do
+      post 'searchfind', controller: :search
+    post 'searchmissing', controller: :search
+    post 'searchsuspect', controller: :search
+    end
+  end
 
-
+  # get '/search_find' => 'search#searchfind'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
