@@ -13,7 +13,7 @@
     = csrf_meta_tag
 
   %body
-    %nav.top-bar{ "data-topbar": "", role: "navigation" }
+    %nav.top-bar{ "data-topbar" => "", role: "navigation" }
       %ul.title-area
         %li.name
           %h1= link_to t("title"), root_url
@@ -31,11 +31,11 @@
             %li.divider.hide-for-small
             %li= link_to t("users.edit"), edit_profile_path
     - if notice
-      .success.alert-box{ "data-alert": "" }
+      .success.alert-box{ "data-alert" => "" }
         = notice
         %a.close{ href: "#" } &times;
     - if alert
-      .alert.alert-box{ "data-alert": "" }
+      .alert.alert-box{ "data-alert" => "" }
         - alert.each do |a|
           %div
             = a

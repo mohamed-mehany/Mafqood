@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get 'finding_posts/:id/mine', to: 'finding_posts#mine', as: 'finding_post_mine'
+  get 'finding_posts/new'
+  get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :suspect_posts, :finding_posts
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

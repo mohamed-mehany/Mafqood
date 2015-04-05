@@ -19,13 +19,12 @@
           - @missing_posts.each do |missing|
             %li
               %a{"data-description" => "age : #{missing.age},
-
             reporter name: #{missing.reporter_name},
                   reporter phone: #{missing.reporter_phone},
                                    location : #{missing.location},
                                    description: #{missing.description},
                                    special signs : #{missing.special_signs},
-																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => ""}
+                                  gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => missing_post_report_path(missing)}
                 %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
               .og-expander
                 .og-expander-inner
@@ -41,5 +40,5 @@
     = javascript_include_tag "grid"
     :javascript
       $(function() {
-      	Grid.init();
+        Grid.init();
       });
