@@ -4,6 +4,17 @@ class FindingPostReport < ActiveRecord::Base
   has_many :finding_posts
   validate :unique_report
 
+  # Author: Nariman Hesham
+  #
+  # Creating three scopes for the different types of reports
+  #
+  # Examples:
+  # => calling FindingPostReport.fake returns all finding posts
+  #    reported as Fake
+  # => calling FindingPostReport.spam returns all finding posts
+  #    reported as Spam
+  # => calling FindingPostReport.duplicate returns all finding posts
+  #    reported as Duplicate 
   scope :fake, -> { where(kind: "Fake", kind: "fake") }
   scope :spam, -> { where(kind: "Spam", kind: "spam") }
   scope :duplicate, -> { where(kind: "Duplicate", kind: "duplicate") }
