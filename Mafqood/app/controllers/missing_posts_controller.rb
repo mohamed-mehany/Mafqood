@@ -29,6 +29,9 @@ class MissingPostsController < ApplicationController
     end
   end
 
+# to edit post getting the user id and matching it with the current user
+# if equal render to new to edit the post else prints alert message
+
     def edit
     @missing = MissingPost.find(params[:id])
     if current_user == @missing.user
@@ -48,6 +51,18 @@ class MissingPostsController < ApplicationController
     end
   end
 
+# Public: Report this missing post as mine i.e this kid is my kid.
+#
+# Examples
+#
+#   mine #i.e this method is called when a user navigates to
+#   /missing_posts/:id/mine
+#
+#   # => @missing_post_report.save
+#
+# Redirects the user to the missings post index and displays a flash
+# whether the report was successful or not.
+
   def report
     if(current_user)
     @missing_posts = MissingPost.order("created_at desc")
@@ -61,7 +76,8 @@ class MissingPostsController < ApplicationController
     end
   end
 
- private
+ protected
+ # Protected: Redirects the user to the homepage unless he is logged in
 
  def missing_params
    params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
