@@ -27,6 +27,10 @@ class MissingPostsController < ApplicationController
   #   end
   # end  
   
+  # + # Author: Sherif Ahmed
+  # + Report_x is a generic method that takes report type as a param,
+  # + then move on to get the current post id and user id and insert them to report table
+
 def report1_missing
     @temp = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
