@@ -73,6 +73,8 @@ protected
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
   end
   def is_owner x
-    redirect_to({action: "index"}, alert: ["Must be logged in..."]) unless (current_user.id == FindingPost.find(params[:id]).user_id)
+    if (current_user == nil || (current_user.id != FindingPost.find(params[:id]).user_id))
+      redirect_to({action: "index"}, alert: ["Must be logged in..."])
+    end            
   end
 end
