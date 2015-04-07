@@ -1,7 +1,8 @@
 class FindingPostReport < ActiveRecord::Base
   
   belongs_to :user
-  validate :unique_report
+  #validate :unique_report
+  validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
 
   
 # Private: As a uniquness validations, this method checks if there is a 
@@ -22,7 +23,7 @@ class FindingPostReport < ActiveRecord::Base
 # a specific error message is added to :base to the errors of
 # the record  
   def unique_report
-    if self.class.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
+    if FindingPostReport.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
       if(kind == "mine")
         errors.add :base, :finding_duplicate_mine
       end

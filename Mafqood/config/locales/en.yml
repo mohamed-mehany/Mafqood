@@ -110,6 +110,8 @@ en:
 
         finding_post_report:
           attributes:
+            user_id:
+              uniqueness: "You have already reported this kid as yours!"
             base:
               finding_duplicate_mine: "You have already reported this kid as yours!"
             type:
@@ -135,5 +137,6 @@ en:
     successful_edit: "Your post has been edited successfully"
     must_login: "You must be logged in to perform this action"
     edit_login: "You are not allowed to edit because either you're not the post owner or you're not logged in"
+    duplicate_mine: "You have already reported this kid as yours!"
     submit: "Submit new finding"
     submit_edit: "Edit post"
