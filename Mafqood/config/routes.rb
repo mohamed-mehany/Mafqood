@@ -25,13 +25,14 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :suspect_posts,:finding_posts
-  
+  resources :missing_posts
   resource :search do
     collection do
-      post 'searchfind', controller: :search
+    post 'searchfind', controller: :search
     post 'searchmissing', controller: :search
     post 'searchsuspect', controller: :search
     end
+    root 'searchfind#index'
   end
 
   # get '/search_find' => 'search#searchfind'
@@ -52,7 +53,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :missing_posts
+
 
   # Example resource route with options:
   #   resources :products do
@@ -94,3 +95,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+

@@ -1,11 +1,11 @@
 class MissingPost < ActiveRecord::Base
-include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks
 
-  settings index: { number_of_shards: 1 }
+  # settings index: { number_of_shards: 1 }
 
   def as_indexed_json(options = {})
-    self.as_json({only: [:user, :description, :age, :location, :gender]})
+    self.as_json({only: [:reporter_phone, :reporter_name, :user, :description, :age, :location, :gender]})
   end
   attr_accessor :image
   mount_uploader :image, ImageUploader
@@ -21,5 +21,4 @@ include Elasticsearch::Model
             :numericality => { :only_integer => true },
             :length => { :is => 11 },
             :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }
-
 end

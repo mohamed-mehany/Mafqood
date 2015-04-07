@@ -1,48 +1,51 @@
-%h1 Search  found Posts
-= link_to 'Home', '/'
-= form_tag searchfinding_search_path, method: :post do
-  = text_field_tag :key
-  = submit_tag "search"
-- unless @results.nil?
-  %h3 Results
-  - if @results.empty?
-    %p No results found
-  - else
-    %ol
-      - @results.each do |res|
-        %li
-          = res.title
-          \: #{res.text}
+/ %h1 Search  Found Posts
+/ = link_to 'Home', '/'
+/ = form_tag searchfind_search_path, method: :post do
+/   = text_field_tag :key
+/   = submit_tag "search"
+/ / - unless @results.nil?
+/ /   %h3 Results
+/ /   / - if @results.empty?
+/ /   /   %p No results found
+/ /   / - else
+/ /     / %ol
+/ /       - @results.each do |res|
+/ /         %li
+/ /           = res.title
+/ /           \: #{res.text}
 
 
-          %h1 Search suspect Posts
-= link_to 'Home', '/'
-= form_tag searchsuspect_search_path, method: :post do
-  = text_field_tag :key
-  = submit_tag "search"
-- unless @results.nil?
-  %h3 Results
-  - if @results.empty?
-    %p No results found
-  - else
-    %ol
-      - @results.each do |res|
-        %li
-          = res.title
-          \: #{res.text}
+          
+/ %h1 Search Suspect Posts
+/ = link_to 'Home', '/'
+/ = form_tag searchsuspect_search_path, method: :post do
+/   = text_field_tag :key
+/   = submit_tag "search"
+/ / - unless @results.nil?
+/ /   %h3 Results
+/ /   - if @results.empty?
+/ /     %p No results found
+/ /   - else
+/ /     %ol
+/ /       - @results.each do |res|
+/ /         %li
+/ /           = res.title
+/ /           \: #{res.text}
 
-          %h1 Search missing9 Posts
-= link_to 'Home', '/'
-= form_tag searchmissing_search_path, method: :post do
-  = text_field_tag :key
-  = submit_tag "search"
-- unless @results.nil?
-  %h3 Results
-  - if @results.empty?
-    %p No results found
-  - else
-    %ol
-      - @results.each do |res|
-        %li
-          = res.title
-          \: #{res.text}
+
+
+/ %h1 Search Missing Posts
+/ = link_to 'Home', '/'
+/ = form_tag searchmissing_search_path, method: :post do
+/   = text_field_tag :key
+/   = submit_tag "search"
+/ / - unless @results.nil?
+/ /   %h3 Results
+/ /   - if @results.empty?
+/ /     %p No results found
+/ /   - else
+/ /     %ol
+/ /       - @results.each do |res|
+/ /         %li
+/ /           = res.title
+/ /           \: #{res.text}

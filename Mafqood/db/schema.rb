@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320210830) do
+ActiveRecord::Schema.define(version: 20150405134618) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 20150320210830) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "finding_post_reports", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "finding_post_id", limit: 4
+    t.string   "kind",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "finding_posts", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.string   "description",   limit: 255
@@ -80,6 +88,14 @@ ActiveRecord::Schema.define(version: 20150320210830) do
     t.integer  "user_id",       limit: 4
   end
 
+  create_table "missing_post_reports", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "missing_post_id", limit: 4
+    t.string   "type",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "missing_posts", force: :cascade do |t|
     t.integer  "age",            limit: 4
     t.string   "reporter_name",  limit: 255
@@ -92,6 +108,13 @@ ActiveRecord::Schema.define(version: 20150320210830) do
     t.datetime "updated_at",                 null: false
     t.string   "location",       limit: 255
     t.integer  "user_id",        limit: 4
+  end
+
+  create_table "suspect_post_reports", force: :cascade do |t|
+    t.integer  "suspect_post_id", limit: 4
+    t.string   "type",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "suspect_posts", force: :cascade do |t|
