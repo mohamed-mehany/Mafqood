@@ -1,8 +1,8 @@
-= content_for(:title, t("finding.title"))
+= content_for(:title, t("finding.edittitle"))
 .row
   .large-12.large-centered.medium-12.medium-centered.small-12.small-centered.columns
     %fieldset
-      %legend= t("finding.title")
+      %legend= t("finding.edittitle")
       = form_for(@finding_post) do |f|
         = f.label :name, t("finding.child_name")
         = f.text_field :name, placeholder: t("finding.required_field")
@@ -23,4 +23,4 @@
         = f.text_field :contact_info, placeholder: t("finding.contact_info")
         = f.label :image , t("finding.photo")
         = f.file_field :image 
-        = f.submit "Edit Post", class: "button expand"
+        = f.submit t("finding.submit_edit"), class: "button expand"
