@@ -72,7 +72,22 @@ protected
   def auth
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
   end
-  def is_owner x
+# Public: Checks if the current user using the website is the post's owner 
+# whenever edit and update methods are called as this is used in a before
+# filter
+#
+# @user_id  - The user_id to be compared with the user_id of the post.
+# 
+# Examples:
+#   A user with id 1 navigates to finding_posts/1/edit who's user_id = 1
+#   # => true
+#
+#   A user with id 1 navigates to finding_posts/5/edit who's user_id = 2
+#   # => false
+#
+# Returns either true if the passed @user_id equals the user_id of the post
+# otherwise returns false.
+  def is_owner @user_id
     if (current_user == nil || (current_user.id != FindingPost.find(params[:id]).user_id))
       redirect_to({action: "index"}, alert: ["Must be logged in..."])
     end            
