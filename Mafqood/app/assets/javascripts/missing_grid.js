@@ -1,4 +1,12 @@
-function(){ $(document).foundation(); });
+/*
+* debouncedresize: special jQuery event that happens once after a window resize
+*
+* latest version and complete README available on Github:
+* https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
+*
+* Copyright 2011 @louis_remi
+* Licensed under the MIT license.
+*/
 var $event = $.event,
 $special,
 resizeTimeout;
@@ -153,10 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
 	return deferred ? deferred.promise( $this ) : $this;
 };
 
-var Grid = (function() {
+var MissingGrid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-missing-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -331,17 +339,18 @@ var Grid = (function() {
 		this.update();
 	}
 
+	
 	Preview.prototype = {
 		create : function() {
 			// create Preview structure:
-
+			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$description2 = $( '<p></p>' );
-			this.$details = $( '<div class="og-details"></div>' ).append(this.$description ,	this.$description2);
+			this.$href = $( '<a href="#" class="button">Report as Found</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
-			this.$previewInner = $( '<div class=""></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
 			this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
 			// append preview element to the item
 			this.$item.append( this.getEl() );
@@ -371,12 +380,11 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-
+					href : $itemEl.attr( 'data-href' ),
 					largesrc : $itemEl.data( 'largesrc' ),
-				  description  : $itemEl.data( 'description' ),
-					description2 : $itemEl.data( 'description2' ),
-					description3 : $itemEl.data( 'description3' )
-			};
+					title : $itemEl.data( 'title' ),
+					description : $itemEl.data( 'description' )
+				};
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );

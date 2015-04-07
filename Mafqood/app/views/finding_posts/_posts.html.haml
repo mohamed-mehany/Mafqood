@@ -1,0 +1,14 @@
+- @finding_posts.each do |finding_post|
+  %li
+    %a{"data-description" => "Description: #{finding_post.description}<br>Location: #{finding_post.location}<br>Special signs: #{finding_post.special_signs}<br>Age: #{finding_post.age}<br>Contact information: #{finding_post.contact_info}<br>Gender: #{finding_post.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", "data-href" => report_child_as_returned_path(finding_post.id)}
+      %img{:alt => "img01", :src => "#{finding_post.image.thumb}"}/
+    .og-expander
+      .og-expander-inner
+        %span.og-close
+        .og-fullimg
+          .og-loading
+          %img{:src => ""}
+        .og-details
+          %h3
+          %p
+          %a{:href => report_child_as_returned_path(finding_post.id)}
