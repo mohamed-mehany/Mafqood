@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'suspect_posts/:id/fake', to: 'suspect_posts#report2_suspect', as: 'suspect_post_report2_missing'
   get 'suspect_posts/:id/duplicate', to: 'suspect_posts#report3_suspect', as: 'suspect_post_report3_missing'
 
-
+get '/search' => 'search#search'
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
