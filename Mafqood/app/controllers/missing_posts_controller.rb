@@ -36,7 +36,7 @@ def report11_missing
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.type = "spam"
+    @missing_post_report.kind = "spam"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
@@ -50,7 +50,7 @@ def report11_missing
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.type = "fake"
+    @missing_post_report.kind = "fake"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
@@ -64,7 +64,7 @@ def report11_missing
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.type = "duplicate"
+    @missing_post_report.kind = "duplicate"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
