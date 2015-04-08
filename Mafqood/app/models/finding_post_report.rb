@@ -23,9 +23,9 @@ class FindingPostReport < ActiveRecord::Base
 # the record  
   def unique_report
     if self.class.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
-      if(kind == "mine")
-        errors.add :base, "You have already reported this kid as yours!"
-      end
+      # if(kind == "mine")
+      #   errors.add :base, "You have already reported this kid as yours!"
+      # end
     if(kind == "spam")
         errors.add :base, "You have already reported this!"
        end
