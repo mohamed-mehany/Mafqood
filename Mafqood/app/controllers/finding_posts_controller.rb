@@ -24,16 +24,16 @@ class FindingPostsController < ApplicationController
   end
 
 # Public: Report this finding post as mine i.e this kid is my kid.
-#       
+#
 # Examples
 #
-#   mine #i.e this method is called when a user navigates to 
-#   /fining_posts/:id/mine 
+#   mine #i.e this method is called when a user navigates to
+#   /fining_posts/:id/mine
 #
 #   # => @finding_post_report.save
 #
-# Redirects the user to the findings post index and displays a flash 
-# whether the report was successful or not.
+# Redirects the user to the findings post index and displays a flash
+# whether the report wa successful or not.
   def mine
     @temp = FindingPost.find(params[:id])
     @finding_post_report = FindingPostReport.new
@@ -59,6 +59,27 @@ class FindingPostsController < ApplicationController
     else
       flash[:alert] = @finding_post.errors.full_messages
       render 'edit'
+    end
+  end
+
+  # Author: Nariman Hesham
+  #
+  # public: Report a specific finding post to be returned to child's
+  #   parents or the contrary
+  #
+  # method is called when a user is navigated to '/my_posts/:id/returned'
+  #
+  # @finding_post.save
+  # => true, redirects the user to user posts and success message is displayed
+  # => false, redirects the user to user posts and error message is displayed
+  def report_returned
+    @finding_post = FindingPost.find(params[:id])
+    @finding_post.status == true ? @finding_post.status = 0 : @finding_post.status = 1
+    if @finding_post.save
+      flash[:notice] = "Your Post status has been updated successfully"
+      redirect_to my_posts_path
+    else
+      redirect_to my_posts_path, alert: ["Error while updating post status"]
     end
   end
 

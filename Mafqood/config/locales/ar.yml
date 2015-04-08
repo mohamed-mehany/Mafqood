@@ -6,6 +6,7 @@ ar:
   logout: "تسجيل خروج"
   remove: "إزالة"
   login_to_view: "من فضلك سجل الدخول لعرض هذه الصفحة"
+  menu: "القائمة"
   home:
     report: "إبلاغ"
     search: "بحث"
@@ -15,6 +16,7 @@ ar:
     successful_login: "تم تسجيل الدخول بنجاح"
     successful_logout: "تم تسجيل الخروج بنجاح"
     successful_update: "تم تعديل البيانات بنجاح"
+    my_posts: "كل بلاغاتي"
   telephones:
     number: "التليفون"
   addresses:

@@ -1,5 +1,5 @@
 !!! 5
-%html{ lang: cookies[:locale], dir: cookies[:locale] == "ar" ? "rtl" : "ltr" }
+%html{ lang: I18n.locale, dir: I18n.locale == I18n.default_locale ? "rtl" : "ltr" }
   %head
     %meta{ charset: "utf-8" }
 
@@ -13,13 +13,13 @@
     = csrf_meta_tag
 
   %body
-    %nav.top-bar{ "data-topbar": "", role: "navigation" }
+    %nav.top-bar{ "data-topbar" => "", role: "navigation" }
       %ul.title-area
         %li.name
           %h1= link_to t("title"), root_url
         %li.toggle-topbar.menu-icon
           %a{ href: "javascript:" }
-            %span Menu
+            %span= t("menu")
       %section.top-bar-section
         %ul
           - if current_user
@@ -29,13 +29,20 @@
         - if current_user
           %ul.right
             %li.divider.hide-for-small
+            - if I18n.locale == :en
+              %li= link_to "عربي", { locale: "ar" }, onclick: "$('html').attr('lang', 'ar').attr('dir', 'rtl');"
+            - else
+              %li= link_to "English", { locale: "en" }, onclick: "$('html').attr('lang', 'en').attr('dir', 'ltr');"
+            %li.divider.hide-for-small
+            %li= link_to t("users.my_posts"), my_posts_path
+            %li.divider.hide-for-small
             %li= link_to t("users.edit"), edit_profile_path
     - if notice
-      .success.alert-box{ "data-alert": "" }
+      .success.alert-box{ "data-alert" => "" }
         = notice
         %a.close{ href: "#" } &times;
     - if alert
-      .alert.alert-box{ "data-alert": "" }
+      .alert.alert-box{ "data-alert" => "" }
         - alert.each do |a|
           %div
             = a

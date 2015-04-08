@@ -6,6 +6,7 @@ en:
   logout: "Logout"
   remove: "Remove"
   login_to_view: "Please login to view this page"
+  menu: "Menu"
   home:
     report: "Report"
     seatch: "Search"
@@ -15,6 +16,7 @@ en:
     successful_login: "Signed in successfully"
     successful_logout: "Signed out successfully"
     successful_update: "Updated successfully"
+    my_posts: "My Posts"
   telephones:
     number: "Telephone"
   addresses:
@@ -114,7 +116,8 @@ en:
               uniqueness: "You have already reported this kid as yours!"
             base:
               finding_duplicate_mine: "You have already reported this kid as yours!"
-            type:
+            kind:
+
               uniqueness: "You have already reported this child as yours!"
   finding:
     title: "Submit new finding"

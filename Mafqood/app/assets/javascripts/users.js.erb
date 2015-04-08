@@ -1,3 +1,6 @@
+/*
+* Public: Appends a new field for the phone number in the user form.
+*/
 function addPhone()
 {
   var theSize = $("#telephones .row").size();
@@ -19,11 +22,9 @@ function addPhone()
   );
 }
 
-function removePhone()
-{
-  if($("#telephones .row").size() > 1) $("#telephones .row:last").remove();
-}
-
+/*
+* Public: Appends a new field for the address in the user form.
+*/
 function addAddress()
 {
   var theSize = $("#addresses .row").size();
@@ -43,9 +44,4 @@ function addAddress()
       </div>\
     </div>'
   );
-}
-
-function removeAddress()
-{
-  if($("#addresses .row").size() > 1) $("#addresses .row:last").remove();
 }

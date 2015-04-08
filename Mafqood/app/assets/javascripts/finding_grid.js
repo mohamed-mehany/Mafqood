@@ -164,7 +164,7 @@ $.fn.imagesLoaded = function( callback ) {
 var Grid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -355,8 +355,9 @@ var Grid = (function() {
 			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$mine = $( '<a href="#" class="button round">Its my kid</a><br>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit );
+			this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
+			this.$returned = $( '<a href="#" class="button">Report as Returned</a><br>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit,this.$returned);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -391,7 +392,8 @@ var Grid = (function() {
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
 					mine : $itemEl.attr( 'mine' ),
-					edit : $itemEl.attr( 'hrefedit' ),
+					edit : $itemEl.attr( 'edit' ),
+					returned : $itemEl.attr('returned'),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -401,7 +403,7 @@ var Grid = (function() {
 			this.$description.html( eldata.description );
 			this.$mine.attr( 'href', eldata.mine );
 			this.$edit.attr( 'href' , eldata.edit );
-
+			this.$returned.attr( 'href', eldata.returned );
 			var self = this;
 
 			// remove the current image in the preview

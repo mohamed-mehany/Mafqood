@@ -6,8 +6,7 @@ FactoryGirl.define do
     f.image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'child.png')) }
     f.location "Found Location"
     f.gender 1
-    f.special_signs "no"
-    f.contact_info "01234567899"
-    f.user_id 1
+    f.contact_info "01111111111"
+    f.status false
   end
 end
