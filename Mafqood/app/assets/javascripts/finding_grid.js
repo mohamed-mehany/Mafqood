@@ -390,7 +390,7 @@ var Grid = (function() {
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
-			this.$returned.attr( 'returned', eldata.returned );
+			this.$returned.attr( 'href', eldata.returned );
 
 			var self = this;
 

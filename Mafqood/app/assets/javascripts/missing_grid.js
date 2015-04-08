@@ -339,7 +339,7 @@ var MissingGrid = (function() {
 		this.update();
 	}
 
-	
+
 	Preview.prototype = {
 		create : function() {
 			// create Preview structure:
@@ -391,7 +391,7 @@ var MissingGrid = (function() {
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
-			this.$found.attr( 'found', eldata.found );
+			this.$found.attr( 'href', eldata.found );
 
 			var self = this;
 
