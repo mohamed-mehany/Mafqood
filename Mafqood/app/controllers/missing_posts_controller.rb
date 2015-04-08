@@ -15,7 +15,7 @@ class MissingPostsController < ApplicationController
   end
 
   def create
-    @missing_post = MissingPost.new(missing_params)
+    @missing_post = MissingPost.new(missing_post_params)
     @missing_post.user = current_user
     if @missing_post.save
       flash[:notice] = "Your Post has been created successfully"
@@ -40,7 +40,7 @@ class MissingPostsController < ApplicationController
 
   def update
     @missing = MissingPost.find(params[:id])
-    if @missing.update(missing_params)
+    if @missing.update(missing_post_params)
       redirect_to({ action: "index"}, notice: t("missing_posts.successful_post"))
     else
       render 'new'
@@ -75,7 +75,7 @@ class MissingPostsController < ApplicationController
   protected
  # Protected: Redirects the user to the homepage unless he is logged in
 
-  def missing_params
+  def missing_post_params
     params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
 
