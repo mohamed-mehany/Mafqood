@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.9.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.9.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.9.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.9.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.9.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-08T19:27:52+02:00">2015-04-08T19:27:52+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-08T22:14:38+02:00">2015-04-08T22:14:38+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">89.27%</span></span>
+    (<span class="covered_percent"><span class="green">91.39%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.89
+         0.92
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>31</b> files in total.
-    <b>205</b> relevant lines. 
-    <span class="green"><b>183</b> lines covered</span> and
-    <span class="red"><b>22</b> lines missed </span>
+    <b>32</b> files in total.
+    <b>209</b> relevant lines. 
+    <span class="green"><b>191</b> lines covered</span> and
+    <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,12 +72,22 @@
       
       <tr>
         <td class="strong"><a href="#a9c4e27b948859592d5f9af329fb62fa9d1ff30c" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">57.14 %</td>
+        <td class="yellow strong">85.71 %</td>
         <td>66</td>
         <td>14</td>
-        <td>8</td>
-        <td>6</td>
-        <td>0.6</td>
+        <td>12</td>
+        <td>2</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3be712deffb22daf1d0769740b1d44c6a73f9562" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -341,11 +351,11 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#dbafadf789cb292f8d1a1017825f4836679647f1" class="src_link" title="spec/controllers/application_controller_spec.rb">spec/controllers/application_controller_spec.rb</a></td>
+        <td class="strong"><a href="#393c69454f7fc50a8e17fcebb1b4c0f9c7d5be89" class="src_link" title="spec/controllers/home_controller_spec.rb">spec/controllers/home_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>8</td>
-        <td>8</td>
+        <td>15</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -781,11 +791,11 @@
         <div class="source_table" id="a9c4e27b948859592d5f9af329fb62fa9d1ff30c">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">57.14 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
       <b>14</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -846,20 +856,20 @@
           <code class="ruby">  def set_locale</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">    if params[:locale]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
           <code class="ruby">      cookies[:locale] = params[:locale]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to request.referer || root_url</code>
         </li>
@@ -870,8 +880,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
           
           <code class="ruby">    I18n.locale = cookies[:locale] || I18n.default_locale</code>
         </li>
@@ -1183,6 +1193,48 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="3be712deffb22daf1d0769740b1d44c6a73f9562">
+  <div class="header">
+    <h3>app/controllers/home_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class HomeController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def index</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
@@ -7348,13 +7400,13 @@
   </pre>
 </div>
       
-        <div class="source_table" id="dbafadf789cb292f8d1a1017825f4836679647f1">
+        <div class="source_table" id="393c69454f7fc50a8e17fcebb1b4c0f9c7d5be89">
   <div class="header">
-    <h3>spec/controllers/application_controller_spec.rb</h3>
+    <h3>spec/controllers/home_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7377,82 +7429,76 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">describe ApplicationController, type: :controller do</code>
+          <code class="ruby">describe HomeController, type: :controller do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;#set_locale&quot; do</code>
+          <code class="ruby">  describe &quot;#index&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;should be able to set locale&quot; do</code>
+          <code class="ruby">    it &quot;should get the default locale&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      get :index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      response.should be_ok</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;#current_user&quot; do</code>
+          <code class="ruby">      controller.params[:locale].should be_nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;should return the current user&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;should be able to set locale&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      get :index, locale: &quot;en&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;#authenticate_user!&quot; do</code>
+          <code class="ruby">      controller.params[:locale].should_not be_nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;should authenticate user&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>

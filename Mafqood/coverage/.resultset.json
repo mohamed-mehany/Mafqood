@@ -1,18 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/mark/Mafqood/Mafqood/spec/controllers/application_controller_spec.rb": [
+      "/home/mark/Mafqood/Mafqood/spec/controllers/home_controller_spec.rb": [
         1,
         null,
         1,
         1,
         1,
-        null,
-        null,
         1,
         1,
+        1,
         null,
-        null,
+        1,
         1,
         1,
         null,
@@ -1045,11 +1044,11 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        2,
+        1,
+        1,
         null,
-        0,
+        2,
         null,
         null,
         1,
@@ -1203,8 +1202,14 @@
         null,
         null,
         null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1428514072
+    "timestamp": 1428524078
   }
 }
