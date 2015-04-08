@@ -110,7 +110,7 @@ en:
 
         finding_post_report:
           attributes:
-            type:
+            user_id:
               uniqueness: "You have already reported this child as yours!"
   finding:
     title: "Submit new finding"
