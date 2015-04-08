@@ -95,8 +95,4 @@ def report11_missing
   def missing_params
     params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
-
-  # def finding_report
-  #   params.require(:report).permit(:user_id,:post_id,:post_kind)
-  # end
 end
