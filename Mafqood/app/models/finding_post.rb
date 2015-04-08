@@ -8,7 +8,7 @@ class FindingPost < ActiveRecord::Base
             numericality: { only_integer: true }, 
             length: { is: 11 }	
 
-mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   def to_s
     name

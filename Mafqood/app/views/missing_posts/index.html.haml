@@ -16,26 +16,7 @@
     .container
       .main
         %ul#og-grid.og-grid
-          - @missing_posts.each do |missing|
-            %li
-              %a{"data-description" => "age : #{missing.age},
-            reporter name: #{missing.reporter_name},
-                  reporter phone: #{missing.reporter_phone},
-                                   location : #{missing.location},
-                                   description: #{missing.description},
-                                   special signs : #{missing.special_signs},
-                                  gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => missing_post_report_path(missing)}
-                %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
-              .og-expander
-                .og-expander-inner
-                  %span.og-close
-                  .og-fullimg
-                    .og-loading
-                    %img{:src => "images/2.jpg"}/
-                  .og-details
-                    %h3
-                    %p
-                    %a{:href => ""}
+          = render "posts"
     / /container
     = javascript_include_tag "grid"
     :javascript

@@ -7,7 +7,7 @@ require 'rails_helper'
        kind: 'mine')
       report2 = FindingPostReport.create(
        user_id: 1,
-       finding_post_id: 2,
+       finding_post_id: 1,
        kind: 'mine')
       report2.valid?
       expect(report2.errors[:base]).to include("You have already reported this kid as yours!")
@@ -27,10 +27,10 @@ require 'rails_helper'
       expect(report4).to be_valid
     end
     it "is valid with duplicate user_id, type but a unique finding_post_id" do
-      report4 = FindingPostReport.create(
+      report5 = FindingPostReport.create(
        user_id: 1,
        finding_post_id: 2,
        kind: 'mine')
-      expect(report4).to be_valid
+      expect(report5).to be_valid
     end
 end

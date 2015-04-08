@@ -91,8 +91,20 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    docile (1.1.5)
+>>>>>>> db6310a14b0a4725d23738b766f11c6508dc6ea4
+>>>>>>> 7036014ab52b8ce333c4cfa0fe7c1253be4f0107
     erubis (2.7.0)
     execjs (2.4.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     formtastic (3.1.3)
@@ -244,6 +256,11 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.9.2)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.9.0)
+    simplecov-html (0.9.0)
     slop (3.6.0)
     spring (1.3.3)
     sprockets (2.12.3)
@@ -282,6 +299,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  factory_girl_rails
   foundation-rails
   haml
   haml-rails (~> 0.9.0)
@@ -292,10 +310,15 @@ DEPENDENCIES
   omniauth-facebook
   rails (= 4.2.0)
   rmagick
+<<<<<<< HEAD
   rspec-rails
+=======
+  rspec-rails (~> 3.0)
+>>>>>>> 7036014ab52b8ce333c4cfa0fe7c1253be4f0107
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
+  simplecov
   spring
   turbolinks
   uglifier (>= 1.3.0)
