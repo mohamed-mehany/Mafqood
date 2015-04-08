@@ -36,8 +36,14 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-
-private
+  
+  def posts
+    @finding_posts = current_user.finding_posts
+    @missing_posts = current_user.missing_posts
+  end
+  
+  private
+  
   def user_params
     params.require(:user).permit(
       :name, :email, telephones_attributes: [:id, :number, :_destroy],

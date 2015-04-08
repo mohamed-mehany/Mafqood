@@ -33,13 +33,13 @@ class FindingPostsController < ApplicationController
 #   # => @finding_post_report.save
 #
 # Redirects the user to the findings post index and displays a flash 
-# whether the report wa successful or not.
+# whether the report was successful or not.
   def mine
     @temp = FindingPost.find(params[:id])
     @finding_post_report = FindingPostReport.new
     @finding_post_report.finding_post_id = @temp.id
     @finding_post_report.user = current_user
-    @finding_post_report.kind = "spam"
+    @finding_post_report.kind = "mine"
     if @finding_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully report this child as yours")
     else
@@ -48,13 +48,34 @@ class FindingPostsController < ApplicationController
     end
   end
 
+  # Author: Nariman Hesham 
+  #    
+  # public: Report a specific finding post to be returned to child's
+  #   parents or the contrary
+  #
+  # method is called when a user is navigated to '/my_posts/:id/returned'
+  #
+  # @finding_post.save
+  # => true, redirects the user to user posts and success message is displayed
+  # => false, redirects the user to user posts and error message is displayed
+  def report_returned
+    @finding_post = FindingPost.find(params[:id])
+    @finding_post.status == true ? @finding_post.status = 0 : @finding_post.status = 1
+    if @finding_post.save
+      flash[:notice] = "Your Post status has been updated successfully"
+      redirect_to my_posts_path
+    else
+      redirect_to my_posts_path, alert: ["Error while updating post status"]
+    end
+  end  
+
 protected
   def finding_post_params
     params.require(:finding_post).permit(
       :name,:contact_info,:description,:age,:special_signs,
       :image,:location,:gender)
   end
-
+# Protected: Redirects the user to the homepage unless he is logged in
   def auth
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
   end
