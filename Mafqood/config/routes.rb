@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   resource :search do
     collection do
       post 'searchfind', controller: :search
-    post 'searchmissing', controller: :search
-    post 'searchsuspect', controller: :search
+    # post 'searchmissing', controller: :search
+    # post 'searchsuspect', controller: :search
     end
   end
 

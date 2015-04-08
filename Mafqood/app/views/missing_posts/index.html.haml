@@ -43,3 +43,8 @@
       $(function() {
       	Grid.init();
       });
+#search-container
+  %div
+    %form{:action => "/search"}
+      <input type="search", name="query", id="searchbox", placeholder="Press enter afterwards">
+%div{:style => "height: 140px;"}
