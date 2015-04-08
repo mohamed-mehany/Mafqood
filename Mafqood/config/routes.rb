@@ -20,19 +20,19 @@ Rails.application.routes.draw do
   get 'suspect_posts/:id/fake', to: 'suspect_posts#report2_suspect', as: 'suspect_post_report2_missing'
   get 'suspect_posts/:id/duplicate', to: 'suspect_posts#report3_suspect', as: 'suspect_post_report3_missing'
 
-get '/search' => 'search#search'
+# get '/search' => 'search#search'
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :suspect_posts,:finding_posts
   
-  resource :search do
-    collection do
-      post 'searchfind', controller: :search
-    # post 'searchmissing', controller: :search
-    # post 'searchsuspect', controller: :search
-    end
-  end
+  # resource :search do
+  #   collection do
+  #     post 'searchfind', controller: :search
+  #   # post 'searchmissing', controller: :search
+  #   # post 'searchsuspect', controller: :search
+  #   end
+  # end
 
   # get '/search_find' => 'search#searchfind'
 
