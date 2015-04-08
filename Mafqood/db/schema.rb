@@ -10,8 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20150330215824) do
+ActiveRecord::Schema.define(version: 20150405142128) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -66,6 +65,14 @@ ActiveRecord::Schema.define(version: 20150330215824) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "finding_post_reports", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "finding_post_id", limit: 4
+    t.string   "kind",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "finding_posts", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.string   "description",   limit: 255
@@ -81,19 +88,34 @@ ActiveRecord::Schema.define(version: 20150330215824) do
     t.boolean  "status",        limit: 1
   end
 
+  create_table "missing_post_reports", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "missing_post_id", limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "kind",            limit: 255
+  end
+
   create_table "missing_posts", force: :cascade do |t|
     t.integer  "age",            limit: 4
     t.string   "reporter_name",  limit: 255
     t.string   "reporter_phone", limit: 255
     t.string   "description",    limit: 255
     t.string   "image",          limit: 255
-    t.string   "gender",         limit: 255
     t.string   "special_signs",  limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "location",       limit: 255
     t.integer  "user_id",        limit: 4
     t.boolean  "status",         limit: 1
+    t.boolean  "gender",         limit: 1
+  end
+
+  create_table "suspect_post_reports", force: :cascade do |t|
+    t.integer  "suspect_post_id", limit: 4
+    t.string   "kind",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "suspect_posts", force: :cascade do |t|

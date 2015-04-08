@@ -161,10 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
 	return deferred ? deferred.promise( $this ) : $this;
 };
 
-var FindingGrid = (function() {
+var Grid = (function() {
 
 		// list of items
-	var $grid = $( '.og-finding-grid' ),
+	var $grid = $( '.og-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -344,8 +344,9 @@ var FindingGrid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button">Report as Returned</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$href = $( '<a href="#" class="button">This is my kid</a>' );
+			this.$returned = $( '<a href="#" class="button">Report as Returned</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$returned );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -379,7 +380,8 @@ var FindingGrid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-					href : $itemEl.attr( 'data-href' ),
+					href : $itemEl.attr( 'href' ),
+					returned : $itemEl.attr('returned'),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -388,6 +390,7 @@ var FindingGrid = (function() {
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
+			this.$returned.attr( 'returned', eldata.returned );
 
 			var self = this;
 
