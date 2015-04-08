@@ -109,6 +109,11 @@ en:
               too_long: "500 characters is the maximum allowed"
             special_signs:
               too_long: "500 characters is the maximum allowed"
+
+        finding_post_report:
+          attributes:
+            type:
+              uniqueness: "You have already reported this child as yours!"
   finding:
     title: "Submit new finding"
     child_name: "Child's name"
@@ -124,4 +129,6 @@ en:
     location: "Location"
     contact_info: "Phone number to contact you"
     photo: "Upload a photo (Required)"
+    successful_report_mine: "You have successfully report this child as yours"
+    successful_create: "Your new post have been created successfully!"
     submit: "Submit new finding"

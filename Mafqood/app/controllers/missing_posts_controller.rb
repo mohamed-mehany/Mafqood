@@ -1,6 +1,22 @@
 class MissingPostsController < ApplicationController
+  # before_filter :auth, only: [:create, :new, :mine]
+
   def index
+    @missing_posts = MissingPost.new
     @missing_posts = MissingPost.order("created_at desc")
+  end
+
+  def report
+    if(current_user)
+    @missing_posts = MissingPost.order("created_at desc")
+    @missing = MissingPost.find(params[:id])
+    @missing_post_report = MissingPostReport.new
+    @missing_post_report.kind = "mine"
+    @missing_post_report.user_id = current_user.id
+    @missing_post_report.missing_post_id = @missing.id
+    @missing_post_report.save
+    # redirect_to @missing, notice: ["congratulations :D"]
+    end
   end
 
   def show
@@ -23,6 +39,27 @@ class MissingPostsController < ApplicationController
       end
     else
       redirect_to root_url, alert: ["Must be logged in..."]
+    end
+  end
+  
+  # Author: Nariman Hesham 
+  # 
+  # public: Report a specific missing post to be found by child's
+  #   parents or the contrary
+  #
+  # method is called when a user is navigated to '/my_posts/:id/found'
+  #
+  # @missing_post.save
+  # => true, redirects the user to user posts and success message is displayed
+  # => false, redirects the user to user posts and error message is displayed
+  def report_found
+    @missing_post = MissingPost.find(params[:id])
+    @missing_post.status == true ? @missing_post.status = 0 : @missing_post.status = 1
+    if @missing_post.save
+      flash[:notice] = "Your Post status has been updated successfully"
+      redirect_to my_posts_path
+    else
+      redirect_to my_posts_path, alert: ["Error while updating post status"]
     end
   end
 

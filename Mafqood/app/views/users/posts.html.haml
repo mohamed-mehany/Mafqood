@@ -17,14 +17,20 @@
       .main
         .row
           .columns.large-6.medium-6.small-12
-            %ul#og-grid1.og-grid
+            %ul#og-grid1.og-finding-grid
               = render "finding_posts/posts"
           .columns.large-6.medium-6.small-12
-            %ul#og-grid2.og-grid
+            %ul#og-grid2.og-missing-grid
               = render "missing_posts/posts"
     / /container
-    = javascript_include_tag "grid"
+    = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
-      	Grid.init();
+      	FindingGrid.init();
       });
+    = javascript_include_tag "missing_grid"
+    :javascript
+      $(function() {
+        MissingGrid.init();
+      });    
+         
