@@ -91,13 +91,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
     docile (1.1.5)
->>>>>>> db6310a14b0a4725d23738b766f11c6508dc6ea4
->>>>>>> 7036014ab52b8ce333c4cfa0fe7c1253be4f0107
     erubis (2.7.0)
     execjs (2.4.0)
     factory_girl (4.5.0)
@@ -310,11 +304,7 @@ DEPENDENCIES
   omniauth-facebook
   rails (= 4.2.0)
   rmagick
-<<<<<<< HEAD
-  rspec-rails
-=======
   rspec-rails (~> 3.0)
->>>>>>> 7036014ab52b8ce333c4cfa0fe7c1253be4f0107
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
