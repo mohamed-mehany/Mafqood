@@ -1,6 +1,6 @@
 class FindingPostsController < ApplicationController
   before_filter :auth, only: [:create, :new, :mine]
-  
+
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
@@ -24,15 +24,15 @@ class FindingPostsController < ApplicationController
   end
 
 # Public: Report this finding post as mine i.e this kid is my kid.
-#       
+#
 # Examples
 #
-#   mine #i.e this method is called when a user navigates to 
-#   /fining_posts/:id/mine 
+#   mine #i.e this method is called when a user navigates to
+#   /fining_posts/:id/mine
 #
 #   # => @finding_post_report.save
 #
-# Redirects the user to the findings post index and displays a flash 
+# Redirects the user to the findings post index and displays a flash
 # whether the report wa successful or not.
   def mine
     @temp = FindingPost.find(params[:id])
