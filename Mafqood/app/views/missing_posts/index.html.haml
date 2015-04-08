@@ -25,7 +25,7 @@
                                    location : #{missing.location},
                                    description: #{missing.description},
                                    special signs : #{missing.special_signs},
-																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => ""}
+																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => "", :spam => "#{missing_post_report1_missing_path(missing)}",:fake => "#{missing_post_report2_missing_path(missing)}", :duplicate => "#{missing_post_report3_missing_path(missing)}"}
                 %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
               .og-expander
                 .og-expander-inner

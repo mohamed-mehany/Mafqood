@@ -12,28 +12,14 @@
     = stylesheet_link_tag "default"
     = stylesheet_link_tag "component"
     = javascript_include_tag "modernizr.custom"
+  
   %body
-  %h1 Search Posts
-= link_to 'All Posts', finding_posts_path
-= form_tag search_search_path, method: :post do
-  = text_field_tag :key
-  = submit_tag "search"
-- unless @results.nil?
-  %h3 Results
-  - if @results.empty?
-    %p No results found
-  - else
-    %ol
-      - @results.each do |res|
-        %li
-          = res.title
-          \: #{res.text}
     .container
       .main
         %ul#og-grid.og-grid
           - @findings.each do |finding|
             %li
-              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => ""}
+              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => "",:spam => "#{finding_post_report1_finding_path(finding)}",:fake => "#{finding_post_report2_finding_path(finding)}", :duplicate => "#{finding_post_report3_finding_path(finding)}"}
                 %img{:alt => "img01", :src => "#{finding.image.thumb}"}/
               .og-expander
                 .og-expander-inner
@@ -46,7 +32,7 @@
                     %p
                     %a{:href => ""}
     / /container
-    = javascript_include_tag "grid"
+    = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
       	Grid.init();
