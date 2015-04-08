@@ -49,6 +49,8 @@ en:
     edit_login: "You are not allowed to edit because either you're not the post owner or you're not logged in"
     submit: "Submit new missing"
     submit_edit: "Edit post"
+    successful_post: "Post updated successfully"
+    unauthorized_edit: "You are not allowed to edit this post."
 
   suspect_posts:
     title: "Submit new suspect post"

@@ -18,7 +18,8 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new(missing_params)
     @missing_post.user = current_user
     if @missing_post.save
-      redirect_to({ action: "index"}, notice: t("missing_posts.successful_create"))
+      flash[:notice] = "Your Post has been created successfully"
+      redirect_to @missing_post
     else
       render 'new'
     end
@@ -29,30 +30,26 @@ class MissingPostsController < ApplicationController
 
   def edit
     @missing = MissingPost.find(params[:id])
-    if(current_user.id == @missing.user.id)
-      if current_user == @missing.user
-        @missing_post = @missing
-        render 'new'
-      end
+    if current_user == @missing.user
+      @missing_post = @missing
+      render 'new'
     else
-      render @missing , alert: "you are not allowed to edit this post"
+      redirect_to({ action: "index"}, alert: t("missing_posts.unauthorized_edit"))
     end
   end
 
   def update
     @missing = MissingPost.find(params[:id])
     if @missing.update(missing_params)
-      redirect_to @missing, notice: "Post updated successfully"
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_post"))
     else
-      redirect_to action: "edit"
+      render 'new'
     end
   end
 
-# Public: Report this missing post as mine i.e this kid is my kid.
-#
 # Examples
 #
-#   mine #i.e this method is called when a user navigates to
+#   report #i.e this method is called when a user navigates to
 #   /missing_posts/:id/mine
 #
 #   # => @missing_post_report.save
@@ -66,7 +63,8 @@ class MissingPostsController < ApplicationController
     @report_found.kind = "found"
     @report_found.user_id = current_user.id
     @report_found.missing_post_id = @missing_post.id
-    if @report_found.save
+    if @missing_post.user_id == current_user.id
+      @report_found.save
       redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
     else
       flash[:alert] = @report_found.errors.full_messages
