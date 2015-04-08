@@ -1,26 +1,27 @@
-= content_for(:title, t("finding.title"))
-.row
-  .large-12.large-centered.medium-12.medium-centered.small-12.small-centered.columns
-    %fieldset
-      %legend= t("finding.title")
-      = form_for(@finding_post) do |f|
-        = f.label :name, t("finding.child_name")
-        = f.text_field :name, placeholder: t("finding.required_field")
-        = f.label :age, t("fiding.age")
-        = f.text_field :age, placeholder: t("finding.required_field")
-        = f.label :description, t("finding.description")
-        = f.text_area :description, placeholder: t("finding.description_placeholder")
-        = f.label :special_signs, t("finding.special_signs")
-        = f.text_field :special_signs, placeholder: t("finding.special_signs_placeholder")
-        = f.label :gender, t("finding.gender")
-        = f.radio_button :gender, "1"  
-        = f.label :gender, t("finding.male"), value: "1" 
-        = f.radio_button :gender, "0"
-        = f.label :gender, t("finding.female"), value: "0"
-        = f.label :location, t("finding.location")
-        = f.text_field :location, placeholder: t("finding.required_field")
-        = f.label :contact_info, "Enter your phone numer"
-        = f.text_field :contact_info, placeholder: t("finding.contact_info")
-        = f.label :image , t("finding.photo")
-        = f.file_field :image 
-        = f.submit t("finding.submit"), class: "button expand"
+=content_for(:title,t("finding.title"))
+%div{:class => "row"}
+	%div{:class => "large-12 large-centered medium-12 medium-centered small-12 small-centered columns"}
+		%div{:class => "panel callout radius"}
+			%center
+				%h2 New Finding Post
+			= form_for(@finding) do |f|
+				= f.label :name, t("finding.child_name")
+				= f.text_field :name, placeholder: t("finding.required_field")
+				= f.label :age, t("fiding.age")
+				= f.text_field :age, placeholder: t("finding.required_field")
+				= f.label :description, t("finding.description")
+				= f.text_area :description, placeholder: t("finding.description_placeholder")
+				= f.label :special_signs, t("finding.special_signs")
+				= f.text_field :special_signs, placeholder: t("finding.special_signs_placeholder")
+				= f.label :gender, t("finding.gender")
+				= f.radio_button :gender, 1
+				= f.label :gender, t("finding.male"), :value => 1
+				= f.radio_button :gender, 0
+				= f.label :gender, t("finding.female"), :value => 0
+				= f.label :location, t("finding.location")
+				= f.text_field :location, placeholder: t("finding.required_field")
+				= f.label :contact_info, "Enter your phone numer"
+				= f.text_field :contact_info, placeholder: t("finding.contact_info")
+				= f.label :image , t("finding.photo")
+				= f.file_field :image
+				= f.submit t("finding.submit"),class: "button expand"
