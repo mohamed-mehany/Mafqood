@@ -31,11 +31,13 @@ class MissingPostsController < ApplicationController
 
   def edit
     @missing = MissingPost.find(params[:id])
-    if current_user == @missing.user
-      @missing_post = @missing
-      render 'new'
+    if(current_user.id == @missing.user.id)
+      if current_user == @missing.user
+        @missing_post = @missing
+        render 'new'
+      end
     else
-      redirect_to @missing, alert: "You are not allowed to edit this post."
+      render @missing , alert: "you are not allowed to edit this post"
     end
   end
 
