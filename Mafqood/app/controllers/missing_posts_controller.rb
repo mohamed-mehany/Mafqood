@@ -1,6 +1,5 @@
 class MissingPostsController < ApplicationController
   before_filter :auth, only: [:create, :new, :report, :edit , :update]
-  # before_filter (only: [:edit, :update]) { |f| f.is_owner MissingPost.find(params[:id]) }
 
   def index
     @missing_posts = MissingPost.new
@@ -46,7 +45,7 @@ class MissingPostsController < ApplicationController
     if @missing.update(missing_params)
       redirect_to @missing, notice: "Post updated successfully"
     else
-      render 'new'
+      redirect_to action: "edit"
     end
   end
 
@@ -63,13 +62,12 @@ class MissingPostsController < ApplicationController
 # whether the report was successful or not.
 
   def report
-    @missing_posts = MissingPost.order("created_at desc")
     @missing = MissingPost.find(params[:id])
-    @missing_post_report = MissingPostReport.new
-    @missing_post_report.kind = "mine"
-    @missing_post_report.user_id = current_user.id
-    @missing_post_report.missing_post_id = @missing.id
-    @missing_post_report.save
+    @report_mine = MissingPostReport.new
+    @report_mine.kind = "mine"
+    @report_mine.user_id = current_user.id
+    @report_mine.missing_post_id = @missing.id
+    @report_mine.save
   end
 
   protected
@@ -82,9 +80,5 @@ class MissingPostsController < ApplicationController
   def auth
     redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
   end
-
-  # def is_owner x
-  #   redirect_to({action: "index"}, alert: ["Must be logged in..."]) unless (current_user.id == MissingPost.find(params[:id]).user_id)
-  # end
 
 end

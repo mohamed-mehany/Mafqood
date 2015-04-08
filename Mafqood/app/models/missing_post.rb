@@ -4,6 +4,7 @@ class MissingPost < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :user
   validates :gender , presence: true
+  validates :image , presence: true
   validates :age , presence: true
   validates :location , presence: true
   validates :reporter_name , presence: true
