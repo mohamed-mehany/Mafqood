@@ -1,6 +1,9 @@
 class FindingPost < ActiveRecord::Base
  
+# include Elasticsearch::Model
+#   include Elasticsearch::Model::Callbacks
 
+#   settings index: { number_of_shards: 1 }
 
 
 

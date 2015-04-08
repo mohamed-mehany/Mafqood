@@ -31,10 +31,27 @@
                     %h3
                     %p
                     %a{:href => ""}
+    
+    
+
     / /container
     = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
       	Grid.init();
       });
-      
+/       %h1 Search  found Posts
+/ = link_to 'Home', '/'
+/ = form_tag searchfind_search_path, method: :post do
+/   = text_field_tag :key
+/   = submit_tag "search"
+/ - unless @results.nil?
+/   %h3 Results
+/   - if @results.empty?
+/     %p No results found
+/   - else
+/     %ol
+/       - @results.each do |res|
+/         %li
+/           = res.title
+/           \: #{res.text}
