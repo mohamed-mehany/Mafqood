@@ -348,7 +348,7 @@ var Grid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a><br>' );
+			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
 			}
 			else{
 				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );

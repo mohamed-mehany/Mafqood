@@ -109,8 +109,15 @@ ar:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+
+        finding_post:
+          attributes:
+            base:
+              finding_duplicate_mine: "لقد قمت بالأبلاغ سابقا أن هذا هو \ هي طفلك"
+
   finding:
     title: "أبلاغ عن طفل وجد"
+    edittitle: "تعديل بيانات طفلك"
     child_name: "أسم الطفل"
     required_field: "خانة مطلوبة"
     age: "العمر تحديدا أو تقريبا"
@@ -125,3 +132,9 @@ ar:
     contact_info: "رقم هاتفك"
     photo: "أضافة صورة - خانة مطلوبه"
     submit: "أبلاغ"
+    successful_report_mine: "لقد تم أبلاغنا بنجاح أن هذا طفلك"
+    successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
+    successful_edit: "تم تعديل بيانات الطفل بنجاح"
+    must_login: "يجب أن تقوم بتسجيل الدخول أولا"
+    edit_login: "غير مسموح لك بتعديل البيانات لأنك لم تقوم بتسجيل الدخول أو انك تحاول تعديل بيانات لا تخص طفلك"
+    submit_edit: "تعديل البيانات" 

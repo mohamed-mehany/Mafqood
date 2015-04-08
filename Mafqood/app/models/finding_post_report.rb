@@ -20,6 +20,7 @@ class FindingPostReport < ActiveRecord::Base
   scope :spam, -> { where(kind: "Spam", kind: "spam") }
   scope :duplicate, -> { where(kind: "Duplicate", kind: "duplicate") }
 
+
 # Private: As a uniquness validations, this method checks if there is a 
 # FindingPostReport with the combination of the user_id, finding_post_id
 # -the post being reported- and kind which is the type of report
@@ -38,9 +39,9 @@ class FindingPostReport < ActiveRecord::Base
 # a specific error message is added to :base to the errors of
 # the record  
   def unique_report
-    if self.class.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
-      if(kind == "mine" || kind == "spam")
-        errors.add :base, "You have already reported this kid as yours!"
+    if FindingPostReport.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
+      if(kind == "mine")
+        errors.add :base, :finding_duplicate_mine
       end
     end
   end

@@ -1,6 +1,6 @@
 class FindingPostsController < ApplicationController
   before_filter :auth, only: [:create, :new, :mine]
-
+  before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
@@ -16,7 +16,7 @@ class FindingPostsController < ApplicationController
     @finding_post = FindingPost.new(finding_post_params)
     @finding_post.user = current_user
     if @finding_post.save
-      redirect_to({ action: "index"}, notice: "Your new post have been created successfully!")
+      redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
       flash[:alert] = @finding_post.errors.full_messages
       render "new"
@@ -41,10 +41,24 @@ class FindingPostsController < ApplicationController
     @finding_post_report.user = current_user
     @finding_post_report.kind = "mine"
     if @finding_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully report this child as yours")
+      redirect_to({ action: "index"}, notice: t("finding.successful_report_mine"))
     else
       flash[:alert] = @finding_post_report.errors.full_messages
       redirect_to action: "index"
+    end
+  end
+ 
+  def edit
+    @finding_post = FindingPost.find(params[:id])
+  end
+
+  def update
+    @finding_post = FindingPost.find(params[:id])
+    if @finding_post.update(finding_post_params.reject{|k,v| v.blank?})
+      redirect_to({action: "index"}, notice: "t(finding.successful_edit")
+    else
+      flash[:alert] = @finding_post.errors.full_messages
+      render 'edit'
     end
   end
 
@@ -77,6 +91,26 @@ protected
   end
 # Protected: Redirects the user to the homepage unless he is logged in
   def auth
-    redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
+    redirect_to(root_url, alert: [t("finding.must_login")]) unless current_user
+  end
+# Public: Checks if the current user using the website is the post's owner 
+# whenever edit and update methods are called as this is used in a before
+# filter
+#
+# @user_id  - The user_id to be compared with the user_id of the post.
+# 
+# Examples:
+#   A user with id 1 navigates to finding_posts/1/edit who's user_id = 1
+#   # => true
+#
+#   A user with id 1 navigates to finding_posts/5/edit who's user_id = 2
+#   # => false
+#
+# Returns either true if the passed @user_id equals the user_id of the post
+# otherwise returns false.
+  def is_owner user_id
+    if (current_user == nil || (current_user.id != FindingPost.find(params[:id]).user_id))
+      redirect_to({action: "index"}, alert: [t("finding.edit_login")])
+    end            
   end
 end
