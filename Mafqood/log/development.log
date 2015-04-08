@@ -61626,3 +61626,781 @@ Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 12
 
 
 Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 08:34:40 +0200
+
+
+Started GET "/missing_posts" for 127.0.0.1 at 2015-04-08 10:32:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MissingPostsController#index as HTML
+  [1m[35mMissingPost Load (0.1ms)[0m  SELECT `missing_posts`.* FROM `missing_posts`  ORDER BY created_at desc
+  Rendered missing_posts/index.html.haml within layouts/application (110.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 929ms (Views: 900.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/javascripts/users.js.haml.js" for 127.0.0.1 at 2015-04-08 10:32:35 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.haml.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.0ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (17.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (35.0ms)
+
+
+Started GET "/assets/foundation_and_overrides-16f4ac6e49f24b1badd2a6c262fd41d5.css?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation-26aa64ee1872ba766d9eb3597a7ad26c.css?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/vendor/modernizr-ab036539ab2eac66b636accb8d06d77b.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation-013a9ecfcbd0d277665f83c66e076e18.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.abide-cecd3b8dfdb9535c145e3160cca57cae.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.accordion-07d483c126d868809345e4abbcfd54a5.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.alert-e54c2d9000574a39e07b2e6ede6ae0f6.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.clearing-b0828edefaad3278cd85c2faf6fd20ef.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.dropdown-c6b22cf8e5474c59dc0bc19e2d290da5.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.interchange-adf4ca4cb9a1f36677701d7d06489ead.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.joyride-7f23c30298ef55f2db505f357bd4a799.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.magellan-8cd3c13f48f6d78fb172bb5200551918.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.offcanvas-0c2112e52f2de840e27058c4912dd869.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.orbit-925ec65dcf6be03dd5c7a1d472845b27.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.reveal-7bd8d9ca180151af16ff7678033f8212.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.slider-66a6fcccc01097ba84b9e9fb84a429ef.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.tooltip-5214a0ecffb0be84dc9247c31455ef50.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.tab-0d9dd6504af28bc75bdb999fbb120872.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.topbar-ba04adaaf787a047a2bc9195842bb938.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation/foundation.equalizer-b93ba11c4146c58dd7d95ba14769e640.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/foundation-cf9c2be01a146b330f05b712f6779903.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/core-f6c29219d44f4267c6c5f748cb73851a.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/datepicker-28441b2cd45f0545c8a439f40b98d784.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/widget-406fc24d615dd4370e049e85fb5f549d.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/button-a8037a4250da171316b7e7521b0d9d0b.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/mouse-504ef967eca0eb03967e3c9751c36d17.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/draggable-d158b51e489137b213fd1eaa96a9b92a.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/position-65ef6bd55aa64766623cc74b5d7d353d.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/resizable-aa565fd6aa9f42700d8c54b318c0c1c8.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/dialog-ee62065c80cb02fe6e91bf5811c59c91.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/sortable-fe96bfa9ff14377c0dc83b42d0f191e4.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/jquery-ui/tabs-7d723642f0cea4ad8b4be12b7af40214.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/base-73f24d8653d67794d4eb7ac3c8266e3b.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/batch_actions-5706928449a7d192adcb4c959b623cf6.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler-71efe70af420ba0aef07b4e19fc2fc06.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu-0d4c387b749f3fc1d71179e523ab4e49.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/flash-a3dc1386603709c2a6501741817b1ca8.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/has_many-64f8975fc252419139c3a62d16c53777.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/modal_dialog-400dfa6502091f82a5e3941b8a771c46.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/per_page-239488a1a0b13f3cda3dddf002b6ed21.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/popover-4659964ef0ff6b1465b40769d440f87a.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery-ui-5963f9f0bd7887f07217b87c96e27f88.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler-18530342f84893188506c0a48a10be15.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery-22727936bd5e807603d51c2a59b45b7d.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin/application-eb8a267ef17a17c127e0278b098e46d5.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/active_admin-835293ec52ff33915328aca69e191403.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/finding_posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/grid-b0ccb7899b115dacba77c648c1bbbe9a.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/missing_posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/missings-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/modernizr.custom-a8e7d450e08b63956fd6e7808c1d9e9f.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/users-d8d1ab57e473ed5bc3644fac3cc4620a.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/assets/missing_grid-594b4773d49d77e967a2882f20793889.js?body=1" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+
+Started GET "/images/2.jpg" for 127.0.0.1 at 2015-04-08 10:32:36 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/2.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.7ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (21.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (45.8ms)
+
+
+Started GET "/missing_posts/4/edit" for 127.0.0.1 at 2015-04-08 10:34:03 +0200
+Processing by MissingPostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mMissingPost Load (205.5ms)[0m  [1mSELECT  `missing_posts`.* FROM `missing_posts` WHERE `missing_posts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered missing_posts/new.html.haml within layouts/application (295.2ms)
+Completed 200 OK in 922ms (Views: 688.4ms | ActiveRecord: 205.7ms)
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:23 +0200
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:23 +0200
+
+
+Started GET "/missing_posts" for 127.0.0.1 at 2015-04-08 10:34:23 +0200
+Processing by MissingPostsController#index as HTML
+  [1m[36mMissingPost Load (0.1ms)[0m  [1mSELECT `missing_posts`.* FROM `missing_posts`  ORDER BY created_at desc[0m
+  Rendered missing_posts/index.html.haml within layouts/application (53.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Completed 200 OK in 455ms (Views: 453.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/grid-b0ccb7899b115dacba77c648c1bbbe9a.js?body=1" for 127.0.0.1 at 2015-04-08 10:34:23 +0200
+
+
+Started GET "/images/2.jpg" for 127.0.0.1 at 2015-04-08 10:34:24 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/2.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.9ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (16.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (33.6ms)
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:24 +0200
+
+
+Started GET "/assets/modernizr.custom-a8e7d450e08b63956fd6e7808c1d9e9f.js?body=1" for 127.0.0.1 at 2015-04-08 10:34:24 +0200
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:24 +0200
+
+
+Started GET "/missing_posts/4/edit" for 127.0.0.1 at 2015-04-08 10:34:25 +0200
+Processing by MissingPostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMissingPost Load (0.1ms)[0m  SELECT  `missing_posts`.* FROM `missing_posts` WHERE `missing_posts`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered missing_posts/new.html.haml within layouts/application (21.2ms)
+Completed 200 OK in 331ms (Views: 328.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:46 +0200
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:46 +0200
+
+
+Started GET "/missing_posts/4/edit" for 127.0.0.1 at 2015-04-08 10:34:52 +0200
+Processing by MissingPostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mMissingPost Load (0.2ms)[0m  [1mSELECT  `missing_posts`.* FROM `missing_posts` WHERE `missing_posts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered missing_posts/new.html.haml within layouts/application (23.9ms)
+Completed 200 OK in 420ms (Views: 415.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:53 +0200
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:53 +0200
+
+
+Started GET "/missing_posts/2/edit" for 127.0.0.1 at 2015-04-08 10:34:55 +0200
+Processing by MissingPostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMissingPost Load (0.7ms)[0m  SELECT  `missing_posts`.* FROM `missing_posts` WHERE `missing_posts`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered missing_posts/new.html.haml within layouts/application (40.3ms)
+Completed 200 OK in 374ms (Views: 368.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:56 +0200
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 10:34:56 +0200
+
+
+Started GET "/missing_posts" for 127.0.0.1 at 2015-04-08 11:15:29 +0200
+Processing by MissingPostsController#index as HTML
+  [1m[35mMissingPost Load (55.2ms)[0m  SELECT `missing_posts`.* FROM `missing_posts`  ORDER BY created_at desc
+  Rendered missing_posts/index.html.haml within layouts/application (187.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 601ms (Views: 497.1ms | ActiveRecord: 55.4ms)
+
+
+Started GET "/assets/vendor/modernizr-ab036539ab2eac66b636accb8d06d77b.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation-26aa64ee1872ba766d9eb3597a7ad26c.css?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation_and_overrides-16f4ac6e49f24b1badd2a6c262fd41d5.css?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.accordion-07d483c126d868809345e4abbcfd54a5.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.alert-e54c2d9000574a39e07b2e6ede6ae0f6.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.clearing-b0828edefaad3278cd85c2faf6fd20ef.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.dropdown-c6b22cf8e5474c59dc0bc19e2d290da5.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.interchange-adf4ca4cb9a1f36677701d7d06489ead.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/component-15e05c6a12a2e7933af448eb97af154b.css?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/default-2bf14a5e759a0a07d6a6bf5bf9079cee.css?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.joyride-7f23c30298ef55f2db505f357bd4a799.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation-013a9ecfcbd0d277665f83c66e076e18.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.abide-cecd3b8dfdb9535c145e3160cca57cae.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.magellan-8cd3c13f48f6d78fb172bb5200551918.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.offcanvas-0c2112e52f2de840e27058c4912dd869.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.tooltip-5214a0ecffb0be84dc9247c31455ef50.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.topbar-ba04adaaf787a047a2bc9195842bb938.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.tab-0d9dd6504af28bc75bdb999fbb120872.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation-cf9c2be01a146b330f05b712f6779903.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-ui/core-f6c29219d44f4267c6c5f748cb73851a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-ui/datepicker-28441b2cd45f0545c8a439f40b98d784.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.orbit-925ec65dcf6be03dd5c7a1d472845b27.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-ui/widget-406fc24d615dd4370e049e85fb5f549d.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/foundation/foundation.reveal-7bd8d9ca180151af16ff7678033f8212.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-ui/button-a8037a4250da171316b7e7521b0d9d0b.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:30 +0200
+
+
+Started GET "/assets/jquery-ui/mouse-504ef967eca0eb03967e3c9751c36d17.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/draggable-d158b51e489137b213fd1eaa96a9b92a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/position-65ef6bd55aa64766623cc74b5d7d353d.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/resizable-aa565fd6aa9f42700d8c54b318c0c1c8.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/sortable-fe96bfa9ff14377c0dc83b42d0f191e4.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/tabs-7d723642f0cea4ad8b4be12b7af40214.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/base-73f24d8653d67794d4eb7ac3c8266e3b.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/batch_actions-5706928449a7d192adcb4c959b623cf6.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler-71efe70af420ba0aef07b4e19fc2fc06.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu-0d4c387b749f3fc1d71179e523ab4e49.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/foundation/foundation.slider-66a6fcccc01097ba84b9e9fb84a429ef.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/modal_dialog-400dfa6502091f82a5e3941b8a771c46.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/per_page-239488a1a0b13f3cda3dddf002b6ed21.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/popover-4659964ef0ff6b1465b40769d440f87a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/jquery-ui/dialog-ee62065c80cb02fe6e91bf5811c59c91.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery-ui-5963f9f0bd7887f07217b87c96e27f88.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery-22727936bd5e807603d51c2a59b45b7d.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/application-eb8a267ef17a17c127e0278b098e46d5.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin-835293ec52ff33915328aca69e191403.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/finding_posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/grid-b0ccb7899b115dacba77c648c1bbbe9a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/missing_grid-594b4773d49d77e967a2882f20793889.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler-18530342f84893188506c0a48a10be15.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/missing_posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/foundation/foundation.equalizer-b93ba11c4146c58dd7d95ba14769e640.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/users-d8d1ab57e473ed5bc3644fac3cc4620a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/javascripts/users.js.haml.js" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.haml.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (22.0ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.7ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (43.4ms)
+
+
+Started GET "/assets/modernizr.custom-a8e7d450e08b63956fd6e7808c1d9e9f.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/has_many-64f8975fc252419139c3a62d16c53777.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/missings-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/active_admin/lib/flash-a3dc1386603709c2a6501741817b1ca8.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/assets/foundation/foundation-013a9ecfcbd0d277665f83c66e076e18.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/images/2.jpg" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/2.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (19.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (38.6ms)
+
+
+Started GET "/javascripts/users.js.haml.js" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/users.js.haml.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (17.9ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (35.8ms)
+
+
+Started GET "/assets/modernizr.custom-a8e7d450e08b63956fd6e7808c1d9e9f.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:31 +0200
+
+
+Started GET "/images/2.jpg" for 127.0.0.1 at 2015-04-08 11:15:32 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/2.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/omar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (18.2ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /home/omar/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (36.8ms)
+
+
+Started GET "/assets/grid-b0ccb7899b115dacba77c648c1bbbe9a.js?body=1" for 127.0.0.1 at 2015-04-08 11:15:32 +0200
