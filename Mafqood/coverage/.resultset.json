@@ -1,25 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/mark/Mafqood/Mafqood/spec/models/users_spec.rb": [
+      "/home/mark/Mafqood/Mafqood/spec/controllers/application_controller_spec.rb": [
         1,
         null,
         1,
         1,
         1,
+        null,
+        null,
         1,
         1,
+        null,
+        null,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        null,
         null,
         null
       ],
@@ -1076,11 +1072,11 @@
         null,
         null,
         null,
-        1,
-        0,
-        0,
         null,
-        0,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -1207,61 +1203,8 @@
         null,
         null,
         null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/models/account.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/models/telephone.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/models/address.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
       ]
     },
-    "timestamp": 1427837675
+    "timestamp": 1428514072
   }
 }

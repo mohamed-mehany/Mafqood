@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :float
+  helper_method :current_user #, :float
   before_action :set_locale
   
   # Public: Sets the locale of the website according to the params[:locale] hash.
@@ -34,13 +34,13 @@ class ApplicationController < ActionController::Base
   #   # => "right"
   #
   # Returns the float converted value.
-  def float(direction)
-    if cookies[:locale] == "en"
-      direction
-    else
-      direction == "left" ? "right" : "left"
-    end
-  end
+  # def float(direction)
+  #   if cookies[:locale] == "en"
+  #     direction
+  #   else
+  #     direction == "left" ? "right" : "left"
+  #   end
+  # end
   
   # Private: Gets the current user that is signed in.
   #
