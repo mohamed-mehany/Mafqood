@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   get 'finding_posts/:id/fake', to: 'finding_posts#report2_finding', as: 'finding_post_report2_finding'
   get 'finding_posts/:id/duplicate', to: 'finding_posts#report3_finding', as: 'finding_post_report3_finding'
   
-  get 'missing_posts/:id/spam', to: 'missing_posts#report1_finding', as: 'missing_post_report1_missing'
-  get 'missing_posts/:id/fake', to: 'missing_posts#report2_finding', as: 'missing_post_report2_missing'
-  get 'missing_posts/:id/duplicate', to: 'missing_posts#report3_finding', as: 'missing_post_report3_missing'
+  get 'missing_posts/:id/spam', to: 'missing_posts#report11_missing', as: 'missing_post_report1_missing'
+  get 'missing_posts/:id/fake', to: 'missing_posts#report22_missing', as: 'missing_post_report2_missing'
+  get 'missing_posts/:id/duplicate', to: 'missing_posts#report33_missing', as: 'missing_post_report3_missing'
 
-  get 'suspect_posts/:id/spam', to: 'suspect_posts#report1_finding', as: 'suspect_post_report1_missing'
-  get 'suspect_posts/:id/fake', to: 'suspect_posts#report2_finding', as: 'suspect_post_report2_missing'
-  get 'suspect_posts/:id/duplicate', to: 'suspect_posts#report3_finding', as: 'suspect_post_report3_missing'
+  get 'suspect_posts/:id/spam', to: 'suspect_posts#report1_suspect', as: 'suspect_post_report1_missing'
+  get 'suspect_posts/:id/fake', to: 'suspect_posts#report2_suspect', as: 'suspect_post_report2_missing'
+  get 'suspect_posts/:id/duplicate', to: 'suspect_posts#report3_suspect', as: 'suspect_post_report3_missing'
 
 
   

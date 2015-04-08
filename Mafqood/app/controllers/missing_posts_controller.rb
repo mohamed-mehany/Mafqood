@@ -31,12 +31,12 @@ class MissingPostsController < ApplicationController
   # + Report_x is a generic method that takes report type as a param,
   # + then move on to get the current post id and user id and insert them to report table
 
-def report1_missing
+def report11_missing
     @temp = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.kind = "spam"
+    @missing_post_report.type = "spam"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
@@ -45,12 +45,12 @@ def report1_missing
     end
   end
 
-  def report2_missing
+  def report22_missing
     @temp = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.kind = "fake"
+    @missing_post_report.type = "fake"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
@@ -59,12 +59,12 @@ def report1_missing
     end
   end
 
-  def report3_missing
+  def report33_missing
     @temp = MissingPost.find(params[:id])
     @missing_post_report = MissingPostReport.new
     @missing_post_report.missing_post_id = @temp.id
     @missing_post_report.user = current_user
-    @missing_post_report.kind = "duplicate"
+    @missing_post_report.type = "duplicate"
     if @missing_post_report.save
       redirect_to({ action: "index"}, notice: "You have successfully reported this post")
     else
