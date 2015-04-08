@@ -15,7 +15,7 @@ class MissingPostReport < ActiveRecord::Base
   # => calling MissingPostReport.spam returns all missing posts
   #    reported as Spam
   # => calling MissingPostReport.duplicate returns all missing posts
-  #    reported as Duplicate   
+  #    reported as Duplicate
   scope :fake, -> { where(kind: "Fake", kind: "fake") }
   scope :spam, -> { where(kind: "Spam", kind: "spam") }
   scope :duplicate, -> { where(kind: "Duplicate", kind: "duplicate") }

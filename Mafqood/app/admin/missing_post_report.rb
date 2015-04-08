@@ -1,11 +1,11 @@
 ActiveAdmin.register MissingPostReport do
-  menu parent: "Reported Posts", label: "Missing Posts Reports"  
+  menu parent: "Reported Posts", label: "Missing Posts Reports"
 
   config.batch_actions = false
 
-  scope :fake 
-  scope :spam 
-  scope :duplicate 
+  scope :fake
+  scope :spam
+  scope :duplicate
 
   index do
     column "ID", :id
@@ -13,7 +13,7 @@ ActiveAdmin.register MissingPostReport do
     column "Post ID", :missing_post_id
     column "Report Type", :kind
     column :created_at
-    actions    
+    actions
   end
 
   # See permitted parameters documentation:

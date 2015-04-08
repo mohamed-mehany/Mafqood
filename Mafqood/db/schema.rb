@@ -10,6 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 20150405142128) do
 
   create_table "accounts", force: :cascade do |t|
@@ -107,8 +108,8 @@ ActiveRecord::Schema.define(version: 20150405142128) do
     t.datetime "updated_at",                 null: false
     t.string   "location",       limit: 255
     t.integer  "user_id",        limit: 4
-    t.boolean  "status",         limit: 1
     t.boolean  "gender",         limit: 1
+    t.boolean  "status",         limit: 1
   end
 
   create_table "suspect_post_reports", force: :cascade do |t|

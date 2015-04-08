@@ -1,11 +1,11 @@
 ActiveAdmin.register FindingPostReport do
-  menu parent: "Reported Posts", label: "Finding Posts Reports"  
+  menu parent: "Reported Posts", label: "Finding Posts Reports"
 
   config.batch_actions = false
 
-  scope :fake 
-  scope :spam 
-  scope :duplicate 
+  scope :fake
+  scope :spam
+  scope :duplicate
 
   index do
     column "ID", :id
@@ -13,9 +13,8 @@ ActiveAdmin.register FindingPostReport do
     column "Post ID", :finding_post_id
     column "Report Type", :kind
     column :created_at
-    actions    
+    actions
   end
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

@@ -91,10 +91,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-<<<<<<< HEAD
-=======
     docile (1.1.5)
->>>>>>> db6310a14b0a4725d23738b766f11c6508dc6ea4
     erubis (2.7.0)
     execjs (2.4.0)
     factory_girl (4.5.0)

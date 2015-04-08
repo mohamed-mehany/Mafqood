@@ -1,6 +1,6 @@
 class FindingPostsController < ApplicationController
   before_filter :auth, only: [:create, :new, :mine]
-  
+
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
@@ -24,16 +24,16 @@ class FindingPostsController < ApplicationController
   end
 
 # Public: Report this finding post as mine i.e this kid is my kid.
-#       
+#
 # Examples
 #
-#   mine #i.e this method is called when a user navigates to 
-#   /fining_posts/:id/mine 
+#   mine #i.e this method is called when a user navigates to
+#   /fining_posts/:id/mine
 #
 #   # => @finding_post_report.save
 #
-# Redirects the user to the findings post index and displays a flash 
-# whether the report was successful or not.
+# Redirects the user to the findings post index and displays a flash
+# whether the report wa successful or not.
   def mine
     @temp = FindingPost.find(params[:id])
     @finding_post_report = FindingPostReport.new
@@ -48,8 +48,8 @@ class FindingPostsController < ApplicationController
     end
   end
 
-  # Author: Nariman Hesham 
-  #    
+  # Author: Nariman Hesham
+  #
   # public: Report a specific finding post to be returned to child's
   #   parents or the contrary
   #
@@ -67,7 +67,7 @@ class FindingPostsController < ApplicationController
     else
       redirect_to my_posts_path, alert: ["Error while updating post status"]
     end
-  end  
+  end
 
 protected
   def finding_post_params
