@@ -16,23 +16,10 @@
     .container
       .main
         %ul#og-grid.og-grid
-          - @findings.each do |finding|
-            %li
-              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => ""}
-                %img{:alt => "img01", :src => "#{finding.image.thumb}"}/
-              .og-expander
-                .og-expander-inner
-                  %span.og-close
-                  .og-fullimg
-                    .og-loading
-                    %img{:src => "images/2.jpg"}/
-                  .og-details
-                    %h3
-                    %p
-                    %a{:href => ""}
+          = render "posts"
     / /container
-    = javascript_include_tag "grid"
+    = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
-      	Grid.init();
+        Grid.init();
       });

@@ -13,6 +13,5 @@ class MissingPost < ActiveRecord::Base
   validates :reporter_phone,
             :numericality => { :only_integer => true },
             :length => { :is => 11 },
-            :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }
-
+            :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }         
 end

@@ -1,4 +1,6 @@
-.og-grid {
+.og-grid, 
+.og-finding-grid,
+.og-missing-grid {
 	list-style: none;
 	padding: 20px 0;
 	margin: 0 auto;
@@ -6,7 +8,9 @@
 	width: 100%;
 }
 
-.og-grid li {
+.og-grid li, 
+.og-finding-grid li,
+.og-missing-grid li {
 	display: inline-block;
 	margin: 10px 5px 0 5px;
 	vertical-align: top;
@@ -14,14 +18,20 @@
 }
 
 .og-grid li > a,
-.og-grid li > a img {
+.og-grid li > a img,
+.og-finding-grid li > a,
+.og-finding-grid li > a img
+.og-missing-grid li > a,
+.og-missing-grid li > a img {
 	border: none;
 	outline: none;
 	display: block;
 	position: relative;
 }
 
-.og-grid li.og-expanded > a::after {
+.og-grid li.og-expanded > a::after
+.og-finding-grid li.og-expanded > a::after 
+.og-missing-grid li.og-expanded > a::after {
 	top: auto;
 	border: solid transparent;
 	content: " ";
