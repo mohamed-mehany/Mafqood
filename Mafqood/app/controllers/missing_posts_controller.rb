@@ -18,8 +18,7 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new(missing_params)
     @missing_post.user = current_user
     if @missing_post.save
-      flash[:notice] = "Your Post has been created successfully"
-      redirect_to @missing_post
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_create"))
     else
       render 'new'
     end
@@ -62,12 +61,17 @@ class MissingPostsController < ApplicationController
 # whether the report was successful or not.
 
   def report
-    @missing = MissingPost.find(params[:id])
-    @report_mine = MissingPostReport.new
-    @report_mine.kind = "mine"
-    @report_mine.user_id = current_user.id
-    @report_mine.missing_post_id = @missing.id
-    @report_mine.save
+    @missing_post = MissingPost.find(params[:id])
+    @report_found = MissingPostReport.new
+    @report_found.kind = "found"
+    @report_found.user_id = current_user.id
+    @report_found.missing_post_id = @missing_post.id
+    if @report_found.save
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
+    else
+      flash[:alert] = @report_found.errors.full_messages
+      redirect_to action: "index"
+    end
   end
 
   protected

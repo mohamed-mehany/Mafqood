@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get 'finding_posts/new'
   # get 'missing_posts/:id/report', to: 'missing_posts#report'
+  # get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
   get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :suspect_posts,:finding_posts
+  resources :suspect_posts,:finding_posts,:missing_posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -28,7 +29,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :missing_posts
 
   # Example resource route with options:
   #   resources :products do

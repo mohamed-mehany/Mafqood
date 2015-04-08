@@ -41,6 +41,14 @@ en:
     reporter_phone: "Phone number:"
     phone_placeholder: "Mobile"
     submit_button: "Submit"
+    successful_report_mine: "You have successfully report this child as yours"
+    successful_create: "Your new post has been created successfully!"
+    successful_edit: "Your post has been edited successfully"
+    successful_report_found: "you reported that you found this person"
+    must_login: "You must be logged in to perform this action"
+    edit_login: "You are not allowed to edit because either you're not the post owner or you're not logged in"
+    submit: "Submit new missing"
+    submit_edit: "Edit post"
 
   suspect_posts:
     title: "Submit new suspect post"
@@ -107,6 +115,13 @@ en:
               too_long: "500 characters is the maximum allowed"
             special_signs:
               too_long: "500 characters is the maximum allowed"
+
+        missing_post_report:
+          attributes:
+            base:
+              missing_duplicate_found: "You have already reported you found this kid!"
+            type:
+              uniqueness: "You have already reported this child as yours!"
   finding:
     title: "Submit new finding"
     child_name: "Child's name"
