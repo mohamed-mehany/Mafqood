@@ -14,9 +14,9 @@
     = javascript_include_tag "modernizr.custom"
   %body
      
-     %body
+  %body
   %h1 Search Missing Posts
-= link_to 'All Posts', missing_posts_path
+= link_to 'Missing Posts', missing_posts_path
 = form_tag searchmissing_search_path, method: :post do
   = text_field_tag :key
   = submit_tag "search"
@@ -31,9 +31,9 @@
           = res.title
           \: #{res.text}
 
-           %body
+  %body
   %h1 Search Suspect Posts
-= link_to 'All Posts', suspect_posts_path
+= link_to 'Suspect Posts', suspect_posts_path
 = form_tag searchsuspect_search_path, method: :post do
   = text_field_tag :key
   = submit_tag "search"

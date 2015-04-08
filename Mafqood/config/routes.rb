@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     post 'searchmissing', controller: :search
     post 'searchsuspect', controller: :search
     end
-    root 'searchfind#index'
+    # root 'search#index'
   end
 
   # get '/search_find' => 'search#searchfind'
