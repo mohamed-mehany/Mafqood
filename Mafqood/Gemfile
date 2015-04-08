@@ -7,12 +7,11 @@ gem 'rails', '4.2.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'foundation-rails'
-gem 'haml-rails', '~> 0.9.0'
 gem 'simple_form'
 gem 'rmagick'
 gem 'html2haml'
-#gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
+
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
@@ -56,4 +55,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   gem 'factory_girl_rails'
+end
+group :test do
+  gem 'simplecov'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
 end
