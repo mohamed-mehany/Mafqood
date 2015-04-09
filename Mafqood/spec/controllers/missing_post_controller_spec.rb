@@ -194,6 +194,3 @@ RSpec.describe MissingPostsController, type: :controller do
       allow(controller).to receive(:current_user) {user}
       get :report, {:id => missing_post.to_param}
       expect(assigns(:missing_post_report).id).to eq(1)
-    end
-  end
-end
