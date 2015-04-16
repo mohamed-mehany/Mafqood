@@ -341,12 +341,24 @@ var MissingGrid = (function() {
 
 
 	Preview.prototype = {
-		create : function() {
+		create : function( $item ) {
+			// create Preview structure:
+			var $itemEl = this.$item.children( 'a' ),
+			eldata = {
+				user : $itemEl.attr( 'user'),
+				current : $itemEl.attr ( 'current'),
+			};
+			if(eldata.user != eldata.current){
+				this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+			}
+			else{
+				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+			}
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button">Report</a>' );
-			this.$found = $( '<a href="#" class="button">Report as Found</a>' );
+			this.$href = $( '<a href="#" class="button round">Report</a>' );
+			this.$found = $( '<a href="#" class="button round">Report as Found</a>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$found );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
@@ -382,6 +394,7 @@ var MissingGrid = (function() {
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
 					href : $itemEl.attr( 'href' ),
+					edit : $itemEl.attr( 'hrefedit' ),
 					found : $itemEl.attr( 'found' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
@@ -392,6 +405,8 @@ var MissingGrid = (function() {
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
 			this.$found.attr( 'href', eldata.found );
+			this.$edit.attr( 'href' , eldata.edit );
+
 
 			var self = this;
 

@@ -4,6 +4,7 @@ class MissingPost < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :user
   validates :gender , presence: true
+  validates :image , presence: true
   validates :age , presence: true
   validates :location , presence: true
   validates :reporter_name , presence: true
@@ -13,5 +14,6 @@ class MissingPost < ActiveRecord::Base
   validates :reporter_phone,
             :numericality => { :only_integer => true },
             :length => { :is => 11 },
-            :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }         
+            :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }
+
 end
