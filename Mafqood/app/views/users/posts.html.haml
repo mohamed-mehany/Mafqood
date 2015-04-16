@@ -24,13 +24,10 @@
               = render "missing_posts/posts"
     / /container
     = javascript_include_tag "finding_grid"
-    :javascript
-      $(function() {
-      	FindingGrid.init();
-      });
     = javascript_include_tag "missing_grid"
     :javascript
       $(function() {
+      	FindingGrid.init();
         MissingGrid.init();
       });    
          

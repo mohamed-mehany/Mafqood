@@ -55,7 +55,7 @@ class FindingPostsController < ApplicationController
   def update
     @finding_post = FindingPost.find(params[:id])
     if @finding_post.update(finding_post_params.reject{|k,v| v.blank?})
-      redirect_to({action: "index"}, notice: "t(finding.successful_edit")
+      redirect_to({action: "index"}, notice: t("finding.successful_edit"))
     else
       flash[:alert] = @finding_post.errors.full_messages
       render 'edit'

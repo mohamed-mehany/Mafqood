@@ -15,7 +15,7 @@
   %body
     .container
       .main
-        %ul#og-grid.og-grid
+        %ul#og-grid.og-finding-grid
           - @finding_posts.each do |finding_post|
             -griduser = 0
             -if(current_user != nil)
@@ -37,5 +37,5 @@
     = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
-        Grid.init();
+        FindingGrid.init();
       });
