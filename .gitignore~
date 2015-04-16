@@ -9,7 +9,16 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-
+<<<<<<< HEAD
+log/*
+!log/.keep
+tmp/*
+Mafqood/log
+Mafqood/log/*
+!Mafqood/log/.keep
+Mafqood/tmp/*
+Mafqood/tmp
+=======
 /log/*
 !/log/.keep
 /tmp/*
@@ -18,6 +27,7 @@
 !/Mafqood/log/.keep
 /Mafqood/tmp/*
 /Mafqood/tmp
-/Mafqood/public/uploads
+
 #Ignore coverage files.
 /Mafqood/coverage
+>>>>>>> 9de01774115f51a6e0a20d6df3e1b79ea02e94e3
