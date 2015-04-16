@@ -17,6 +17,9 @@
       .main
         %ul#og-grid.og-grid
           - @missing_posts.each do |missing|
+            -griduser = 0
+            -if(current_user != nil)
+              -griduser = current_user.id
             %li
               %a{"data-description" => "age : #{missing.age},
             reporter name: #{missing.reporter_name},
@@ -24,7 +27,7 @@
                                    location : #{missing.location},
                                    description: #{missing.description},
                                    special signs : #{missing.special_signs},
-                                  gender : #{missing.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{missing.image}", "data-title" => "", :href => missing_post_report_path(missing), :hrefedit => edit_missing_post_path(missing)}
+                                  gender : #{missing.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{missing.image}", "data-title" => "", :href => missing_post_report_path(missing), :hrefedit => edit_missing_post_path(missing),:user => "#{missing.user_id}",:current => "#{griduser}", :found => report_child_as_found_path(missing)}
                 %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
               .og-expander
                 .og-expander-inner

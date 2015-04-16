@@ -18,8 +18,7 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new(missing_post_params)
     @missing_post.user = current_user
     if @missing_post.save
-      flash[:notice] = "Your Post has been created successfully"
-      redirect_to @missing_post
+      redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
       render 'new'
     end
