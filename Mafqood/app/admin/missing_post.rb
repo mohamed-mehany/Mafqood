@@ -13,6 +13,6 @@ ActiveAdmin.register MissingPost do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
+  permit_params :age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs
 
 end
