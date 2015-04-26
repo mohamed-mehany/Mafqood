@@ -18,6 +18,10 @@ class UsersController < ApplicationController
       session.delete(:name)
       session.delete(:email)
       session[:user_id] = @user.id
+      @ip = request.remote_ip
+      request.env['HTTP_X_REAL_IP']
+      session[:ip] = @ip
+      session[:action] = 0
       redirect_to root_url, notice: t("users.successful_login")
     else
       flash.now[:alert] = @user.errors.full_messages
@@ -40,15 +44,15 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-  
+
   # Public: Assigns the finding posts and missing posts of the current user to variables to be passed to the view.
   def posts
     @finding_posts = current_user.finding_posts
     @missing_posts = current_user.missing_posts
   end
-  
+
   private
-  
+
   # Private: Gets the parameters for the user form.
   #
   # Returns the allowed user params for mass assignment.
