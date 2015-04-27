@@ -1,5 +1,5 @@
 class FindingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new, :mine]
+  before_filter :authenticate_user!, only: [:create, :new, :mine]
   before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
