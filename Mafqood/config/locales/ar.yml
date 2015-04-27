@@ -75,6 +75,9 @@ ar:
     submit_button: "إرسال"
 
   activerecord:
+    attributes:
+      telephones:
+        number: "رقم الهاتف"
     errors:
       models:
         missing_posts:
@@ -121,6 +124,13 @@ ar:
           attributes:
             base:
               finding_duplicate_mine: "لقد قمت بالأبلاغ سابقا أن هذا هو \ هي طفلك"
+        telephone:
+          attributes:
+            number:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "غير صحيح"
+              invalid: "يجب ان يبدأ ب 01 و مكون من ١١ رقم"
 
   finding:
     title: "أبلاغ عن طفل وجد"

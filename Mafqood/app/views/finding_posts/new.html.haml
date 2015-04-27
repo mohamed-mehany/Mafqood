@@ -3,7 +3,7 @@
   .large-12.large-centered.medium-12.medium-centered.small-12.small-centered.columns
     %fieldset
       %legend= t("finding.title")
-      = form_for(@finding_post) do |f|
+      = simple_form_for(@finding_post) do |f|
         = f.label :name, t("finding.child_name")
         = f.text_field :name, placeholder: t("finding.required_field")
         = f.label :age, t("fiding.age")
@@ -19,8 +19,6 @@
         = f.label :gender, t("finding.female"), value: "0"
         = f.label :location, t("finding.location")
         = f.text_field :location, placeholder: t("finding.required_field")
-        = f.label :contact_info, "Enter your phone numer"
-        = f.text_field :contact_info, placeholder: t("finding.contact_info")
         = f.label :image , t("finding.photo")
         = f.file_field :image
         = f.submit t("finding.submit"), class: "button expand"
