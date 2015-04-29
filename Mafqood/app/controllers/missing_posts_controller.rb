@@ -20,7 +20,7 @@ class MissingPostsController < ApplicationController
     if @missing_post.save
       redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
-      flash.now[:alert] = @missing_post.errors.full_messages
+      #flash.now[:alert] = @missing_post.errors.full_messages
       render 'new'
     end
   end
