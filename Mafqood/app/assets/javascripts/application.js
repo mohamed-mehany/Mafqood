@@ -15,6 +15,9 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require ahoy
+<script src="jquery.js"></script>
+<script src="ahoy.js"></script>
 
 $(function(){ $(document).foundation(); });
 
