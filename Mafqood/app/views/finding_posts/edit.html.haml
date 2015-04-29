@@ -1,3 +1,4 @@
+//
 = content_for(:title, t("finding.edittitle"))
 .row
   .large-12.large-centered.medium-12.medium-centered.small-12.small-centered.columns
@@ -12,12 +13,8 @@
         = f.text_area :description, placeholder: t("finding.description_placeholder")
         = f.label :special_signs, t("finding.special_signs")
         = f.text_field :special_signs, placeholder: t("finding.special_signs_placeholder")
-        = f.label :gender, t("finding.gender")
-        = f.radio_button(:gender, "1"  , :checked => (@finding_post.gender == true))
-        = f.label :gender, t("finding.male"), value: "1"
-        = f.radio_button(:gender, "0", :checked => (@finding_post.gender == false))
-        = f.label :gender, t("finding.female"), value: "0"
-        = f.label :location, t("finding.location")
+        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t("suspect_posts.male"), t("suspect_posts.female")], label: t("suspect_posts.gender")
+        = f.input :location_id, collection: Location.order("name"), label_method: :name, value_method: :id, label: "Location", include_blank: "(" + t("finding.location") + ")"
         = f.text_field :location, placeholder: t("finding.required_field")
         = f.label :contact_info, "Enter your phone numer"
         = f.text_field :contact_info, placeholder: t("finding.contact_info")

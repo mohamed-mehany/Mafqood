@@ -1,21 +1,21 @@
-= simple_form_for @user do |f|
+= simple_form_for @user, url: update_profile_path do |f|
   %fieldset
     %legend= @user.new_record? ? t("login") : t("users.edit")
     = hidden_field_tag :provider, session[:provider]
     = hidden_field_tag :uid, session[:uid]
-    = f.text_field :name, placeholder: "Name"
-    = f.text_field :email, placeholder: "Email"
+    = f.input :name, placeholder: "Name"
+    = f.input :email, placeholder: "Email", label: false
     #telephones
       - first = true
       = f.fields_for :telephones do |telephone|
         - if first
           .row
             .columns.small-12
-              = telephone.text_field :number, placeholder: t("telephones.number")
+              = telephone.input :number, placeholder: t("telephones.number"), label: false
         - else
           .row
             .columns.large-10.medium-9.small-8
-              = telephone.text_field :number, placeholder: t("telephones.number")
+              = telephone.input :number, placeholder: t("telephones.number"), label: false
             .columns.large-2.medium-3.small-4
               = telephone.check_box :_destroy
               = telephone.label :_destroy, t("remove")
@@ -27,11 +27,11 @@
         - if first
           .row
             .columns.small-12
-              = address.text_field :text, placeholder: "Address"
+              = address.input :text, as: :string, placeholder: "Address", label: false
         - else
           .row
             .columns.large-10.medium-9.small-8
-              = address.text_field :text, placeholder: "Address"
+              = address.input :text, as: :string, placeholder: "Address", label: false
             .columns.large-2.medium-3.small-4
               = address.check_box :_destroy
               = address.label :_destroy, t("remove")

@@ -18,7 +18,7 @@ class FindingPostsController < ApplicationController
     if @finding_post.save
       redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
-      flash[:alert] = @finding_post.errors.full_messages
+      #flash[:alert] = @finding_post.errors.full_messages
       render "new"
     end
   end
@@ -87,7 +87,7 @@ protected
   def finding_post_params
     params.require(:finding_post).permit(
       :name,:contact_info,:description,:age,:special_signs,
-      :image,:location,:gender)
+      :image,:location_id,:gender)
   end
 # Protected: Redirects the user to the homepage unless he is logged in
   def auth

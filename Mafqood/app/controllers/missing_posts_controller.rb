@@ -1,5 +1,5 @@
 class MissingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new, :report, :edit , :update]
+  before_filter :authenticate_user!, only: [:create, :new, :report, :edit , :update]
 
   def index
     @missing_posts = MissingPost.new
@@ -20,6 +20,7 @@ class MissingPostsController < ApplicationController
     if @missing_post.save
       redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
+      flash.now[:alert] = @missing_post.errors.full_messages
       render 'new'
     end
   end
@@ -96,7 +97,7 @@ class MissingPostsController < ApplicationController
  # Protected: Redirects the user to the homepage unless he is logged in
 
   def missing_post_params
-    params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
+    params.require(:missing_post).permit(:age, :location_id, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
 
   def auth
