@@ -1,11 +1,12 @@
 class FindingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new, :mine]
+  before_filter :auth, only: [:create, :new, :mine, :share]
   before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
 
   def show
+    @finding_post = FindingPost.find(params[:id])
   end
 
   def new
