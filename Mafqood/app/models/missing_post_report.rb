@@ -5,7 +5,7 @@ class MissingPostReport < ActiveRecord::Base
   belongs_to :user
   has_many :missing_posts
 
-
+  scope :spammed, -> { joins("spammer ON missing_posts.user_id = spammers.user_id") }
   # def unique_report
   #   if self.class.exists?(:user_id => user_id, :missing_post_id => missing_post_id, :kind => kind)
   #     if(kind == "found")

@@ -1,6 +1,7 @@
 class SuspectPostReport < ActiveRecord::Base
   has_many :suspect_posts
-
+  
+  scope :spammed, -> { joins("spammer ON ip = user_ip") }
   # Author: Nariman Hesham
   #
   # Creating three scopes for the different types of reports

@@ -12,7 +12,7 @@ class SuspectPostsController < ApplicationController
 
   def create
     @suspect_post = SuspectPost.create(suspect_post_params)
-
+    @suspect_post.ip = request.remote_ip
     if @suspect_post.save
       @action = session[:action]+1
       session[:action] = @action

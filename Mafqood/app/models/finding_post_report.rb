@@ -5,6 +5,8 @@ class FindingPostReport < ActiveRecord::Base
   validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
   has_many :finding_posts
 
+  scope :spammed, -> { joins("spammer ON finding_posts.user_id = spammers.user_id") }
+
   # Author: Nariman Hesham
   #
   # Creating three scopes for the different types of reports
