@@ -21,10 +21,11 @@ en:
     number: "Telephone"
   addresses:
     text: "ِAddress"
+
   missing_posts:
     title: "Submit new missing post"
     page_title: "New Missing Post:"
-    form_title: "Report a missing kid"
+    form_title: "Report a missing person"
     approximate_age: "Age:"
     age_placeholder: "Age"
     gender: "Gender:"
@@ -32,22 +33,31 @@ en:
     female: " Female"
     location: "Area/Location:"
     location_placeholder: "Area or exact location"
-    image: "Kid's photo:"
+    image: "person's photo:"
     description: "Description:"
-    description_placeholder: "Any additional information/description about the kid"
+    description_placeholder: "Any additional information/description about the person"
     special_signs: "Special Signs:"
-    signs_placeholder: "Any special signs seen on the kid"
-    reporter_info: "How to reach you:"
+    signs_placeholder: "Any special signs seen on the person"
     reporter_name: "Name:"
     name_placeholder: "Full name"
     reporter_phone: "Phone number:"
     phone_placeholder: "Mobile"
     submit_button: "Submit"
+    successful_report_mine: "You have successfully report this child as yours"
+    successful_create: "Your new post has been created successfully!"
+    successful_edit: "Your post has been edited successfully"
+    successful_report_found: "you reported that you found this person"
+    must_login: "You must be logged in to perform this action"
+    edit_login: "You are not allowed to edit because either you're not the post owner or you're not logged in"
+    submit: "Submit new missing"
+    submit_edit: "Edit post"
+    successful_post: "Post updated successfully"
+    unauthorized_edit: "You are not allowed to edit this post."
 
   suspect_posts:
     title: "Submit new suspect post"
     page_title: "New Suspect Post:"
-    form_title: "Report a Suspected kid"
+    form_title: "Report a Suspected person"
     approximate_age: "Approximate age:"
     age_placeholder: "approximate age"
     gender: "Gender:"
@@ -55,11 +65,11 @@ en:
     female: "Female"
     location: "Area/Location:"
     location_placeholder: "Area or exact location"
-    image: "Kid's photo:"
+    image: "person's photo:"
     description: "Description:"
-    description_placeholder: "Any additional information/description about the kid"
+    description_placeholder: "Any additional information/description about the person"
     special_signs: "Special Signs:"
-    signs_placeholder: "Any special signs seen on the kid"
+    signs_placeholder: "Any special signs seen on the person"
     reporter_info: "How to reach you:"
     reporter_name: "Name:"
     name_placeholder: "Full name"
@@ -110,6 +120,12 @@ en:
             special_signs:
               too_long: "500 characters is the maximum allowed"
 
+        missing_post_report:
+          attributes:
+            base:
+              missing_duplicate_found: "You have already reported you found this kid!"
+            type:
+
         finding_post_report:
           attributes:
             user_id:
@@ -117,8 +133,8 @@ en:
             base:
               finding_duplicate_mine: "You have already reported this kid as yours!"
             kind:
-
               uniqueness: "You have already reported this child as yours!"
+
   finding:
     title: "Submit new finding"
     edittitle: "Edit finding post"

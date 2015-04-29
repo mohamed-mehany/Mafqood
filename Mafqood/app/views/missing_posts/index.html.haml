@@ -15,11 +15,12 @@
   %body
     .container
       .main
-        %ul#og-grid.og-grid
+        %ul#og-grid.og-missing-grid
           = render "posts"
+
     / /container
-    = javascript_include_tag "grid"
+    = javascript_include_tag "missing_grid"
     :javascript
       $(function() {
-        Grid.init();
+        MissingGrid.init();
       });

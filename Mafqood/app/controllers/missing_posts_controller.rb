@@ -1,22 +1,9 @@
 class MissingPostsController < ApplicationController
-  # before_filter :auth, only: [:create, :new, :mine]
+  before_filter :auth, only: [:create, :new, :report, :edit , :update]
 
   def index
     @missing_posts = MissingPost.new
     @missing_posts = MissingPost.order("created_at desc")
-  end
-
-  def report
-    if(current_user)
-    @missing_posts = MissingPost.order("created_at desc")
-    @missing = MissingPost.find(params[:id])
-    @missing_post_report = MissingPostReport.new
-    @missing_post_report.kind = "mine"
-    @missing_post_report.user_id = current_user.id
-    @missing_post_report.missing_post_id = @missing.id
-    @missing_post_report.save
-    # redirect_to @missing, notice: ["congratulations :D"]
-    end
   end
 
   def show
@@ -28,22 +15,17 @@ class MissingPostsController < ApplicationController
   end
 
   def create
-    if (current_user)
-      @missing_post = MissingPost.new(missing_post_params)
-      @missing_post.user = current_user
-      if @missing_post.save
-        flash[:notice] = "Your Post has been created successfully"
-        redirect_to @missing_post
-      else
-        render 'new'
-      end
+    @missing_post = MissingPost.new(missing_post_params)
+    @missing_post.user = current_user
+    if @missing_post.save
+      redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
-      redirect_to root_url, alert: ["Must be logged in..."]
+      render 'new'
     end
   end
-  
-  # Author: Nariman Hesham 
-  # 
+
+  # Author: Nariman Hesham
+  #
   # public: Report a specific missing post to be found by child's
   #   parents or the contrary
   #
@@ -63,10 +45,62 @@ class MissingPostsController < ApplicationController
     end
   end
 
- private
+# to edit post getting the user id and matching it with the current user
+# if equal render to new to edit the post else prints alert message
 
- def missing_post_params
-   params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
- end
+  def edit
+    @missing = MissingPost.find(params[:id])
+    if current_user == @missing.user
+      @missing_post = @missing
+      render 'new'
+    else
+      redirect_to({ action: "index"}, alert: t("missing_posts.unauthorized_edit"))
+    end
+  end
+
+  def update
+    @missing = MissingPost.find(params[:id])
+    if @missing.update(missing_post_params)
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_post"))
+    else
+      render 'new'
+    end
+  end
+
+# Examples
+#
+#   report #i.e this method is called when a user navigates to
+#   /missing_posts/:id/mine
+#
+#   # => @missing_post_report.save
+#
+# Redirects the user to the missings post index and displays a flash
+# whether the report was successful or not.
+
+  def report
+    @missing_post = MissingPost.find(params[:id])
+    @report_found = MissingPostReport.new
+    @report_found.kind = "found"
+    @report_found.user_id = current_user.id
+    @report_found.missing_post_id = @missing_post.id
+    if @missing_post.user_id == current_user.id
+      @report_found.save
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
+    else
+      flash[:alert] = @report_found.errors.full_messages
+      redirect_to action: "index"
+    end
+  end
+
+  protected
+ # Protected: Redirects the user to the homepage unless he is logged in
+
+  def missing_post_params
+    params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
+  end
+
+  def auth
+    redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
+  end
 
 end

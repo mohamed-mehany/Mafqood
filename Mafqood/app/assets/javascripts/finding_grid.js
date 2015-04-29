@@ -161,10 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
 	return deferred ? deferred.promise( $this ) : $this;
 };
 
-var Grid = (function() {
+var FindingGrid = (function() {
 
 		// list of items
-	var $grid = $( '.og-grid' ),
+	var $grid = $( '.og-finding-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -348,10 +348,10 @@ var Grid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
 			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
