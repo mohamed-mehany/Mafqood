@@ -10,6 +10,7 @@
       %fieldset
         %legend
           = t("missing_posts.form_title")
+        = f.input :reporter_name, label:t("finding.child_name"), placeholder: t("finding.required_field")
         = f.label :gender, t("missing_posts.gender")
         = f.radio_button(:gender, "1"  , :checked => (@missing_post.gender == true))
         = f.label :gender, t("missing_posts.male"), :value => 1
