@@ -119,6 +119,14 @@ ActiveRecord::Schema.define(version: 20150429205522) do
     t.string   "gender",         limit: 255
   end
 
+  create_table "spammers", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "user_ip",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "kind",       limit: 255
+  end
+
   create_table "suspect_post_reports", force: :cascade do |t|
     t.integer  "suspect_post_id", limit: 4
     t.string   "type",            limit: 255

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user #, :float
   before_action :set_locale
-  
+
   # Public: Sets the locale of the website according to the params[:locale] hash.
   #
   # Redirects to the referer if exists, otherwise root url.
@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
     end
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
-  
+
   private
-  
+
   # Private: Gets the float value depending on the language of the website.
   #
   # text  - The float direction needed to be converted.
@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   #     direction == "left" ? "right" : "left"
   #   end
   # end
-  
+
   # Private: Gets the current user that is signed in.
   #
   # Examples
@@ -52,6 +52,11 @@ class ApplicationController < ActionController::Base
   # Not signed in:
   #   # => nil
   #
+  # def session_ip
+  #   session[:ip] = request.remote_ip
+  #   session[:action] = 0
+  # end
+
   # Returns the current user as an ActiveRecord or nil if the user is not signed in.
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
