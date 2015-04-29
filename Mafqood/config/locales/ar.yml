@@ -82,9 +82,11 @@ ar:
     attributes:
       telephones:
         number: "رقم الهاتف"
+      location:
+        name: "مكان الطفل"
     errors:
       models:
-        missing_posts:
+        missing_post:
           attributes:
             gender:
               blank: "يجب اختيار ذكر أو انثى"
@@ -95,7 +97,7 @@ ar:
             location:
               blank: "لا يمكن ان يكون فارغا"
             reporter_phone:
-              blank: "لا يمكن ان يكون فارغا"
+              blank: "لا يمكن ان يكون الأسم فارغا"
               not_a_number: "هذا ليس رقم هاتف"
               wrong_length: "رقم هاتف غير صالح"
               invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
@@ -103,6 +105,8 @@ ar:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+            age:
+              blank: "لا يمكن ان يكون فارغا"
 
         suspect_post:
           attributes:
