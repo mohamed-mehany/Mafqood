@@ -73,6 +73,7 @@ ar:
     reporter_phone: "رقم التليفون:"
     phone_placeholder: "محمول"
     submit_button: "إرسال"
+    successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
 
   activerecord:
     attributes:
