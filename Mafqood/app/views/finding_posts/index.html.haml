@@ -21,7 +21,7 @@
             -if(current_user != nil)
               -griduser = current_user.id
             %li
-              %a{"data-description" => "description : #{finding_post.description}<br>location : #{finding_post.location}<br>special signs : #{finding_post.special_signs}<br>age : #{finding_post.age}<br>telephone : #{finding_post.user.telephones.first.number}<br>gender : #{finding_post.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", :mine => finding_post_mine_path(finding_post),:edit => edit_finding_post_path(finding_post),:user => "#{finding_post.user_id}",:current => "#{griduser}", :returned => report_child_as_returned_path(finding_post)}
+              %a{"data-description" => "#{t("finding.gender")} : #{finding_post.gender == true ? t("finding.male"):t("finding.female")}<br>#{t("finding.description")} : #{finding_post.description}<br>#{t("finding.location")} : #{finding_post.location}<br>#{t("finding.special_signs")} : #{finding_post.special_signs}<br>#{t("finding.age")} : #{finding_post.age}<br>#{t("finding.telephone")} : #{finding_post.user.telephones.first.number}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", :mine => finding_post_mine_path(finding_post),:edit => edit_finding_post_path(finding_post),:user => "#{finding_post.user_id}",:current => "#{griduser}", :returned => report_child_as_returned_path(finding_post)}
                 %img{:alt => "img01", :src => "#{finding_post.image.thumb}"}/
               .og-expander
                 .og-expander-inner
