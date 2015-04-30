@@ -349,16 +349,16 @@ var MissingGrid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-				this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
 			}
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button round">Report Mine</a>' );
-			this.$found = $( '<a href="#" class="button round">Report as Found</a>' );
+			this.$href = $( '<a href="#" class="button">Report Mine</a>' );
+			this.$found = $( '<a href="#" class="button">Report as Found</a>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$found,this.$edit);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );

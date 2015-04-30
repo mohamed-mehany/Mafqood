@@ -347,17 +347,21 @@ var FindingGrid = (function() {
 				user : $itemEl.attr( 'user'),
 				current : $itemEl.attr ( 'current'),
 			};
+			this.$ul = ('<ul class="stack button-group">');
+			this.$li1 = ('<li>');
+			this.$li2 = ('</li>');
+			this.$ul2 = ('</ul>');
 			if(eldata.user != eldata.current){
-				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a><br>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit post</a><br>' );
 			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
-			this.$returned = $( '<a href="#" class="button">Report as Returned</a><br>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit,this.$returned);
+			this.$mine = $( '<a href="#" class="button">Its my kid</a><br>' );
+			this.$returned = $( '<a href="#" class="button">Report as Returned</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description,this.$edit,this.$mine,this.$returned);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
