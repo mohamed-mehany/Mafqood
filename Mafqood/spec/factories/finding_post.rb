@@ -1,4 +1,4 @@
-FactoryGirl.define do 
+FactoryGirl.define do
   factory :finding_post do |f|
     f.name "Child Name"
     f.description "A Child that has been found"

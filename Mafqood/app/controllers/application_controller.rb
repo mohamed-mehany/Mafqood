@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       end
       @number = @find.action_num
       @find.action_num = @number+1
-      if @find.action_num > 3
+      if @find.action_num > 4
         @spammer = Spammer.new
         @spammer.user_id = @find.user_id
         @spammer.user_ip = @find.user_ip
