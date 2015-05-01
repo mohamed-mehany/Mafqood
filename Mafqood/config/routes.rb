@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get '/edit_profile', to: 'users#edit', as: 'edit_profile'
+  patch '/edit_profile', to: 'users#update', as: 'update_profile'
+  
   get '/auth/:provider', to: 'sessions#new', as: 'login'
   get '/auth/:provider/callback', to: 'sessions#new'
   get '/auth/failure', to: redirect('/')

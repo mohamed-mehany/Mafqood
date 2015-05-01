@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: t("users.successful_login")
     else
-      flash.now[:alert] = @user.errors.full_messages
       render "new"
     end
   end
@@ -36,7 +35,6 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to edit_profile_path, notice: t("users.successful_update")
     else
-      flash.now[:alert] = @user.errors.full_messages
       render "new"
     end
   end
