@@ -1,7 +1,6 @@
 class FindingPostReport < ActiveRecord::Base
   
   belongs_to :user
-  #validate :unique_report
   validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
   has_many :finding_posts
 
