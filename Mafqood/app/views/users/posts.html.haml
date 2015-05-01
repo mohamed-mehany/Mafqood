@@ -1,0 +1,33 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Thumbnail Grid with Expanding Preview
+    %meta{:content => "Thumbnail Grid with Expanding Preview", :name => "description"}/
+    %meta{:content => "thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio", :name => "keywords"}/
+    %meta{:content => "Codrops", :name => "author"}/
+    = stylesheet_link_tag "default"
+    = stylesheet_link_tag "component"
+    = javascript_include_tag "modernizr.custom"
+  %body
+    .container
+      .main
+        .row
+          .columns.large-6.medium-6.small-12
+            %ul#og-grid1.og-finding-grid
+              = render "finding_posts/posts"
+          .columns.large-6.medium-6.small-12
+            %ul#og-grid2.og-missing-grid
+              = render "missing_posts/posts"
+    / /container
+    = javascript_include_tag "finding_grid"
+    = javascript_include_tag "missing_grid"
+    :javascript
+      $(function() {
+      	FindingGrid.init();
+        MissingGrid.init();
+      });    
+         

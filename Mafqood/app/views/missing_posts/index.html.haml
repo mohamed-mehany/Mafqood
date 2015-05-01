@@ -15,36 +15,24 @@
   %body
     .container
       .main
-        %ul#og-grid.og-grid
-          - @missing_posts.each do |missing|
-            %li
-              %a{"data-description" => "age : #{missing.age},
+        %ul#og-grid.og-missing-grid
+          = render "posts"
 
-            reporter name: #{missing.reporter_name},
-                  reporter phone: #{missing.reporter_phone},
-                                   location : #{missing.location},
-                                   description: #{missing.description},
-                                   special signs : #{missing.special_signs},
-																	gender : #{missing.gender}", "data-largesrc" => "#{missing.image}", "data-title" => "", :href => "", :spam => "#{missing_post_report1_missing_path(missing)}",:fake => "#{missing_post_report2_missing_path(missing)}", :duplicate => "#{missing_post_report3_missing_path(missing)}"}
-                %img{:alt => "img01", :src => "#{missing.image.thumb}"}/
-              .og-expander
-                .og-expander-inner
-                  %span.og-close
-                  .og-fullimg
-                    .og-loading
-                    %img{:src => "images/2.jpg"}/
-                  .og-details
-                    %h3
-                    %p
-                    %a{:href => ""}
     / /container
     = javascript_include_tag "missing_grid"
     :javascript
       $(function() {
-      	Grid.init();
+        MissingGrid.init();
       });
+
 #search-container
   %div
-    %form{:action => "/search"}
-      <input type="search", name="query", id="searchbox", placeholder="Press enter afterwards">
+    %form{:action => "/search2"}
+      <input type="search", name="query", id="searchbox", placeholder="Missing Search,Press enter afterwards">
+%div{:style => "height: 140px;"}
+
+#search-container
+  %div
+    %form{:action => "/search3"}
+      <input type="search", name="query", id="searchbox", placeholder="Suspect Search,Press enter afterwards">
 %div{:style => "height: 140px;"}

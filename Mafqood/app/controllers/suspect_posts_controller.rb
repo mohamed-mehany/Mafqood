@@ -1,6 +1,15 @@
 class SuspectPostsController < ApplicationController
+  
   def index
+    if params[:query].present?
+      @suspects = SuspectPost.search(params[:key], load: true).result
+    else
     @suspects = SuspectPost.order("created_at desc")
+  end
+end
+  
+  def search
+    @suspects = SuspectPost.search(params[:query], load: true).result
   end
 
   def show
@@ -8,48 +17,6 @@ class SuspectPostsController < ApplicationController
 
   def new
     @suspect_post = SuspectPost.new
-  end
-
-  def report1_suspect
-    @temp = MissingPost.find(params[:id])
-    @suspect_post_report = SuspectPostReport.new
-    @suspect_post_report.suspect_post_id = @temp.id
-    @suspect_post_report.user = current_user
-    @suspect_post_report.kind = "spam"
-    if @suspect_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @suspect_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
-  end
-
-  def report2_suspect
-    @temp = MissingPost.find(params[:id])
-    @suspect_post_report = SuspectPostReport.new
-    @suspect_post_report.suspect_post_id = @temp.id
-    @suspect_post_report.user = current_user
-    @suspect_post_report.kind = "fake"
-    if @suspect_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @suspect_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
-  end
-
-  def report3_suspect
-    @temp = MissingPost.find(params[:id])
-    @suspect_post_report = SuspectPostReport.new
-    @suspect_post_report.suspect_post_id = @temp.id
-    @suspect_post_report.user = current_user
-    @suspect_post_report.kind = "duplicate"
-    if @suspect_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @suspect_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
   end
 
   def create
@@ -70,7 +37,7 @@ class SuspectPostsController < ApplicationController
   protected
 
   def suspect_post_params
-    params.require(:suspect_post).permit(:approximate_age, :gender, :location, :image, :description,
+    params.require(:suspect_post).permit(:approximate_age, :gender, :location_id, :image, :description,
       :special_signs, :reporter_name, :reporter_phone)
   end
 end

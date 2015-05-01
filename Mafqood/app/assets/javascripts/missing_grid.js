@@ -161,10 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
 	return deferred ? deferred.promise( $this ) : $this;
 };
 
-var Grid = (function() {
+var MissingGrid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-missing-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -339,6 +339,7 @@ var Grid = (function() {
 		this.update();
 	}
 
+
 	Preview.prototype = {
 		create : function( $item ) {
 			// create Preview structure:
@@ -348,18 +349,17 @@ var Grid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
 			}
 			else{
 				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
 			}
+			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button round">Its my kid</a><br>' );
-			this.$spam = $ ('<a href="#" class="button round">Report spam</a><br>' );
-			this.$fake = $ ('<a href="#" class="button round">Report fake</a><br>' );
-			this.$duplicate = $ ('<a href="#" class="button round">Report duplicate</a><br>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$edit, this.$spam, this.$fake, this.$duplicate );
+			this.$href = $( '<a href="#" class="button round">Report Mine</a>' );
+			this.$found = $( '<a href="#" class="button round">Report as Found</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$found,this.$edit);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -394,10 +394,8 @@ var Grid = (function() {
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
 					href : $itemEl.attr( 'href' ),
-					edit : $itemEl.attr( 'hrefedit' ),
-					spam : $itemEl.attr ('spam'),
-					fake : $itemEl.attr ('fake'),
-					duplicate : $itemEl.attr ('duplicate'),
+					edit : $itemEl.attr( 'edit' ),
+					found : $itemEl.attr( 'found' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -406,10 +404,9 @@ var Grid = (function() {
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
-			this.$spam.attr('href', eldata.spam);
-			this.$fake.attr('href', eldata.fake);
-			this.$duplicate.attr('href', eldata.duplicate);
+			this.$found.attr( 'href', eldata.found );
 			this.$edit.attr( 'href' , eldata.edit );
+
 
 			var self = this;
 

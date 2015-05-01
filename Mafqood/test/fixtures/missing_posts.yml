@@ -1,0 +1,19 @@
+one:
+  reporter_name: MyString
+  description: MyString
+  location: MyString
+  special_signs: MyString
+  age: 1
+  image: MyString
+  reporter_phone: MyString
+  gender: false
+
+two:
+  reporter_name: MyString
+  description: MyString
+  location: MyString
+  special_signs: MyString
+  age: 1
+  image: MyString
+  reporter_phone: MyString
+  gender: false

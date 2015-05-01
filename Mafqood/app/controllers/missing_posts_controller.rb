@@ -1,8 +1,19 @@
 class MissingPostsController < ApplicationController
-  def index
-    @missing_posts = MissingPost.order("created_at desc")
-  end
+  before_filter :auth, only: [:create, :new, :report, :edit , :update]
 
+  def index
+    if params[:query].present?
+      @missing_posts = MissingPost.search(params[:key], load: true).result
+    else
+    @missing_posts = MissingPost.order("created_at desc")
+    @missing_posts = MissingPost.new
+  end
+end
+  
+  def search
+    @missing_post = MissingPost.search(params[:query], load: true).result
+  end
+  
   def show
     @missing_post = MissingPost.find(params[:id])
   end
@@ -11,88 +22,93 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new
   end
 
- 
-  # def send_report
-  #   if (current_user)
-  #     @missing_post = Report.new(finding_report)
-  #     @missing_post.user = current_user
-  #   if @missing_post.save
-  #         redirect_to Post.find(@MissingPost.report.post_id), notice: "Your have reported successfully"
-  #     else
-  #       flash[:alert] = @missing_post.errors.full_messages
-  #       render 'new'
-  #     end
-  #   else
-  #     redirect_to root_url, alert: ["Must be logged in..."]
-  #   end
-  # end  
-  
-  # + # Author: Sherif Ahmed
-  # + Report_x is a generic method that takes report type as a param,
-  # + then move on to get the current post id and user id and insert them to report table
-
-def report11_missing
-    @temp = MissingPost.find(params[:id])
-    @missing_post_report = MissingPostReport.new
-    @missing_post_report.missing_post_id = @temp.id
-    @missing_post_report.user = current_user
-    @missing_post_report.kind = "spam"
-    if @missing_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @missing_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
-  end
-
-  def report22_missing
-    @temp = MissingPost.find(params[:id])
-    @missing_post_report = MissingPostReport.new
-    @missing_post_report.missing_post_id = @temp.id
-    @missing_post_report.user = current_user
-    @missing_post_report.kind = "fake"
-    if @missing_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @missing_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
-  end
-
-  def report33_missing
-    @temp = MissingPost.find(params[:id])
-    @missing_post_report = MissingPostReport.new
-    @missing_post_report.missing_post_id = @temp.id
-    @missing_post_report.user = current_user
-    @missing_post_report.kind = "duplicate"
-    if @missing_post_report.save
-      redirect_to({ action: "index"}, notice: "You have successfully reported this post")
-    else
-      flash[:alert] = @missing_post_report.errors.full_messages
-      redirect_to action: "index"
-    end
-  end
-
-  
-
   def create
-    if (current_user)
-      @missing_post = MissingPost.new(missing_params)
-      @missing_post.user = current_user
-      if @missing_post.save
-        flash[:notice] = "Your Post has been created successfully"
-        redirect_to @missing_post
-      else
-        render 'new'
-      end
+    @missing_post = MissingPost.new(missing_post_params)
+    @missing_post.user = current_user
+    if @missing_post.save
+      redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
-      redirect_to root_url, alert: ["Must be logged in..."]
+      render 'new'
     end
   end
 
- private
+  # Author: Nariman Hesham
+  #
+  # public: Report a specific missing post to be found by child's
+  #   parents or the contrary
+  #
+  # method is called when a user is navigated to '/my_posts/:id/found'
+  #
+  # @missing_post.save
+  # => true, redirects the user to user posts and success message is displayed
+  # => false, redirects the user to user posts and error message is displayed
+  def report_found
+    @missing_post = MissingPost.find(params[:id])
+    @missing_post.status == true ? @missing_post.status = 0 : @missing_post.status = 1
+    if @missing_post.save
+      flash[:notice] = "Your Post status has been updated successfully"
+      redirect_to my_posts_path
+    else
+      redirect_to my_posts_path, alert: ["Error while updating post status"]
+    end
+  end
 
-  def missing_params
+# to edit post getting the user id and matching it with the current user
+# if equal render to new to edit the post else prints alert message
+
+  def edit
+    @missing = MissingPost.find(params[:id])
+    if current_user == @missing.user
+      @missing_post = @missing
+      render 'new'
+    else
+      redirect_to({ action: "index"}, alert: t("missing_posts.unauthorized_edit"))
+    end
+  end
+
+  def update
+    @missing = MissingPost.find(params[:id])
+    if @missing.update(missing_post_params)
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_post"))
+    else
+      render 'new'
+    end
+  end
+
+# Examples
+#
+#   report #i.e this method is called when a user navigates to
+#   /missing_posts/:id/mine
+#
+#   # => @missing_post_report.save
+#
+# Redirects the user to the missings post index and displays a flash
+# whether the report was successful or not.
+
+  def report
+    @missing_post = MissingPost.find(params[:id])
+    @report_found = MissingPostReport.new
+    @report_found.kind = "found"
+    @report_found.user_id = current_user.id
+    @report_found.missing_post_id = @missing_post.id
+    if @missing_post.user_id == current_user.id
+      @report_found.save
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
+    else
+      flash[:alert] = @report_found.errors.full_messages
+      redirect_to action: "index"
+    end
+  end
+
+  protected
+ # Protected: Redirects the user to the homepage unless he is logged in
+
+  def missing_post_params
     params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
+
+  def auth
+    redirect_to(root_url, alert: ["Must be logged in..."]) unless current_user
+  end
+
 end

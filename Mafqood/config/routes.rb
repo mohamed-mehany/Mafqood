@@ -1,41 +1,28 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get '/edit_profile', to: 'users#edit', as: 'edit_profile'
   get '/auth/:provider', to: 'sessions#new', as: 'login'
   get '/auth/:provider/callback', to: 'sessions#new'
   get '/auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
+
   get 'finding_posts/new'
-  
-  get 'finding_posts/:id/spam', to: 'finding_posts#report1_finding', as: 'finding_post_report1_finding'
-  get 'finding_posts/:id/fake', to: 'finding_posts#report2_finding', as: 'finding_post_report2_finding'
-  get 'finding_posts/:id/duplicate', to: 'finding_posts#report3_finding', as: 'finding_post_report3_finding'
-  
-  get 'missing_posts/:id/spam', to: 'missing_posts#report11_missing', as: 'missing_post_report1_missing'
-  get 'missing_posts/:id/fake', to: 'missing_posts#report22_missing', as: 'missing_post_report2_missing'
-  get 'missing_posts/:id/duplicate', to: 'missing_posts#report33_missing', as: 'missing_post_report3_missing'
+  # get 'missing_posts/:id/report', to: 'missing_posts#report'
+  # get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
 
-  get 'suspect_posts/:id/spam', to: 'suspect_posts#report1_suspect', as: 'suspect_post_report1_missing'
-  get 'suspect_posts/:id/fake', to: 'suspect_posts#report2_suspect', as: 'suspect_post_report2_missing'
-  get 'suspect_posts/:id/duplicate', to: 'suspect_posts#report3_suspect', as: 'suspect_post_report3_missing'
-
-# get '/search' => 'search#search'
+  get 'finding_posts/:id/mine', to: 'finding_posts#mine', as: 'finding_post_mine'
+  #get 'finding_posts/:id/edit', to: 'finding_posts#edit', as: 'finding_post_edit'
+  get 'missing_posts/:id/report', to: 'missing_posts#report', as: 'missing_post_report'
+  resources :users, :suspect_posts, :finding_posts, :missing_posts
+  get '/my_posts', to: 'users#posts', as: 'my_posts'
+  get '/my_posts/:id/found', to: 'missing_posts#report_found', as: 'report_child_as_found'
+  get '/my_posts/:id/returned', to: 'finding_posts#report_returned', as: 'report_child_as_returned'
   
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  resources :suspect_posts,:finding_posts
-  
-  # resource :search do
-  #   collection do
-  #     post 'searchfind', controller: :search
-  #   # post 'searchmissing', controller: :search
-  #   # post 'searchsuspect', controller: :search
-  #   end
-  # end
-
-  # get '/search_find' => 'search#searchfind'
-
+  get '/search3' => 'suspect_posts#search'
+  get '/search2' => 'missing_posts#search'
+  get '/search' => 'finding_posts#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -52,7 +39,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :missing_posts
 
   # Example resource route with options:
   #   resources :products do

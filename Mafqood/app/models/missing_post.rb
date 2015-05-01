@@ -1,9 +1,15 @@
 class MissingPost < ActiveRecord::Base
 
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
   attr_accessor :image
   mount_uploader :image, ImageUploader
   belongs_to :user
+  has_one :location
+  
   validates :gender , presence: true
+  validates :image , presence: true
   validates :age , presence: true
   validates :location , presence: true
   validates :reporter_name , presence: true

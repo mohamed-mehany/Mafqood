@@ -12,15 +12,17 @@
     = stylesheet_link_tag "default"
     = stylesheet_link_tag "component"
     = javascript_include_tag "modernizr.custom"
-  
   %body
     .container
       .main
-        %ul#og-grid.og-grid
-          - @findings.each do |finding|
+        %ul#og-grid.og-finding-grid
+          - @finding_posts.each do |finding_post|
+            -griduser = 0
+            -if(current_user != nil)
+              -griduser = current_user.id
             %li
-              %a{"data-description" => "name : #{finding.description}<br>location : #{finding.location}<br>special signs : #{finding.special_signs}<br>age : #{finding.age}<br>contact information : #{finding.contact_info}<br>gender : #{finding.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding.image}", "data-title" => "#{finding.name}", :href => "",:spam => "#{finding_post_report1_finding_path(finding)}",:fake => "#{finding_post_report2_finding_path(finding)}", :duplicate => "#{finding_post_report3_finding_path(finding)}"}
-                %img{:alt => "img01", :src => "#{finding.image.thumb}"}/
+              %a{"data-description" => "name : #{finding_post.description}<br>location : #{finding_post.location}<br>special signs : #{finding_post.special_signs}<br>age : #{finding_post.age}<br>contact information : #{finding_post.contact_info}<br>gender : #{finding_post.gender == true ? 'male':'female'}".html_safe, "data-largesrc" => "#{finding_post.image}", "data-title" => "#{finding_post.name}", :mine => finding_post_mine_path(finding_post),:edit => edit_finding_post_path(finding_post),:user => "#{finding_post.user_id}",:current => "#{griduser}", :returned => report_child_as_returned_path(finding_post)}
+                %img{:alt => "img01", :src => "#{finding_post.image.thumb}"}/
               .og-expander
                 .og-expander-inner
                   %span.og-close
@@ -35,8 +37,9 @@
     = javascript_include_tag "finding_grid"
     :javascript
       $(function() {
-      	Grid.init();
+        FindingGrid.init();
       });
+
 #search-container
   %div
     %form{:action => "/search"}

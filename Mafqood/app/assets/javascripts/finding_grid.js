@@ -161,10 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
 	return deferred ? deferred.promise( $this ) : $this;
 };
 
-var Grid = (function() {
+var FindingGrid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-finding-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -348,18 +348,16 @@ var Grid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-			  this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
 			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="button round">Its my kid</a><br>' );
-			this.$spam = $ ('<a href="#" class="button round">Report spam</a><br>' );
-			this.$fake = $ ('<a href="#" class="button round">Report fake</a><br>' );
-			this.$duplicate = $ ('<a href="#" class="button round">Report duplicate</a><br>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$edit, this.$spam, this.$fake, this.$duplicate );
+			this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
+			this.$returned = $( '<a href="#" class="button">Report as Returned</a><br>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit,this.$returned);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -393,11 +391,9 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-					href : $itemEl.attr( 'href' ),
-					edit : $itemEl.attr( 'hrefedit' ),
-					spam : $itemEl.attr ('spam'),
-					fake : $itemEl.attr ('fake'),
-					duplicate : $itemEl.attr ('duplicate'),
+					mine : $itemEl.attr( 'mine' ),
+					edit : $itemEl.attr( 'edit' ),
+					returned : $itemEl.attr('returned'),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -405,12 +401,9 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
-			this.$spam.attr('href', eldata.spam);
-			this.$fake.attr('href', eldata.fake);
-			this.$duplicate.attr('href', eldata.duplicate);
+			this.$mine.attr( 'href', eldata.mine );
 			this.$edit.attr( 'href' , eldata.edit );
-
+			this.$returned.attr( 'href', eldata.returned );
 			var self = this;
 
 			// remove the current image in the preview

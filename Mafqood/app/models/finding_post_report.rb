@@ -1,9 +1,26 @@
 class FindingPostReport < ActiveRecord::Base
   
   belongs_to :user
-  validate :unique_report
+  #validate :unique_report
+  validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
+  has_many :finding_posts
 
-  
+  # Author: Nariman Hesham
+  #
+  # Creating three scopes for the different types of reports
+  #
+  # Examples:
+  # => calling FindingPostReport.fake returns all finding posts
+  #    reported as Fake
+  # => calling FindingPostReport.spam returns all finding posts
+  #    reported as Spam
+  # => calling FindingPostReport.duplicate returns all finding posts
+  #    reported as Duplicate 
+  scope :fake, -> { where(kind: "Fake", kind: "fake") }
+  scope :spam, -> { where(kind: "Spam", kind: "spam") }
+  scope :duplicate, -> { where(kind: "Duplicate", kind: "duplicate") }
+
+
 # Private: As a uniquness validations, this method checks if there is a 
 # FindingPostReport with the combination of the user_id, finding_post_id
 # -the post being reported- and kind which is the type of report
@@ -22,19 +39,10 @@ class FindingPostReport < ActiveRecord::Base
 # a specific error message is added to :base to the errors of
 # the record  
   def unique_report
-    if self.class.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
-      # if(kind == "mine")
-      #   errors.add :base, "You have already reported this kid as yours!"
-      # end
-    if(kind == "spam")
-        errors.add :base, "You have already reported this!"
-       end
-        if(kind == "fake")
-        errors.add :base, "You have already reported this!"
-        end
-        if(kind == "duplicate")
-        errors.add :base, "You have already reported this!"
-    end
+    if FindingPostReport.exists?(:user_id => user_id, :finding_post_id => finding_post_id, :kind => kind)
+      if(kind == "mine")
+        errors.add :base, :finding_duplicate_mine
+      end
     end
   end
 end

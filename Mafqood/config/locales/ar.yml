@@ -6,6 +6,7 @@ ar:
   logout: "تسجيل خروج"
   remove: "إزالة"
   login_to_view: "من فضلك سجل الدخول لعرض هذه الصفحة"
+  menu: "القائمة"
   home:
     report: "إبلاغ"
     search: "بحث"
@@ -15,10 +16,12 @@ ar:
     successful_login: "تم تسجيل الدخول بنجاح"
     successful_logout: "تم تسجيل الخروج بنجاح"
     successful_update: "تم تعديل البيانات بنجاح"
+    my_posts: "كل بلاغاتي"
   telephones:
     number: "التليفون"
   addresses:
     text: "العنوان"
+
   missing_posts:
     title: "تقديم بلاغ جديد"
     page_title: "تقديم بلاغ جديد"
@@ -41,6 +44,12 @@ ar:
     reporter_phone: "رقم التليفون:"
     phone_placeholder: "محمول"
     submit_button: "إرسال"
+    successful_report_mine: "لك"
+    successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
+    successful_edit: "تم تعديل بيانات الطفل بنجاح"
+    must_login: "يجب أن تقوم بتسجيل الدخول أولا"
+    edit_login: "غير مسموح لك بتعديل البيانات لأنك لم تقوم بتسجيل الدخول أو انك تحاول تعديل بيانات لا تخص طفلك"
+    submit_edit: "تعديل البيانات"
 
   suspect_posts:
     title: "تقديم بلاغ جديد"
@@ -107,8 +116,15 @@ ar:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+
+        finding_post:
+          attributes:
+            base:
+              finding_duplicate_mine: "لقد قمت بالأبلاغ سابقا أن هذا هو \ هي طفلك"
+
   finding:
     title: "أبلاغ عن طفل وجد"
+    edittitle: "تعديل بيانات طفلك"
     child_name: "أسم الطفل"
     required_field: "خانة مطلوبة"
     age: "العمر تحديدا أو تقريبا"
@@ -123,3 +139,9 @@ ar:
     contact_info: "رقم هاتفك"
     photo: "أضافة صورة - خانة مطلوبه"
     submit: "أبلاغ"
+    successful_report_mine: "لقد تم أبلاغنا بنجاح أن هذا طفلك"
+    successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
+    successful_edit: "تم تعديل بيانات الطفل بنجاح"
+    must_login: "يجب أن تقوم بتسجيل الدخول أولا"
+    edit_login: "غير مسموح لك بتعديل البيانات لأنك لم تقوم بتسجيل الدخول أو انك تحاول تعديل بيانات لا تخص طفلك"
+    submit_edit: "تعديل البيانات" 
