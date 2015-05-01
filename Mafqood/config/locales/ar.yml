@@ -1,4 +1,8 @@
 ar:
+  devise:
+    sessions:
+      admin_user:
+        signed_in: "تم تسجيل الدخول بنجاح"
   hello: "مرحبا يا عالم"
   title: "مفقود"
   login: "تسجيل دخول"
@@ -102,7 +106,7 @@ ar:
               wrong_length: "رقم هاتف غير صالح"
               invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
             description:
-              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              too_long: "الحد الأقصى المسموح به   ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
             age:
