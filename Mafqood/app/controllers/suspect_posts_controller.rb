@@ -14,7 +14,7 @@ class SuspectPostsController < ApplicationController
     @suspect_post = SuspectPost.create(suspect_post_params)
 
     if @suspect_post.save
-      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create")
+      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create"))
     else
       render 'new'
     end
