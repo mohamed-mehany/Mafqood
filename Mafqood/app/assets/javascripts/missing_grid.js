@@ -352,7 +352,7 @@ var MissingGrid = (function() {
 				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit Post</a>' );
 			}
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
