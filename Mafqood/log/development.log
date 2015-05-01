@@ -217,3 +217,83 @@ ActionView::Template::Error (Mysql2::Error: Unknown column 'locations.missing_po
   Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (42.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-01 19:24:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 4710ms (Views: 4703.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-45e208a0cb1ee417c5d303387a72f035458dd7474af012d320cf4e2311b36820.js?body=1" for 127.0.0.1 at 2015-05-01 19:24:41 +0200
+
+
+Started GET "/missing_posts" for 127.0.0.1 at 2015-05-01 19:24:50 +0200
+Processing by MissingPostsController#index as HTML
+  [1m[35mMissingPost Load (0.1ms)[0m  SELECT `missing_posts`.* FROM `missing_posts`  ORDER BY created_at desc
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1[0m
+Mysql2::Error: Unknown column 'locations.missing_post_id' in 'where clause': SELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1
+  Rendered missing_posts/_posts.html.haml (13.3ms)
+  Rendered missing_posts/index.html.haml within layouts/application (48.9ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'locations.missing_post_id' in 'where clause': SELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1):
+    1: - @missing_posts.each do |missing_post|
+    2:   %li
+    3:     %a{"data-description" => "Age: #{missing_post.age}<br>Reporter phone: #{missing_post.reporter_phone}<br>Location: #{missing_post.location}<br>Description: #{missing_post.description}<br>Special signs: #{missing_post.special_signs}<br>Gender: #{missing_post.gender}".html_safe, "data-largesrc" => "#{missing_post.image}", "data-title" => missing_post.reporter_name, "href" => "#{missing_post_report_path(missing_post)}", "found" => "#{report_child_as_found_path(missing_post.id)}","edit" => "#{edit_missing_post_path(missing_post)}"}
+    4:       %img{:alt => "img01", :src => "#{missing_post.image.thumb}"}/
+    5:     .og-expander
+    6:       .og-expander-inner
+  app/views/missing_posts/_posts.html.haml:3:in `block in _app_views_missing_posts__posts_html_haml__733382920059850202_70355931314580'
+  app/views/missing_posts/_posts.html.haml:1:in `_app_views_missing_posts__posts_html_haml__733382920059850202_70355931314580'
+  app/views/missing_posts/index.html.haml:19:in `_app_views_missing_posts_index_html_haml__2156671614251800339_66749140'
+
+
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (33.0ms)
+
+
+Started GET "/missing_posts" for 127.0.0.1 at 2015-05-01 19:24:52 +0200
+Processing by MissingPostsController#index as HTML
+  [1m[35mMissingPost Load (0.1ms)[0m  SELECT `missing_posts`.* FROM `missing_posts`  ORDER BY created_at desc
+  [1m[36mLocation Load (0.8ms)[0m  [1mSELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1[0m
+Mysql2::Error: Unknown column 'locations.missing_post_id' in 'where clause': SELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1
+  Rendered missing_posts/_posts.html.haml (3.2ms)
+  Rendered missing_posts/index.html.haml within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'locations.missing_post_id' in 'where clause': SELECT  `locations`.* FROM `locations` WHERE `locations`.`missing_post_id` = 2 LIMIT 1):
+    1: - @missing_posts.each do |missing_post|
+    2:   %li
+    3:     %a{"data-description" => "Age: #{missing_post.age}<br>Reporter phone: #{missing_post.reporter_phone}<br>Location: #{missing_post.location}<br>Description: #{missing_post.description}<br>Special signs: #{missing_post.special_signs}<br>Gender: #{missing_post.gender}".html_safe, "data-largesrc" => "#{missing_post.image}", "data-title" => missing_post.reporter_name, "href" => "#{missing_post_report_path(missing_post)}", "found" => "#{report_child_as_found_path(missing_post.id)}","edit" => "#{edit_missing_post_path(missing_post)}"}
+    4:       %img{:alt => "img01", :src => "#{missing_post.image.thumb}"}/
+    5:     .og-expander
+    6:       .og-expander-inner
+  app/views/missing_posts/_posts.html.haml:3:in `block in _app_views_missing_posts__posts_html_haml__733382920059850202_70355931314580'
+  app/views/missing_posts/_posts.html.haml:1:in `_app_views_missing_posts__posts_html_haml__733382920059850202_70355931314580'
+  app/views/missing_posts/index.html.haml:19:in `_app_views_missing_posts_index_html_haml__2156671614251800339_66749140'
+
+
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.4ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mohamed/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (32.1ms)
