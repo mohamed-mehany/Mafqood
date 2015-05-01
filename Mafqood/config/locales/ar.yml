@@ -94,7 +94,7 @@ ar:
               blank: "لا يمكن ان يكون فارغا"
             image:
               blank: "لا يمكن ان يكون فارغا"
-            location:
+            location_id:
               blank: "لا يمكن ان يكون فارغا"
             reporter_phone:
               blank: "لا يمكن ان يكون الأسم فارغا"
@@ -116,7 +116,7 @@ ar:
               blank: "لا يمكن ان يكون فارغا"
             image:
               blank: "لا يمكن ان يكون فارغا"
-            location:
+            location_id:
               blank: "لا يمكن ان يكون فارغا"
             reporter_phone:
               blank: "لا يمكن ان يكون فارغا"
@@ -132,6 +132,27 @@ ar:
           attributes:
             base:
               finding_duplicate_mine: "لقد قمت بالأبلاغ سابقا أن هذا هو \ هي طفلك"
+            name:
+              blank: "لا يمكن ان يكون فارغا"
+            gender:
+              blank: "يجب اختيار ذكر أو انثى"
+            age:
+              blank: "لا يمكن ان يكون فارغا"
+            image:
+              blank: "لا يمكن ان يكون فارغا"
+            location_id:
+              blank: "لا يمكن ان يكون فارغا"
+            reporter_phone:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "رقم هاتف غير صالح"
+              invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
+            description:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              blank: "لا يمكن ان يكون فارغا"
+            special_signs:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              blank: "لا يمكن ان يكون فارغا"
         telephone:
           attributes:
             number:
