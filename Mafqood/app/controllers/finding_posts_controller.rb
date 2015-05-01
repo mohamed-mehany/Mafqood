@@ -1,11 +1,12 @@
 class FindingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new, :mine]
+  before_filter :authenticate_user!, only: [:create, :new, :mine]
   before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
   end
 
   def show
+    @finding_post = FindingPost.find(params[:id])
   end
 
   def new
@@ -18,7 +19,6 @@ class FindingPostsController < ApplicationController
     if @finding_post.save
       redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
-      flash[:alert] = @finding_post.errors.full_messages
       render "new"
     end
   end
@@ -87,7 +87,7 @@ protected
   def finding_post_params
     params.require(:finding_post).permit(
       :name,:contact_info,:description,:age,:special_signs,
-      :image,:location,:gender)
+      :image,:location_id,:gender)
   end
 # Protected: Redirects the user to the homepage unless he is logged in
   def auth

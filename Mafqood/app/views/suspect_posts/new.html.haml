@@ -1,25 +1,23 @@
-//{:dir => 'rtl'}
 =content_for(:title,t("suspect_posts.title"))
 %center
   %h1
-    = t('suspect_posts.page_title')
-
+    = t("suspect_posts.page_title")
 = simple_form_for @suspect_post, :html => {:multipart => true} do |f|
   %div.row
     %div.large-12.small-12.columns
       %fieldset
         %legend
-          = t('suspect_posts.form_title')
-        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t('suspect_posts.male'), t('suspect_posts.female')], label: t('suspect_posts.gender')
-        = f.input :approximate_age, label: t('suspect_posts.approximate_age'), placeholder: t('suspect_posts.age_placeholder')
-        = f.input :location, label: t('suspect_posts.location'), placeholder: t('suspect_posts.location_placeholder')
-        = f.input :image, as: :file, label: t('suspect_posts.image'), input_html: { accept: 'image/*' }
-        = f.input :description, label: t('suspect_posts.description'), as: :text, placeholder: t('suspect_posts.description_placeholder')
-        = f.input :special_signs, label: t('suspect_posts.special_signs'), as: :text, placeholder: t('suspect_posts.signs_placeholder')
+          = t("suspect_posts.form_title")
+        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t("suspect_posts.male"), t("suspect_posts.female")], label: t("suspect_posts.gender")
+        = f.input :approximate_age, label: t("suspect_posts.approximate_age"), placeholder: t("suspect_posts.age_placeholder")
+        = f.input :location_id, collection: Location.order("name"), label_method: :name, value_method: :id, label: "Location", include_blank: "(" + t("finding.location") + ")"
+        = f.input :image, as: :file, label: t("suspect_posts.image"), input_html: { accept: "image/*" }
+        = f.input :description, label: t("suspect_posts.description"), as: :text, placeholder: t("suspect_posts.description_placeholder")
+        = f.input :special_signs, label: t("suspect_posts.special_signs"), as: :text, placeholder: t("suspect_posts.signs_placeholder")
         %strong
-          = t('suspect_posts.reporter_info')
-        = f.input :reporter_name, label: t('suspect_posts.reporter_name'), placeholder: t('suspect_posts.name_placeholder')
-        = f.input :reporter_phone, label: t('suspect_posts.reporter_phone'), placeholder: t('suspect_posts.phone_placeholder')
+          = t("suspect_posts.reporter_info")
+        = f.input :reporter_name, label: t("suspect_posts.reporter_name"), placeholder: t("suspect_posts.name_placeholder")
+        = f.input :reporter_phone, label: t("suspect_posts.reporter_phone"), placeholder: t("suspect_posts.phone_placeholder")
         %br
         %center
-          =f.button :submit, t('suspect_posts.submit_button')
+          =f.button :submit, t("suspect_posts.submit_button")

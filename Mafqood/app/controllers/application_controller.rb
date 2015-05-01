@@ -16,32 +16,6 @@ class ApplicationController < ActionController::Base
   
   private
   
-  # Private: Gets the float value depending on the language of the website.
-  #
-  # text  - The float direction needed to be converted.
-  #
-  # Examples
-  #
-  # Arabic:
-  #   float("left")
-  #   # => "right"
-  #   float("right")
-  #   # => "left"
-  # English:
-  #   float("left")
-  #   # => "left"
-  #   float("right")
-  #   # => "right"
-  #
-  # Returns the float converted value.
-  # def float(direction)
-  #   if cookies[:locale] == "en"
-  #     direction
-  #   else
-  #     direction == "left" ? "right" : "left"
-  #   end
-  # end
-  
   # Private: Gets the current user that is signed in.
   #
   # Examples
@@ -61,6 +35,6 @@ class ApplicationController < ActionController::Base
   #
   # Redirects to the login path to start signing in.
   def authenticate_user!
-    redirect_to request.referer || root_url, notice: t("login_to_view") unless session[:user_id]
+    redirect_to login_path(:facebook) unless session[:user_id]
   end
 end

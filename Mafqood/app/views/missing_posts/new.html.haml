@@ -1,4 +1,3 @@
-//{:dir => "rtl"}
 = content_for(:title, t("missing_posts.title"))
 %center
   %h1
@@ -11,13 +10,9 @@
         %legend
           = t("missing_posts.form_title")
         = f.input :reporter_name, label:t("finding.child_name"), placeholder: t("finding.required_field")
-        = f.label :gender, t("missing_posts.gender")
-        = f.radio_button(:gender, "1"  , :checked => (@missing_post.gender == true))
-        = f.label :gender, t("missing_posts.male"), :value => 1
-        = f.radio_button(:gender, "0", :checked => (@missing_post.gender == false))
-        = f.label :gender, t("missing_posts.female"), :value => 0
+        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t("missing_posts.male"), t("missing_posts.female")], label: t("missing_posts.gender")
         = f.input :age, label: t('missing_posts.approximate_age'),placeholder: t("missing_posts.age_placeholder")
-        = f.input :location, label: t('missing_posts.location'),placeholder: t("missing_posts.location_placeholder")
+        = f.input :location_id, collection: Location.order("name"), label_method: :name, value_method: :id, label: "Location", include_blank: "(" + t("finding.location") + ")"
         = f.input :image, as: :file, label: t("missing_posts.image"), input_html: { accept: "image/*" }
         = f.input :description, as: :text, label: t('missing_posts.description'),placeholder: t("missing_posts.description_placeholder")
         = f.input :special_signs, as: :text, label: t('missing_posts.special_signs'), placeholder: t("missing_posts.signs_placeholder")
