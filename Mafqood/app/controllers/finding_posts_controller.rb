@@ -6,6 +6,7 @@ class FindingPostsController < ApplicationController
   end
 
   def show
+    @finding_post = FindingPost.find(params[:id])
   end
 
   def new
