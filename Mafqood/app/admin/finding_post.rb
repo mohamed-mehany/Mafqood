@@ -14,5 +14,5 @@ ActiveAdmin.register FindingPost do
   #   permitted
   # end
 
-  permit_params :name, :contact_info, :description, :age, :special_signs, :image, :location, :gender
+  permit_params :name, :contact_info, :description, :age, :special_signs, :image, :location_id, :gender
 end
