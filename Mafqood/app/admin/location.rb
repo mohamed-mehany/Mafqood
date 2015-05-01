@@ -6,6 +6,3 @@ ActiveAdmin.register Location do
 permit_params :name, :name_ar
 
 end
-
-
-end
