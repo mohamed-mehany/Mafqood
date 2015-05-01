@@ -18,7 +18,6 @@ class FindingPostsController < ApplicationController
     if @finding_post.save
       redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
-      #flash[:alert] = @finding_post.errors.full_messages
       render "new"
     end
   end
