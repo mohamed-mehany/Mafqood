@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426182540) do
+ActiveRecord::Schema.define(version: 20150501095345) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20150426182540) do
     t.string   "uid",        limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "actions", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "user_ip",    limit: 255
+    t.integer  "action_num", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "kind",       limit: 255
   end
 
   create_table "active_admin_comments", force: :cascade do |t|

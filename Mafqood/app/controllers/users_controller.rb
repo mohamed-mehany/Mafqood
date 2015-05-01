@@ -17,11 +17,11 @@ class UsersController < ApplicationController
       session.delete(:uid)
       session.delete(:name)
       session.delete(:email)
-      session[:user_id] = @user.id
-      @ip = request.remote_ip
-      request.env['HTTP_X_REAL_IP']
-      session[:ip] = @ip
-      session[:action] = 0
+      # session[:user_id] = @user.id
+      # @ip = request.remote_ip
+      # request.env['HTTP_X_REAL_IP']
+      # session[:ip] = @ip
+      # session[:action] = 0
       redirect_to root_url, notice: t("users.successful_login")
     else
       flash.now[:alert] = @user.errors.full_messages

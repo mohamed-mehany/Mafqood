@@ -14,17 +14,7 @@ class SuspectPostsController < ApplicationController
     @suspect_post = SuspectPost.create(suspect_post_params)
 
     if @suspect_post.save
-      @action = session[:action]+1
-      session[:action] = @action
-      if session[:action] > 2
-        @spammer = Spammer.new
-        if current_user
-          @spammer.user_id = current_user.id
-        end
-        @spammer.user_ip = request.remote_ip
-        @spammer.kind = "verified"
-        @spammer.save
-      end
+      save_action
       flash[:notice] = "Your Post has been created successfully"
       redirect_to @suspect_post
     else

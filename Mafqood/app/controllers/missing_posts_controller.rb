@@ -9,7 +9,6 @@ class MissingPostsController < ApplicationController
   def show
     @missing_post = MissingPost.find(params[:id])
     @ip = session[:ip]
-    @action = session[:action]
   end
 
   def new
@@ -20,23 +19,11 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new(missing_post_params)
     @missing_post.user = current_user
     if @missing_post.save
-      @action = session[:action]+1
-      session[:action] = @action
-      if session[:action] > 2
-        @spammer = Spammer.new
-        @spammer.user_id = current_user.id
-        @spammer.user_ip = request.remote_ip
-        @spammer.kind = "verified"
-        @spammer.save
-      end
+      save_action
       redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
       render 'new'
     end
-  end
-
-  def ip
-
   end
 
   # Author: Nariman Hesham
@@ -100,17 +87,7 @@ class MissingPostsController < ApplicationController
     @report_found.missing_post_id = @missing_post.id
     if @missing_post.user_id == current_user.id
       @report_found.save
-      @action = session[:action]+1
-      session[:action] = @action
-      if session[:action] > 2
-        @spammer = Spammer.new
-        if current_user
-          @spammer.user_id = current_user.id
-        end
-        @spammer.user_ip = request.remote_ip
-        @spammer.kind = "verified"
-        @spammer.save
-      end
+      save_action
       redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
     else
       flash[:alert] = @report_found.errors.full_messages
