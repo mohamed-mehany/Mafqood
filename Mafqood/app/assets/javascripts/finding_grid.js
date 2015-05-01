@@ -347,10 +347,6 @@ var FindingGrid = (function() {
 				user : $itemEl.attr( 'user'),
 				current : $itemEl.attr ( 'current'),
 			};
-			this.$ul = ('<ul class="stack button-group">');
-			this.$li1 = ('<li>');
-			this.$li2 = ('</li>');
-			this.$ul2 = ('</ul>');
 			if(eldata.user != eldata.current){
 				this.$edit = $( '<a href="#" class="button" style="display: none;"></a><br>' );
 			}
