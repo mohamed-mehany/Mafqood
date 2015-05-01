@@ -13,6 +13,6 @@ ActiveAdmin.register SuspectPost do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
+  permit_params :approximate_age, :gender, :location_id, :image, :description, :special_signs, :reporter_name, :reporter_phone
 
 end

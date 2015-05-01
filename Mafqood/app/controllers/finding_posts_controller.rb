@@ -6,6 +6,7 @@ class FindingPostsController < ApplicationController
   end
 
   def show
+    @finding_post = FindingPost.find(params[:id])
   end
 
   def new
@@ -44,7 +45,6 @@ class FindingPostsController < ApplicationController
       save_action
       redirect_to({ action: "index"}, notice: t("finding.successful_report_mine"))
     else
-      flash[:alert] = @finding_post_report.errors.full_messages
       redirect_to action: "index"
     end
   end
@@ -58,7 +58,6 @@ class FindingPostsController < ApplicationController
     if @finding_post.update(finding_post_params.reject{|k,v| v.blank?})
       redirect_to({action: "index"}, notice: t("finding.successful_edit"))
     else
-      flash[:alert] = @finding_post.errors.full_messages
       render 'edit'
     end
   end
