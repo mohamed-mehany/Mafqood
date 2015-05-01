@@ -16,18 +16,9 @@ class FindingPostsController < ApplicationController
     @finding_post = FindingPost.new(finding_post_params)
     @finding_post.user = current_user
     if @finding_post.save
-      @action = session[:action]+1
-      session[:action] = @action
-      if session[:action] > 2
-        @spammer = Spammer.new
-        @spammer.user_id = current_user.id
-        @spammer.user_ip = request.remote_ip
-        @spammer.kind = "verified"
-        @spammer.save
-      end
+      save_action
       redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
-      #flash[:alert] = @finding_post.errors.full_messages
       render "new"
     end
   end
@@ -50,17 +41,7 @@ class FindingPostsController < ApplicationController
     @finding_post_report.user = current_user
     @finding_post_report.kind = "mine"
     if @finding_post_report.save
-      @action = session[:action]+1
-      session[:action] = @action
-      if session[:action] > 2
-        @spammer = Spammer.new
-        if current_user
-          @spammer.user_id = current_user.id
-        end
-        @spammer.user_ip = request.remote_ip
-        @spammer.kind = "verified"
-        @spammer.save
-      end
+      save_action
       redirect_to({ action: "index"}, notice: t("finding.successful_report_mine"))
     else
       flash[:alert] = @finding_post_report.errors.full_messages
