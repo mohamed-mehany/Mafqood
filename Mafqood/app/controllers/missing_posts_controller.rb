@@ -85,7 +85,7 @@ class MissingPostsController < ApplicationController
     @report_found.missing_post_id = @missing_post.id
     if @missing_post.user_id == current_user.id
       @report_found.save
-      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_mine"))
     else
       flash[:alert] = @report_found.errors.full_messages
       redirect_to action: "index"

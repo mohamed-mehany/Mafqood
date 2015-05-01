@@ -357,7 +357,8 @@ var FindingGrid = (function() {
 			this.$description = $( '<p></p>' );
 			this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
 			this.$returned = $( '<a href="#" class="button">Report as Returned</a><br>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit,this.$returned);
+			this.$share = $( '<button onclick="" style="background-color: transparent;"><img src="/assets/Share.png"></button>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit, this.$returned, this.$share );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -394,6 +395,7 @@ var FindingGrid = (function() {
 					mine : $itemEl.attr( 'mine' ),
 					edit : $itemEl.attr( 'edit' ),
 					returned : $itemEl.attr('returned'),
+					share : $itemEl.attr('share'),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -404,6 +406,7 @@ var FindingGrid = (function() {
 			this.$mine.attr( 'href', eldata.mine );
 			this.$edit.attr( 'href' , eldata.edit );
 			this.$returned.attr( 'href', eldata.returned );
+			this.$share.attr( 'onclick', eldata.share );
 			var self = this;
 
 			// remove the current image in the preview
