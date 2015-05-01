@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/mark/Mafqood/Mafqood/spec/models/spammer_spec.rb": [
+      "/home/mark/Mafqood/Mafqood/spec/models/location_spec.rb": [
         1,
         null,
         1,
@@ -9,12 +9,8 @@
         1,
         1,
         1,
-        null,
         1,
         1,
-        null,
-        1,
-        null,
         1,
         null,
         null
@@ -1024,7 +1020,7 @@
         1,
         1,
         1,
-        2,
+        1,
         1,
         1,
         1,
@@ -1047,7 +1043,7 @@
         1,
         1,
         1,
-        2,
+        1,
         1,
         1,
         1,
@@ -1357,7 +1353,7 @@
         1,
         1,
         null,
-        3,
+        1,
         null,
         1,
         1,
@@ -1385,7 +1381,7 @@
         null,
         null,
         1,
-        4,
+        0,
         null,
         null,
         null,
@@ -1534,7 +1530,7 @@
         1,
         1,
         null,
-        2,
+        1,
         null,
         1,
         1,
@@ -1564,6 +1560,8 @@
         1,
         0,
         null,
+        null,
+        1,
         null
       ],
       "/home/mark/Mafqood/Mafqood/app/admin/suspect_post.rb": [
@@ -1749,36 +1747,8 @@
         null,
         null,
         null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
       ]
     },
-    "timestamp": 1430513668
+    "timestamp": 1430515788
   }
 }
