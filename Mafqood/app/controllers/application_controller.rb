@@ -61,6 +61,6 @@ class ApplicationController < ActionController::Base
   #
   # Redirects to the login path to start signing in.
   def authenticate_user!
-    redirect_to request.referer || root_url, notice: t("login_to_view") unless session[:user_id]
+    redirect_to login_path(:facebook) unless session[:user_id]
   end
 end

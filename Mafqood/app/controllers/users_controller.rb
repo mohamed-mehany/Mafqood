@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, only: [:edit]
+  before_filter :authenticate_user!, only: [:edit, :update, :posts]
 
   # Public: Initialises a new user ActiveRecord with one telephone and one address.
   def new
