@@ -3,21 +3,21 @@
 .row
   .large-12.large-centered.medium-12.medium-centered.small-12.small-centered.columns
     %fieldset
-      %legend= t("finding.edittitle")
-      = form_for(@finding_post) do |f|
-        = f.label :name, t("finding.child_name")
-        = f.text_field :name, placeholder: t("finding.required_field")
-        = f.label :age, t("fiding.age")
-        = f.text_field :age, placeholder: t("finding.required_field")
-        = f.label :description, t("finding.description")
-        = f.text_area :description, placeholder: t("finding.description_placeholder")
-        = f.label :special_signs, t("finding.special_signs")
-        = f.text_field :special_signs, placeholder: t("finding.special_signs_placeholder")
-        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t("suspect_posts.male"), t("suspect_posts.female")], label: t("suspect_posts.gender")
+      %legend= t("finding.title")
+      = simple_form_for(@finding_post) do |f|
+        //= f.label :name, t("finding.child_name")
+        = f.input :name, placeholder: t("finding.required_field")
+        //= f.label :age, t("fiding.age")
+        = f.input :age, placeholder: t("finding.required_field")
+        //= f.label :description, t("finding.description")
+        = f.input :description, placeholder: t("finding.description_placeholder")
+        //= f.label :special_signs, t("finding.special_signs")
+        = f.input :special_signs, placeholder: t("finding.special_signs_placeholder")
+        = f.input :gender, as: :radio_buttons, radio_buttons_style: :nested, collection: [t("finding.male"), t("finding.female")], label: t("finding.gender")
         = f.input :location_id, collection: Location.order("name"), label_method: :name, value_method: :id, label: "Location", include_blank: "(" + t("finding.location") + ")"
-        = f.text_field :location, placeholder: t("finding.required_field")
-        = f.label :contact_info, "Enter your phone numer"
-        = f.text_field :contact_info, placeholder: t("finding.contact_info")
-        = f.label :image , t("finding.photo")
-        = f.file_field :image 
-        = f.submit t("finding.submit_edit"), class: "button expand"
+        //= f.label :contact_info, "Enter your phone numer"
+        //= f.input :contact_info, placeholder: t("finding.contact_info")
+        //= f.label :image , t("finding.photo")
+        = f.input :image
+        %center
+          = f.submit t("finding.submit"), class: "button"
