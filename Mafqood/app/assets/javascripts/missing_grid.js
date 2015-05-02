@@ -349,10 +349,10 @@ var MissingGrid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-				this.$edit = $( '<a href="#" class="button round" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button round">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit Post</a>' );
 			}
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );

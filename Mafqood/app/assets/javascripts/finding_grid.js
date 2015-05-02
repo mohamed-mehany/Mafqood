@@ -348,14 +348,14 @@ var FindingGrid = (function() {
 				current : $itemEl.attr ( 'current'),
 			};
 			if(eldata.user != eldata.current){
-				this.$edit = $( '<a href="#" class="button" style="display: none;"></a>' );
+				this.$edit = $( '<a href="#" class="button" style="display: none;"></a><br>' );
 			}
 			else{
-				this.$edit = $( '<a href="#" class="button">Edit post</a>' );
+				this.$edit = $( '<a href="#" class="button">Edit post</a><br>' );
 			}
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
+this.$mine = $( '<a href="#" class="button">Its my kid</a>' );
 			this.$returned = $( '<a href="#" class="button">Report as Returned</a><br>' );
 			this.$share = $( '<button onclick="" style="background-color: transparent;"><img src="/assets/Share.png"></button>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$mine, this.$edit, this.$returned, this.$share );

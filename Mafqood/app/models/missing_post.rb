@@ -9,6 +9,7 @@ class MissingPost < ActiveRecord::Base
   validates :gender, presence: true
   validates :image , presence: true
   validates :age , presence: true
+
   validates :location_id , presence: true
   validates :reporter_name , presence: true
   validates :description, :special_signs,
