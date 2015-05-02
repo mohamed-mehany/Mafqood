@@ -15,8 +15,7 @@ class SuspectPostsController < ApplicationController
 
     if @suspect_post.save
       save_action
-      flash[:notice] = "Your Post has been created successfully"
-      redirect_to @suspect_post
+      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create"))
     else
       render 'new'
     end
@@ -29,7 +28,7 @@ class SuspectPostsController < ApplicationController
   protected
 
   def suspect_post_params
-    params.require(:suspect_post).permit(:approximate_age, :gender, :location, :image, :description,
+    params.require(:suspect_post).permit(:approximate_age, :gender, :location_id, :image, :description,
       :special_signs, :reporter_name, :reporter_phone)
   end
 end

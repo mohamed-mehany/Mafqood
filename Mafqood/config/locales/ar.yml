@@ -1,4 +1,8 @@
 ar:
+  devise:
+    sessions:
+      admin_user:
+        signed_in: "تم تسجيل الدخول بنجاح"
   hello: "مرحبا يا عالم"
   title: "مفقود"
   login: "تسجيل دخول"
@@ -47,6 +51,9 @@ ar:
     successful_report_mine: "لك"
     successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
     successful_edit: "تم تعديل بيانات الطفل بنجاح"
+    telephone: "رقم الهاتف"
+    male: "ذكر"
+    female: "انثي"
     must_login: "يجب أن تقوم بتسجيل الدخول أولا"
     edit_login: "غير مسموح لك بتعديل البيانات لأنك لم تقوم بتسجيل الدخول أو انك تحاول تعديل بيانات لا تخص طفلك"
     submit_edit: "تعديل البيانات"
@@ -73,11 +80,17 @@ ar:
     reporter_phone: "رقم التليفون:"
     phone_placeholder: "محمول"
     submit_button: "إرسال"
+    successful_create: "لقد تم أضافة بيانات الطفل الي قاعدة البايانات بنجاح"
 
   activerecord:
+    attributes:
+      telephones:
+        number: "رقم الهاتف"
+      location:
+        name: "مكان الطفل"
     errors:
       models:
-        missing_posts:
+        missing_post:
           attributes:
             gender:
               blank: "يجب اختيار ذكر أو انثى"
@@ -85,17 +98,19 @@ ar:
               blank: "لا يمكن ان يكون فارغا"
             image:
               blank: "لا يمكن ان يكون فارغا"
-            location:
+            location_id:
               blank: "لا يمكن ان يكون فارغا"
             reporter_phone:
-              blank: "لا يمكن ان يكون فارغا"
+              blank: "لا يمكن ان يكون الأسم فارغا"
               not_a_number: "هذا ليس رقم هاتف"
               wrong_length: "رقم هاتف غير صالح"
               invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
             description:
-              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              too_long: "الحد الأقصى المسموح به   ٥٠٠ حرف"
             special_signs:
               too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+            age:
+              blank: "لا يمكن ان يكون فارغا"
 
         suspect_post:
           attributes:
@@ -105,7 +120,7 @@ ar:
               blank: "لا يمكن ان يكون فارغا"
             image:
               blank: "لا يمكن ان يكون فارغا"
-            location:
+            location_id:
               blank: "لا يمكن ان يكون فارغا"
             reporter_phone:
               blank: "لا يمكن ان يكون فارغا"
@@ -121,13 +136,41 @@ ar:
           attributes:
             base:
               finding_duplicate_mine: "لقد قمت بالأبلاغ سابقا أن هذا هو \ هي طفلك"
+            name:
+              blank: "لا يمكن ان يكون فارغا"
+            gender:
+              blank: "يجب اختيار ذكر أو انثى"
+            age:
+              blank: "لا يمكن ان يكون فارغا"
+            image:
+              blank: "لا يمكن ان يكون فارغا"
+            location_id:
+              blank: "لا يمكن ان يكون فارغا"
+            reporter_phone:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "رقم هاتف غير صالح"
+              invalid: "يجب البدء ب 01 و مكون من ١١ رقم"
+            description:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              blank: "لا يمكن ان يكون فارغا"
+            special_signs:
+              too_long: "الحد الأقصى المسموح به ٥٠٠ حرف"
+              blank: "لا يمكن ان يكون فارغا"
+        telephone:
+          attributes:
+            number:
+              blank: "لا يمكن ان يكون فارغا"
+              not_a_number: "هذا ليس رقم هاتف"
+              wrong_length: "غير صحيح"
+              invalid: "يجب ان يبدأ ب 01 و مكون من ١١ رقم"
 
   finding:
     title: "أبلاغ عن طفل وجد"
     edittitle: "تعديل بيانات طفلك"
     child_name: "أسم الطفل"
     required_field: "خانة مطلوبة"
-    age: "العمر تحديدا أو تقريبا"
+    age: "العمر"
     description: "أوصف الطفل"
     description_placeholder: "مطلوب وصف ملامح و ملابس الطفل"
     special_signs: "علامات بارزة"
@@ -135,7 +178,7 @@ ar:
     gender: "الجنس"
     male: "ذكر"
     female: "أنثي"
-    location: "مكان عثورك علي الطفل"
+    location: "مكان العثور علي الطفل"
     contact_info: "رقم هاتفك"
     photo: "أضافة صورة - خانة مطلوبه"
     submit: "أبلاغ"
@@ -144,4 +187,7 @@ ar:
     successful_edit: "تم تعديل بيانات الطفل بنجاح"
     must_login: "يجب أن تقوم بتسجيل الدخول أولا"
     edit_login: "غير مسموح لك بتعديل البيانات لأنك لم تقوم بتسجيل الدخول أو انك تحاول تعديل بيانات لا تخص طفلك"
+    telephone: "رقم الهاتف"
+    male: "ذكر"
+    female: "انثي"
     submit_edit: "تعديل البيانات" 

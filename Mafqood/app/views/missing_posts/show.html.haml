@@ -1,2 +1,88 @@
+
 = @ip
 = @action
+
+!!!
+%html{:lang => "missingsen"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Thumbnail Grid with Expanding Preview
+    %meta{:content => "Thumbnail Grid with Expanding Preview", :name => "description"}/
+    %meta{:content => "thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio", :name => "keywords"}/
+    %meta{:content => "Codrops", :name => "author"}/
+    = stylesheet_link_tag "default"
+    = stylesheet_link_tag "component"
+    = javascript_include_tag "modernizr.custom"
+  %body
+    .container
+      .main
+        %ul#og-grid.og-missing-grid
+          -griduser = 0
+          -if(current_user != nil)
+            -griduser = current_user.id
+          %li
+            %a{"data-description" => "Age: #{@missing_post.age}<br>Reporter phone: #{@missing_post.reporter_phone}<br>Location: #{@missing_post.location}<br>Description: #{@missing_post.description}<br>Special signs: #{@missing_post.special_signs}<br>Gender: #{@missing_post.gender}".html_safe, "data-largesrc" => "#{@missing_post.image}", "data-title" => @missing_post.reporter_name, "href" => "#{missing_post_report_path(@missing_post)}", :found => "#{report_child_as_found_path(@missing_post.id)}","edit" => "#{edit_missing_post_path(@missing_post)}", :share => "shareMissingPost('#{@missing_post.id}','#{@missing_post.age}','#{@missing_post.gender == true ? "male":"female"}','#{@missing_post.location}');"}
+              %img{:alt => "img01", :src => "#{@missing_post.image.thumb}"}/
+            .og-expander
+              .og-expander-inner
+                %span.og-close
+                .og-fullimg
+                  .og-loading
+                  %img{:src => ""}
+                .og-details
+                  %h3
+                  %p
+                  %a{:href => ""}
+    / /container
+    = javascript_include_tag "missing_grid"
+    :javascript
+      $(function() {
+        MissingGrid.init();
+      });
+
+      function shareMissingPost(id, age, gender, location) {
+        FB.ui(
+          {
+            method: 'share_open_graph',
+            action_type: 'Mafqood:share',
+            action_properties: JSON.stringify({
+              post:{
+                "og:url": 'http://localhost:3000/missing_posts/' + id,
+                "og:title": 'Child has gone Missing:',
+                "og:type": 'mafqood:post',
+                "og:image": 'http://www.wlrfm.com/images/lost-found-banner.jpg',
+                "og:image:height": '627',
+                "og:image:width": '1200',
+                "og:description": 'A child has gone missing from ' + location + ' with these information; ' + 'Gender: ' + gender + ', ' + 'Age: ' + age + ' years old. ' + 'For more information click on the post.',
+                "fb:app_id": '1571552789759205',
+              },
+            })
+          },
+          function(response) {
+            if (response && !response.error_code) {
+              alert('Posting completed.');
+            } else {
+              alert('Error while posting.');
+            }
+          }
+        );
+      }
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1571552789759205',
+          xfbml      : true,
+          version    : 'v2.3'
+        });   
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));

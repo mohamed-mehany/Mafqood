@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
     end
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
-
+#when the user make its first action we store  its ip address and if the user is
+#verfied we store its id and increment its count if the user counter is larger 
+#than 4 we store its ip address in spammers table
   def save_action
     @find = Action.find_by user_ip: session[:ip]
     if @find
@@ -46,6 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
 
   # Private: Gets the float value depending on the language of the website.
   #
@@ -96,6 +99,6 @@ class ApplicationController < ActionController::Base
   #
   # Redirects to the login path to start signing in.
   def authenticate_user!
-    redirect_to request.referer || root_url, notice: t("login_to_view") unless session[:user_id]
+    redirect_to login_path(:facebook) unless session[:user_id]
   end
 end

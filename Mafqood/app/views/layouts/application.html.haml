@@ -8,8 +8,8 @@
     %title= content_for?(:title) ? yield(:title) : t("title")
 
     = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
   %body
@@ -18,7 +18,7 @@
         %li.name
           %h1= link_to t("title"), root_url
         %li.toggle-topbar.menu-icon
-          %a{ href: "javascript:" }
+          %a{ href: "" }
             %span= t("menu")
       %section.top-bar-section
         %ul
@@ -26,13 +26,13 @@
             %li.active= link_to t("logout"), logout_path, class: "button"
           - else
             %li.active= link_to t("facebook_login"), login_path(:facebook), class: "button", onclick: "if($(this).hasClass('disabled')) return false; $(this).addClass('disabled');"
-        - if current_user
-          %ul.right
-            %li.divider.hide-for-small
-            - if I18n.locale == :en
-              %li= link_to "عربي", { locale: "ar" }, onclick: "$('html').attr('lang', 'ar').attr('dir', 'rtl');"
-            - else
-              %li= link_to "English", { locale: "en" }, onclick: "$('html').attr('lang', 'en').attr('dir', 'ltr');"
+        %ul.right
+          %li.divider.hide-for-small
+          - if I18n.locale == :en
+            %li= link_to "عربي", { locale: "ar" }, onclick: "$('html').attr('lang', 'ar').attr('dir', 'rtl');"
+          - else
+            %li= link_to "English", { locale: "en" }, onclick: "$('html').attr('lang', 'en').attr('dir', 'ltr');"
+          - if current_user
             %li.divider.hide-for-small
             %li= link_to t("users.my_posts"), my_posts_path
             %li.divider.hide-for-small
