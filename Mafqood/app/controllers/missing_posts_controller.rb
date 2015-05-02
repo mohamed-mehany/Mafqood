@@ -1,9 +1,14 @@
 class MissingPostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:create, :new, :report, :edit , :update]
+  before_filter :authenticate_user!, only: [:create, :new, :report, :edit, :update]
 
   def index
     @missing_posts = MissingPost.order("created_at desc")
     @missing_posts = @missing_posts.where("reporter_name LIKE ?", "%" + params[:query] + "%") if params[:query]
+    @missing_posts = @missing_posts.where("age - 5 <= ? AND age + 5 >= ?", params[:age], params[:age]) if params[:age] && params[:age] != ""
+    @missing_posts = @missing_posts.where("gender = ?", params[:gender]) if params[:gender] && params[:gender] != ""
+    @missing_posts = @missing_posts.where("location_id = ?", params[:location]) if params[:location] && params[:location] != ""
+    @missing_posts = @missing_posts.where("created_at >= ? AND created_at <= ?", params[:date].to_time - 5.days, params[:date].to_time + 5.days) if params[:date]
+
   end
 
   def show

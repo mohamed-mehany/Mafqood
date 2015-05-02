@@ -4,6 +4,10 @@ class FindingPostsController < ApplicationController
   def index
     @finding_posts = FindingPost.order("created_at desc")
     @finding_posts = @finding_posts.where("name LIKE ?", "%" + params[:query] + "%") if params[:query]
+    @finding_posts = @finding_posts.where("age - 5 <= ? AND age + 5 >= ?", params[:age], params[:age]) if params[:age] && params[:age] != ""
+    @finding_posts = @finding_posts.where("gender = ?", params[:gender]) if params[:gender] && params[:gender] != ""
+    @finding_posts = @finding_posts.where("location_id = ?", params[:location]) if params[:location] && params[:location] != ""
+    @finding_posts = @finding_posts.where("created_at >= ? AND created_at <= ?", params[:date].to_time - 5.days, params[:date].to_time + 5.days) if params[:date]
   end
 
   def show
