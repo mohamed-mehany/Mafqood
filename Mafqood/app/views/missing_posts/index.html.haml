@@ -13,6 +13,8 @@
     = stylesheet_link_tag "component"
     = javascript_include_tag "modernizr.custom"
   %body
+    = form_tag nil, method: :get do
+      = text_field_tag :query, nil, value: params[:query], placeholder: "Search", style: "margin-top: 20px"
     .container
       .main
         %ul#og-grid.og-missing-grid

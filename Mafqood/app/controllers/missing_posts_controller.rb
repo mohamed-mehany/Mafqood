@@ -2,8 +2,8 @@ class MissingPostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :report, :edit , :update]
 
   def index
-    @missing_posts = MissingPost.new
     @missing_posts = MissingPost.order("created_at desc")
+    @missing_posts = @missing_posts.where("reporter_name LIKE ?", "%" + params[:query] + "%") if params[:query]
   end
 
   def show

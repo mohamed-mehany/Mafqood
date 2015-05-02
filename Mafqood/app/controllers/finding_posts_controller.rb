@@ -3,6 +3,7 @@ class FindingPostsController < ApplicationController
   before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   def index
     @finding_posts = FindingPost.order("created_at desc")
+    @finding_posts = @finding_posts.where("name LIKE ?", "%" + params[:query] + "%") if params[:query]
   end
 
   def show
