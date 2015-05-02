@@ -14,8 +14,7 @@ class SuspectPostsController < ApplicationController
     @suspect_post = SuspectPost.create(suspect_post_params)
 
     if @suspect_post.save
-      flash[:notice] = "Your Post has been created successfully"
-      redirect_to @suspect_post
+      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create"))
     else
       render 'new'
     end
