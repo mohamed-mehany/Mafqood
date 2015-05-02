@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       session.delete(:uid)
       session.delete(:name)
       session.delete(:email)
+      session[:user_id] = @user.id
       redirect_to root_url, notice: t("users.successful_login")
     else
       render "new"

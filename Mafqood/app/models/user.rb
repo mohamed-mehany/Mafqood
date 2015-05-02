@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, allow_destroy: true
 
   validates_presence_of :name, :email
-
+  
   # Public: Defines a string equivalent for the User ActiveRecord.
   #
   # Examples
