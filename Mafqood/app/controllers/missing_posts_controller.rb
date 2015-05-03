@@ -8,6 +8,7 @@ class MissingPostsController < ApplicationController
 
   def show
     @missing_post = MissingPost.find(params[:id])
+    @ip = session[:ip]
   end
 
   def new
@@ -18,7 +19,8 @@ class MissingPostsController < ApplicationController
     @missing_post = MissingPost.new(missing_post_params)
     @missing_post.user = current_user
     if @missing_post.save
-      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create"))
+      save_action
+      redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
       render 'new'
     end
@@ -85,9 +87,9 @@ class MissingPostsController < ApplicationController
     @report_found.missing_post_id = @missing_post.id
     if @missing_post.user_id == current_user.id
       @report_found.save
-      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_mine"))
+      save_action
+      redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
     else
-      flash[:alert] = @report_found.errors.full_messages
       redirect_to action: "index"
     end
   end

@@ -9,7 +9,7 @@
         = f.input :description, label:t("finding.description"), placeholder: t("finding.description_placeholder")
         = f.input :special_signs, label:t("finding.special_signs"), placeholder: t("finding.special_signs_placeholder")
         = f.input :gender, label:t("finding.gender"),as: :radio_buttons, radio_buttons_style: :nested, collection: [t("finding.male"), t("finding.female")], label: t("finding.gender")
-        = f.input :location_id, collection: Location.order("name"), label_method: :name, value_method: :id, label: t("finding.location"), include_blank: "(" + t("finding.location") + ")"
+        = f.input :location_id, collection: Location.order("name"), label_method: :to_s, value_method: :id, label: t("finding.location"), include_blank: "(" + t("finding.location") + ")"
         = f.input :image, label:t("finding.image")
         %center
           = f.submit t("finding.submit"), class: "button"

@@ -1,6 +1,6 @@
 class SuspectPostReport < ActiveRecord::Base
   has_many :suspect_posts
-
+  
   # Author: Nariman Hesham
   #
   # Creating three scopes for the different types of reports

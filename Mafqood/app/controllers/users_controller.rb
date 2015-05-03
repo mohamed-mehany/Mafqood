@@ -38,15 +38,15 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-  
+
   # Public: Assigns the finding posts and missing posts of the current user to variables to be passed to the view.
   def posts
     @finding_posts = current_user.finding_posts
     @missing_posts = current_user.missing_posts
   end
-  
+
   private
-  
+
   # Private: Gets the parameters for the user form.
   #
   # Returns the allowed user params for mass assignment.

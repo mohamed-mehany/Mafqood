@@ -12,9 +12,11 @@ class SuspectPostsController < ApplicationController
 
   def create
     @suspect_post = SuspectPost.create(suspect_post_params)
-
+    @suspect_post.ip = request.remote_ip
     if @suspect_post.save
-      redirect_to({ action: "index"}, notice: t("suspect_posts.successful_create"))
+      save_action
+      flash[:notice] = "Your Post has been created successfully"
+      redirect_to @suspect_post
     else
       render 'new'
     end

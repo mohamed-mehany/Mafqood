@@ -17,6 +17,7 @@ class FindingPostsController < ApplicationController
     @finding_post = FindingPost.new(finding_post_params)
     @finding_post.user = current_user
     if @finding_post.save
+      save_action
       redirect_to({ action: "index"}, notice: t("finding.successful_create"))
     else
       render "new"
@@ -41,13 +42,13 @@ class FindingPostsController < ApplicationController
     @finding_post_report.user = current_user
     @finding_post_report.kind = "mine"
     if @finding_post_report.save
+      save_action
       redirect_to({ action: "index"}, notice: t("finding.successful_report_mine"))
     else
-      flash[:alert] = @finding_post_report.errors.full_messages
       redirect_to action: "index"
     end
   end
- 
+
   def edit
     @finding_post = FindingPost.find(params[:id])
   end
@@ -57,7 +58,6 @@ class FindingPostsController < ApplicationController
     if @finding_post.update(finding_post_params.reject{|k,v| v.blank?})
       redirect_to({action: "index"}, notice: t("finding.successful_edit"))
     else
-      flash[:alert] = @finding_post.errors.full_messages
       render 'edit'
     end
   end
@@ -93,12 +93,12 @@ protected
   def auth
     redirect_to(root_url, alert: [t("finding.must_login")]) unless current_user
   end
-# Public: Checks if the current user using the website is the post's owner 
+# Public: Checks if the current user using the website is the post's owner
 # whenever edit and update methods are called as this is used in a before
 # filter
 #
 # @user_id  - The user_id to be compared with the user_id of the post.
-# 
+#
 # Examples:
 #   A user with id 1 navigates to finding_posts/1/edit who's user_id = 1
 #   # => true
@@ -111,6 +111,6 @@ protected
   def is_owner user_id
     if (current_user == nil || (current_user.id != FindingPost.find(params[:id]).user_id))
       redirect_to({action: "index"}, alert: [t("finding.edit_login")])
-    end            
+    end
   end
 end
