@@ -90,7 +90,6 @@ class MissingPostsController < ApplicationController
       save_action
       redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
     else
-      flash[:alert] = @report_found.errors.full_messages
       redirect_to action: "index"
     end
   end

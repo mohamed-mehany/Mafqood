@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user #, :float
+  helper_method :current_user
   before_action :set_locale ,:session_ip
 
   # Public: Sets the locale of the website according to the params[:locale] hash.
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
 #when the user make its first action we store  its ip address and if the user is
-#verfied we store its id and increment its count if the user counter is larger 
+#verfied we store its id and increment its count if the user counter is larger
 #than 4 we store its ip address in spammers table
   def save_action
     @find = Action.find_by user_ip: session[:ip]
@@ -48,6 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
 
 
   # Private: Gets the float value depending on the language of the website.

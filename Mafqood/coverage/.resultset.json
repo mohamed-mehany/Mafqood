@@ -1,12 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-      "/home/mark/Mafqood/Mafqood/spec/controllers/home_controller_spec.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/spec/controllers/finding_post_controller_spec.rb": [
-        1,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
+      "/home/mark/Mafqood/Mafqood/spec/models/location_spec.rb": [
         1,
         null,
         1,
@@ -14,41 +9,13 @@
         1,
         1,
         1,
-<<<<<<< HEAD
-        1,
-        null,
-=======
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         1,
         null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
-        1,
-        1,
-        1,
-        null,
-        null,
-<<<<<<< HEAD
         null
       ],
       "/home/mark/Mafqood/Mafqood/spec/rails_helper.rb": [
-=======
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/spec/rails_helper.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         1,
         1,
@@ -100,22 +67,14 @@
         1,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/environment.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/environment.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         1,
         null,
         null,
         1
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/application.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/application.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         null,
         1,
@@ -143,20 +102,12 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/boot.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/boot.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         null,
         1
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/environments/test.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/environments/test.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         null,
         null,
@@ -200,11 +151,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/active_admin.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/active_admin.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         null,
         null,
@@ -439,11 +386,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/assets.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/assets.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
@@ -455,17 +398,9 @@
         null,
         null,
         null,
-<<<<<<< HEAD
         1
       ],
       "/home/mark/Mafqood/Mafqood/config/initializers/backtrace_silencers.rb": [
-=======
-        1,
-        1,
-        1
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/backtrace_silencers.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
@@ -474,20 +409,12 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/cookies_serializer.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/cookies_serializer.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         1
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/devise.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/devise.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         1,
@@ -748,21 +675,13 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/filter_parameter_logging.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/filter_parameter_logging.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
         1
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/inflections.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/inflections.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
@@ -780,41 +699,25 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/mime_types.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/mime_types.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/omniauth.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/omniauth.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         null,
         1,
         1,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/session_store.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/session_store.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         1
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/simple_form.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/simple_form.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         1,
         null,
@@ -982,11 +885,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/simple_form_foundation.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/simple_form_foundation.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         1,
         null,
@@ -1099,11 +998,7 @@
         1,
         null
       ],
-<<<<<<< HEAD
       "/home/mark/Mafqood/Mafqood/config/initializers/wrap_parameters.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/initializers/wrap_parameters.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
@@ -1119,120 +1014,155 @@
         null,
         null
       ],
-<<<<<<< HEAD
+      "/home/mark/Mafqood/Mafqood/spec/factories/finding_post.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/spec/factories/location.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/spec/factories/missing_post.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/spec/factories/spammer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/spec/factories/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/mark/Mafqood/Mafqood/config/routes.rb": [
-=======
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/spec/factories/finding_post.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         1,
         1,
         1,
         1,
-<<<<<<< HEAD
-=======
-        5,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
-        1,
-        1,
-        1,
-<<<<<<< HEAD
-=======
         null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/spec/factories/missing_post.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
         1,
         1,
         1,
         1,
         1,
-<<<<<<< HEAD
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/mark/Mafqood/Mafqood/app/controllers/application_controller.rb": [
-=======
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/spec/factories/missing_post_not_valid.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/config/routes.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/controllers/application_controller.rb": [
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         1,
         1,
         1,
         1,
         null,
-<<<<<<< HEAD
         null,
         null,
         null,
         1,
-        2,
-        1,
-        1,
-        null,
-        2,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-=======
-        1,
-        4,
         0,
-        0,
-        null,
-        4,
-        null,
-        null,
-        1,
-        null,
-        1,
         0,
         0,
         null,
@@ -1241,54 +1171,12 @@
         null,
         1,
         0,
-        null,
-        null,
-        1,
+        0,
+        0,
+        0,
         0,
         null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/finding_posts_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/home_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/missings_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/misssings_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/sessions_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/models/admin_user.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/admin/admin_user.rb": [
-        1,
-        1,
-        null,
-        1,
+        0,
         0,
         0,
         0,
@@ -1297,13 +1185,8 @@
         0,
         0,
         null,
+        0,
         null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
         0,
         0,
         0,
@@ -1311,55 +1194,33 @@
         null,
         0,
         null,
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/admin/dashboard.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
         0,
         0,
         0,
-        0,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-<<<<<<< HEAD
-=======
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/controllers/finding_posts_controller.rb": [
         1,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         0,
         null,
         null,
-<<<<<<< HEAD
+        null,
+        1,
+        0,
+        null,
+        null,
         null,
         null,
         null,
@@ -1397,64 +1258,10 @@
         null
       ],
       "/home/mark/Mafqood/Mafqood/app/models/admin_user.rb": [
-=======
         1,
         null,
         null,
         1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        4,
-        4,
-        4,
-        4,
-        4,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/models/finding_post.rb": [
-        1,
-        1,
-        1,
-        1,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
-        1,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
         null,
         null
       ],
@@ -1471,10 +1278,94 @@
         null,
         null,
         null,
-=======
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/mac/Documents/GitHub/SE/sprint1/Mafqood/app/uploaders/image_uploader.rb": [
+      "/home/mark/Mafqood/Mafqood/app/admin/spammer.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/spammer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/finding_post.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/finding_post.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/uploaders/image_uploader.rb": [
         null,
         null,
         1,
@@ -1485,18 +1376,12 @@
         null,
         null,
         1,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
         null,
         null,
         null,
         null,
-<<<<<<< HEAD
-=======
         1,
-        16,
-        null,
-        null,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
+        0,
         null,
         null,
         null,
@@ -1513,7 +1398,324 @@
         null,
         null,
         null,
-<<<<<<< HEAD
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/finding_post_report.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/finding_post_report.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/missing_post.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/missing_post.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/location.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/location.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/suspect_post.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/suspect_post.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/suspect_post_report.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/suspect_post_report.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/admin/missing_post_report.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/mark/Mafqood/Mafqood/app/models/missing_post_report.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/home/mark/Mafqood/Mafqood/app/admin/admin_user.rb": [
@@ -1545,35 +1747,8 @@
         null,
         null,
         null
-      ],
-      "/home/mark/Mafqood/Mafqood/app/controllers/home_controller.rb": [
-        1,
-        1,
-=======
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
-        null,
-        null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1428524078
-=======
-    "timestamp": 1428429441
->>>>>>> b01570bfd4ade8ed962ff48b9e768564fcfadbee
+    "timestamp": 1430515788
   }
 }

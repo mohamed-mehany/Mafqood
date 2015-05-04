@@ -6,4 +6,6 @@ class Location < ActiveRecord::Base
   def to_s
     I18n.locale == :en ? name : name_ar
   end
+  
+  validates_presence_of :name, :name_ar
 end

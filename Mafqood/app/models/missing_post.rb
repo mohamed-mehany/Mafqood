@@ -4,6 +4,8 @@ class MissingPost < ActiveRecord::Base
   belongs_to :user
   has_one :location
   
+  scope :spammed, -> { joins("INNER JOIN spammers ON missing_posts.user_id = spammers.user_id") }
+
   validates :gender, presence: true
   validates :image , presence: true
   validates :age , presence: true

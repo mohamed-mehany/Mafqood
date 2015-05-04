@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  post '/users/new', to: 'users#create', as: 'create_user'
   get '/edit_profile', to: 'users#edit', as: 'edit_profile'
-  patch '/edit_profile', to: 'users#update', as: 'update_profile'
+  patch '/edit_profile', to: 'users#update'
+  put '/edit_profile', to: 'users#update'
+  post '/edit_profile', to: 'users#destroy'
   
   get '/auth/:provider', to: 'sessions#new', as: 'login'
   get '/auth/:provider/callback', to: 'sessions#new'

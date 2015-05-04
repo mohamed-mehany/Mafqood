@@ -3,6 +3,8 @@ class SuspectPost < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_one :location
   
+  scope :spammed, -> { joins("INNER JOIN spammers ON ip = spammers.user_ip") }
+  
   validates :location_id, presence: true
   validates :gender, presence: :true
   validates :approximate_age, :image, :reporter_name, :reporter_phone, presence: true          
