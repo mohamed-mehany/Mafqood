@@ -1,9 +1,22 @@
 class MissingPostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:create, :new, :report, :edit , :update]
+  before_filter :authenticate_user!, only: [:create, :new, :report, :edit, :update]
+
+# Public: Search for posts
+#
+# Example
+#
+#
+# if no filters are chosen or the query is empty, the page wil redirect with all the indicies,
+# otherwise if there is a hit from the sent tag, the page will redirect with the matching indicies.
 
   def index
-    @missing_posts = MissingPost.new
     @missing_posts = MissingPost.order("created_at desc")
+    @missing_posts = @missing_posts.where("reporter_name LIKE ?", "%" + params[:query] + "%") if params[:query]
+    @missing_posts = @missing_posts.where("age - 5 <= ? AND age + 5 >= ?", params[:age], params[:age]) if params[:age] && params[:age] != ""
+    @missing_posts = @missing_posts.where("gender = ?", params[:gender]) if params[:gender] && params[:gender] != ""
+    @missing_posts = @missing_posts.where("location_id = ?", params[:location]) if params[:location] && params[:location] != ""
+    @missing_posts = @missing_posts.where("created_at >= ? AND created_at <= ?", params[:date].to_time - 5.days, params[:date].to_time + 5.days) if params[:date]
+
   end
 
   def show
@@ -26,16 +39,17 @@ class MissingPostsController < ApplicationController
     end
   end
 
-  # Author: Nariman Hesham
-  #
-  # public: Report a specific missing post to be found by child's
-  #   parents or the contrary
-  #
-  # method is called when a user is navigated to '/my_posts/:id/found'
-  #
-  # @missing_post.save
-  # => true, redirects the user to user posts and success message is displayed
-  # => false, redirects the user to user posts and error message is displayed
+# Author: Nariman Hesham
+#
+# public: Report a specific missing post to be found by child's
+#   parents or the contrary
+#
+# method is called when a user is navigated to '/my_posts/:id/found'
+#
+# @missing_post.save
+# => true, redirects the user to user posts and success message is displayed
+# => false, redirects the user to user posts and error message is displayed
+
   def report_found
     @missing_post = MissingPost.find(params[:id])
     @missing_post.status == true ? @missing_post.status = 0 : @missing_post.status = 1

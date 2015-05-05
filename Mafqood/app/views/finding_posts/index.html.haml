@@ -13,6 +13,13 @@
     = stylesheet_link_tag "component"
     = javascript_include_tag "modernizr.custom"
   %body
+    = form_tag nil, method: :get do
+      = text_field_tag :query, nil, value: params[:query], placeholder: "Search", style: "margin-top: 20px"
+      = text_field_tag :age, nil, value: params[:age], placeholder: t("missing_posts.age_placeholder")
+      = select_tag :gender, options_for_select([t("missing_posts.male"), t("missing_posts.female")], params[:gender]), include_blank: t("missing_posts.gender")
+      = select_tag :location, options_for_select(Location.all.map { |x| [x, x.id] }, params[:location]), include_blank: t("missing_posts.location")
+      = text_field_tag :date, nil, type: :date, value: params[:date] || Time.now.strftime("%Y-%m-%d")
+      = submit_tag t("missing_posts.submit_button"), class: "expand button", name: nil
     .container
       .main
         %ul#og-grid.og-finding-grid
