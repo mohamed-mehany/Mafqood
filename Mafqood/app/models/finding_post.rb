@@ -19,3 +19,4 @@ class FindingPost < ActiveRecord::Base
     name
   end
 end
+FindingPost.import

@@ -22,3 +22,4 @@ class MissingPost < ActiveRecord::Base
             :format => { :with => /\A01\d\d\d\d\d\d\d\d\d\z/ }
 
 end
+MissingPost.import

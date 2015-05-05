@@ -17,3 +17,4 @@ class SuspectPost < ActiveRecord::Base
   validates :description, :special_signs,
             :length => { :maximum => 500 } 
 end
+SuspectPost.import
