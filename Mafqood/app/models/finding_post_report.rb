@@ -4,7 +4,7 @@ class FindingPostReport < ActiveRecord::Base
   validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
   has_many :finding_posts
 
-# scope spammed, helps the admin to collect posts of a spammer, so the admin can delete them, By joining user id and spammer id while spammer flag is set to true
+# scope spammed, helps the admin to collect posts of a spammer, so the admin can delete them, By joining user id and spammer id
 
   scope :spammed, -> { joins("spammers ON finding_post_reports.user_id = spammers.user_id") }
 
