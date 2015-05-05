@@ -2,8 +2,13 @@ class FindingPostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :mine]
   before_filter(only: [:edit,:update]) { |f| f.is_owner( params[:id] )}
   
-  # if no filters are chosen or the query is empty, the page wil redirect with all the indicies,
-  # otherwise if there is a hit from the sent tag, the page will redirect with the matching indicies.
+# Public: Search for posts
+#
+# Example
+#
+#
+# if no filters are chosen or the query is empty, the page wil redirect with all the indicies,
+# otherwise if there is a hit from the sent tag, the page will redirect with the matching indicies.
   
   def index
     @finding_posts = FindingPost.order("created_at desc")
