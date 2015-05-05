@@ -1,6 +1,9 @@
 class MissingPostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :report, :edit, :update]
 
+# if no filters are chosen or the query is empty, the page wil redirect with all the indicies,
+# otherwise if there is a hit from the sent tag, the page will redirect with the matching indicies.
+
   def index
     @missing_posts = MissingPost.order("created_at desc")
     @missing_posts = @missing_posts.where("reporter_name LIKE ?", "%" + params[:query] + "%") if params[:query]
