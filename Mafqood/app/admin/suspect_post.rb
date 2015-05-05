@@ -1,6 +1,6 @@
 ActiveAdmin.register SuspectPost do
 
-
+  scope :spammed
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -13,6 +13,6 @@ ActiveAdmin.register SuspectPost do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
+  permit_params :approximate_age, :gender, :location_id, :image, :description, :special_signs, :reporter_name, :reporter_phone
 
 end

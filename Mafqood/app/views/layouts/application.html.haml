@@ -8,8 +8,8 @@
     %title= content_for?(:title) ? yield(:title) : t("title")
 
     = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
   %body
@@ -18,7 +18,7 @@
         %li.name
           %h1= link_to t("title"), root_url
         %li.toggle-topbar.menu-icon
-          %a{ href: "javascript:" }
+          %a{ href: "" }
             %span= t("menu")
       %section.top-bar-section
         %ul

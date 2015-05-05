@@ -1,11 +1,9 @@
 class SuspectPost < ActiveRecord::Base
-
-  include Tire::Model::Search
-  include Tire::Model::Callbacks
-  
   attr_accessor :image
   mount_uploader :image, ImageUploader
   has_one :location
+  
+  scope :spammed, -> { joins("INNER JOIN spammers ON ip = spammers.user_ip") }
   
   validates :location_id, presence: true
   validates :gender, presence: :true
@@ -17,4 +15,3 @@ class SuspectPost < ActiveRecord::Base
   validates :description, :special_signs,
             :length => { :maximum => 500 } 
 end
-SuspectPost.import

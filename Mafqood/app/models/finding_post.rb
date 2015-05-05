@@ -1,17 +1,12 @@
 class FindingPost < ActiveRecord::Base
-  
-  include Tire::Model::Search
-  include Tire::Model::Callbacks
-
   belongs_to :user
   has_one :location
   
-  validates_presence_of :name, :description, :image, :age, :location, :contact_info
-  validates_inclusion_of :gender, in: [true, false]
+  scope :spammed, -> { joins("INNER JOIN spammers ON finding_posts.user_id = spammers.user_id") }
+
+  validates_presence_of :name, :description, :image, :age, :location_id, :gender
+
   validates_inclusion_of :age, in: 0..140 
-  validates :contact_info,
-            numericality: { only_integer: true }, 
-            length: { is: 11 }	
 
   mount_uploader :image, ImageUploader
 
@@ -19,4 +14,3 @@ class FindingPost < ActiveRecord::Base
     name
   end
 end
-FindingPost.import

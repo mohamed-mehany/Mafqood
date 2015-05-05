@@ -1,9 +1,10 @@
 class FindingPostReport < ActiveRecord::Base
   
   belongs_to :user
-  #validate :unique_report
   validates :user_id, uniqueness: { scope: [:finding_post_id,:kind] }
   has_many :finding_posts
+
+  scope :spammed, -> { joins("spammers ON finding_post_reports.user_id = spammers.user_id") }
 
   # Author: Nariman Hesham
   #
@@ -16,9 +17,9 @@ class FindingPostReport < ActiveRecord::Base
   #    reported as Spam
   # => calling FindingPostReport.duplicate returns all finding posts
   #    reported as Duplicate 
-  scope :fake, -> { where(kind: "Fake", kind: "fake") }
-  scope :spam, -> { where(kind: "Spam", kind: "spam") }
-  scope :duplicate, -> { where(kind: "Duplicate", kind: "duplicate") }
+  scope :fake, -> { where("kind = ? OR kind = ?", "Fake", "fake") }
+  scope :spam, -> { where("kind = ? OR kind = ?", "Spam", "spam") }
+  scope :duplicate, -> { where("kind = ? OR kind = ?", "Duplicate", "duplicate") }
 
 
 # Private: As a uniquness validations, this method checks if there is a 

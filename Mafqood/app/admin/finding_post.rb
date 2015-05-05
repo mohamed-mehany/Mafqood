@@ -1,6 +1,6 @@
 ActiveAdmin.register FindingPost do
 
-
+  scope :spammed
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register FindingPost do
   #   permitted
   # end
 
-
+  permit_params :name, :contact_info, :description, :age, :special_signs, :image, :location_id, :gender
 end

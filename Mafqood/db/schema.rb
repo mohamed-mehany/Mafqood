@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427104210) do
+ActiveRecord::Schema.define(version: 20150501095345) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20150427104210) do
     t.string   "uid",        limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "actions", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "user_ip",    limit: 255
+    t.integer  "action_num", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "kind",       limit: 255
   end
 
   create_table "active_admin_comments", force: :cascade do |t|
@@ -77,22 +86,23 @@ ActiveRecord::Schema.define(version: 20150427104210) do
   create_table "finding_posts", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.string   "description",   limit: 255
-    t.string   "location",      limit: 255
     t.string   "special_signs", limit: 255
     t.integer  "age",           limit: 4
     t.string   "image",         limit: 255
     t.string   "contact_info",  limit: 255
-    t.boolean  "gender",        limit: 1
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id",       limit: 4
     t.boolean  "status",        limit: 1
+    t.integer  "location_id",   limit: 4
+    t.string   "gender",        limit: 255
   end
 
   create_table "locations", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "name_ar",    limit: 255
   end
 
   create_table "missing_post_reports", force: :cascade do |t|
@@ -112,15 +122,23 @@ ActiveRecord::Schema.define(version: 20150427104210) do
     t.string   "special_signs",  limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.string   "location",       limit: 255
     t.integer  "user_id",        limit: 4
-    t.boolean  "gender",         limit: 1
     t.boolean  "status",         limit: 1
+    t.integer  "location_id",    limit: 4
+    t.string   "gender",         limit: 255
+  end
+
+  create_table "spammers", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "user_ip",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "kind",       limit: 255
   end
 
   create_table "suspect_post_reports", force: :cascade do |t|
     t.integer  "suspect_post_id", limit: 4
-    t.string   "kind",            limit: 255
+    t.string   "type",            limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -136,6 +154,7 @@ ActiveRecord::Schema.define(version: 20150427104210) do
     t.datetime "updated_at",                  null: false
     t.string   "image",           limit: 255
     t.integer  "location_id",     limit: 4
+    t.string   "ip",              limit: 255
   end
 
   create_table "telephones", force: :cascade do |t|

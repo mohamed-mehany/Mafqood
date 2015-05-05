@@ -1,6 +1,6 @@
 ActiveAdmin.register MissingPost do
 
-
+  scope :spammed
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -13,6 +13,6 @@ ActiveAdmin.register MissingPost do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
+  permit_params :age, :location_id, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs
 
 end

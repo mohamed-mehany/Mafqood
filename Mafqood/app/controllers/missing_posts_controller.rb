@@ -1,21 +1,14 @@
 class MissingPostsController < ApplicationController
-  before_filter :auth, only: [:create, :new, :report, :edit , :update]
+  before_filter :authenticate_user!, only: [:create, :new, :report, :edit , :update]
 
   def index
-    if params[:query].present?
-      @missing_posts = MissingPost.search(params[:key], load: true).result
-    else
-    @missing_posts = MissingPost.order("created_at desc")
     @missing_posts = MissingPost.new
+    @missing_posts = MissingPost.order("created_at desc")
   end
-end
-  
-  def search
-    @missing_post = MissingPost.search(params[:query], load: true).result
-  end
-  
+
   def show
     @missing_post = MissingPost.find(params[:id])
+    @ip = session[:ip]
   end
 
   def new
@@ -26,6 +19,7 @@ end
     @missing_post = MissingPost.new(missing_post_params)
     @missing_post.user = current_user
     if @missing_post.save
+      save_action
       redirect_to({ action: "index"}, notice: ["Your Post has been created successfully"])
     else
       render 'new'
@@ -93,9 +87,9 @@ end
     @report_found.missing_post_id = @missing_post.id
     if @missing_post.user_id == current_user.id
       @report_found.save
+      save_action
       redirect_to({ action: "index"}, notice: t("missing_posts.successful_report_found"))
     else
-      flash[:alert] = @report_found.errors.full_messages
       redirect_to action: "index"
     end
   end
@@ -104,7 +98,7 @@ end
  # Protected: Redirects the user to the homepage unless he is logged in
 
   def missing_post_params
-    params.require(:missing_post).permit(:age, :location, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
+    params.require(:missing_post).permit(:age, :location_id, :reporter_name, :reporter_phone, :description, :image, :gender, :special_signs)
   end
 
   def auth

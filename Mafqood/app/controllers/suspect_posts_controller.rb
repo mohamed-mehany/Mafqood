@@ -1,15 +1,6 @@
 class SuspectPostsController < ApplicationController
-  
   def index
-    if params[:query].present?
-      @suspects = SuspectPost.search(params[:key], load: true).result
-    else
     @suspects = SuspectPost.order("created_at desc")
-  end
-end
-  
-  def search
-    @suspects = SuspectPost.search(params[:query], load: true).result
   end
 
   def show
@@ -21,8 +12,9 @@ end
 
   def create
     @suspect_post = SuspectPost.create(suspect_post_params)
-
+    @suspect_post.ip = request.remote_ip
     if @suspect_post.save
+      save_action
       flash[:notice] = "Your Post has been created successfully"
       redirect_to @suspect_post
     else
