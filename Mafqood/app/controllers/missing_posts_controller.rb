@@ -1,6 +1,11 @@
 class MissingPostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :report, :edit, :update]
 
+# Public: Search for posts
+#
+# Example
+#
+#
 # if no filters are chosen or the query is empty, the page wil redirect with all the indicies,
 # otherwise if there is a hit from the sent tag, the page will redirect with the matching indicies.
 
