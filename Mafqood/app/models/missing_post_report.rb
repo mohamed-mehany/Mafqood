@@ -5,7 +5,7 @@ class MissingPostReport < ActiveRecord::Base
   belongs_to :user
   has_many :missing_posts
 
-  # scope spammed, helps the admin to collect posts of a spammer, so the admin can delete them, By joining user id and spammer id while spammer flag is set to true
+  # scope spammed, helps the admin to collect posts of a spammer, so the admin can delete them, By joining user id and spammer id
 
   scope :spammed, -> { joins("spammers ON missing_post_reports.user_id = spammers.user_id") }
 
