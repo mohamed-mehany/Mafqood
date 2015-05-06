@@ -20,7 +20,7 @@
           -if(current_user != nil)
             -griduser = current_user.id
           %li
-            %a{"data-description" => "Age: #{@missing_post.age}<br>Reporter phone: #{@missing_post.reporter_phone}<br>Location: #{Location.find(@missing_post.location_id)}<br>Description: #{@missing_post.description}<br>Special signs: #{@missing_post.special_signs}<br>Gender: #{@missing_post.gender}".html_safe, "data-largesrc" => "#{@missing_post.image}", "data-title" => @missing_post.reporter_name, "href" => "#{missing_post_report_path(@missing_post)}", :found => "#{report_child_as_found_path(@missing_post.id)}","edit" => "#{edit_missing_post_path(@missing_post)}", :share => "shareMissingPost('#{@missing_post.id}','#{@missing_post.age}','#{@missing_post.gender == true ? "male":"female"}','#{@missing_post.location}');"}
+            %a{"data-description" => "Age: #{@missing_post.age}<br>Reporter phone: #{@missing_post.reporter_phone}<br>Location: #{Location.find(@missing_post.location_id)}<br>Description: #{@missing_post.description}<br>Special signs: #{@missing_post.special_signs}<br>Gender: #{@missing_post.gender}".html_safe, "data-largesrc" => "#{@missing_post.image}", "data-title" => @missing_post.reporter_name, "href" => "#{missing_post_report_path(@missing_post)}", :found => "#{report_child_as_found_path(@missing_post.id)}","edit" => "#{edit_missing_post_path(@missing_post)}", :share => "shareMissingPost('#{@missing_post.id}','#{@missing_post.age}','#{@missing_post.gender == true ? "male":"female"}','#{Location.find(@missing_post.location_id)}');"}
               %img{:alt => "img01", :src => "#{@missing_post.image.thumb}"}/
             .og-expander
               .og-expander-inner
